@@ -14,12 +14,10 @@
 #import "UIImageView+RdTools.h"
 #import "NSMutableAttributedString+RdTools.h"
 #import "RdMacroFile.h"
-#import "UIImageView+WebCache.h"
 #import "UIViewController+RdTools.h"
 #import "UITableView+RdTools.h"
 #import "UIImage+RdTools.h"
 #import "RdKeyboardTools.h"
-#import <UIImageView+WebCache.h>
 
 
 //#ifndef RdToolsHeader_h

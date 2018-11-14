@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Masonry.h"
+#import <Masonry.h>
 
 typedef NS_ENUM(NSUInteger, RdViewHorizontalWidthType) {
     UIViewHorizontalWidthFixed,
