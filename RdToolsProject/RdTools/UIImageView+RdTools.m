@@ -62,11 +62,9 @@
         make.height.equalTo(@(width/self.image.size.width * self.image.size.height));
     }];
     
-    [[SDWebImageManager sharedManager] loadImageWithURL:[NSURL URLWithString:url] options:SDWebImageRetryFailed progress:^(NSInteger receivedSize, NSInteger expectedSize) {
-        
-    } completed:^(UIImage *img, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
-        if (img) {
-            self.image = img;
+    [[SDWebImageManager sharedManager] loadImageWithURL:[NSURL URLWithString:url] options:SDWebImageRetryFailed progress:nil completed:^(UIImage * _Nullable image, NSData * _Nullable data, NSError * _Nullable error, SDImageCacheType cacheType, BOOL finished, NSURL * _Nullable imageURL) {
+        if (image) {
+            self.image = image;
             [self mas_updateConstraints:^(MASConstraintMaker *make) {
                 make.height.equalTo(@(width/self.image.size.width * self.image.size.height));
             }];

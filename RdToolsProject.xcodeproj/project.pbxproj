@@ -28,6 +28,7 @@
 		5708FFD9219BB41400702D7F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5708FFD8219BB41400702D7F /* main.m */; };
 		5708FFE3219BB41400702D7F /* RdToolsProjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5708FFE2219BB41400702D7F /* RdToolsProjectTests.m */; };
 		5708FFEE219BB41400702D7F /* RdToolsProjectUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5708FFED219BB41400702D7F /* RdToolsProjectUITests.m */; };
+		D8BD24D5AE73CD2110564D9A /* libPods-RdToolsProject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 08E0028E7124B1786659EAA3 /* libPods-RdToolsProject.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		08E0028E7124B1786659EAA3 /* libPods-RdToolsProject.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RdToolsProject.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		57080000219BB45000702D7F /* RdBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RdBaseViewController.m; sourceTree = "<group>"; };
 		57080001219BB45000702D7F /* RdKeyboardTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RdKeyboardTools.h; sourceTree = "<group>"; };
 		57080002219BB45000702D7F /* UIView+RdMasonry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+RdMasonry.m"; sourceTree = "<group>"; };
@@ -92,6 +94,8 @@
 		5708FFFD219BB45000702D7F /* UIButton+RdTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+RdTools.h"; sourceTree = "<group>"; };
 		5708FFFE219BB45000702D7F /* UIImageView+RdTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+RdTools.m"; sourceTree = "<group>"; };
 		5708FFFF219BB45000702D7F /* NSMutableAttributedString+RdTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableAttributedString+RdTools.h"; sourceTree = "<group>"; };
+		779B5804DB8D5E5C21400152 /* Pods-RdToolsProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RdToolsProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-RdToolsProject/Pods-RdToolsProject.release.xcconfig"; sourceTree = "<group>"; };
+		89295A06D8D491DF4C3CEC7F /* Pods-RdToolsProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RdToolsProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RdToolsProject/Pods-RdToolsProject.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +103,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8BD24D5AE73CD2110564D9A /* libPods-RdToolsProject.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,6 +124,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1249208D6006BF1B885633AF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				08E0028E7124B1786659EAA3 /* libPods-RdToolsProject.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		5708FFBD219BB41300702D7F = {
 			isa = PBXGroup;
 			children = (
@@ -126,6 +139,8 @@
 				5708FFE1219BB41400702D7F /* RdToolsProjectTests */,
 				5708FFEC219BB41400702D7F /* RdToolsProjectUITests */,
 				5708FFC7219BB41300702D7F /* Products */,
+				B44738B4050903424C924A4F /* Pods */,
+				1249208D6006BF1B885633AF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -209,6 +224,15 @@
 			path = RdTools;
 			sourceTree = "<group>";
 		};
+		B44738B4050903424C924A4F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				89295A06D8D491DF4C3CEC7F /* Pods-RdToolsProject.debug.xcconfig */,
+				779B5804DB8D5E5C21400152 /* Pods-RdToolsProject.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -216,6 +240,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5708FFF2219BB41400702D7F /* Build configuration list for PBXNativeTarget "RdToolsProject" */;
 			buildPhases = (
+				796606D9F6DFCE98F071EFB9 /* [CP] Check Pods Manifest.lock */,
 				5708FFC2219BB41300702D7F /* Sources */,
 				5708FFC3219BB41300702D7F /* Frameworks */,
 				5708FFC4219BB41300702D7F /* Resources */,
@@ -333,6 +358,31 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		796606D9F6DFCE98F071EFB9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RdToolsProject-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5708FFC2219BB41300702D7F /* Sources */ = {
@@ -523,6 +573,7 @@
 		};
 		5708FFF3219BB41400702D7F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 89295A06D8D491DF4C3CEC7F /* Pods-RdToolsProject.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -540,6 +591,7 @@
 		};
 		5708FFF4219BB41400702D7F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 779B5804DB8D5E5C21400152 /* Pods-RdToolsProject.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
