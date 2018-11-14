@@ -28,6 +28,7 @@
 		5708FFD9219BB41400702D7F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5708FFD8219BB41400702D7F /* main.m */; };
 		5708FFE3219BB41400702D7F /* RdToolsProjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5708FFE2219BB41400702D7F /* RdToolsProjectTests.m */; };
 		5708FFEE219BB41400702D7F /* RdToolsProjectUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5708FFED219BB41400702D7F /* RdToolsProjectUITests.m */; };
+		57456781219BFDC900862A09 /* RdVideoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5745677F219BFDC800862A09 /* RdVideoView.m */; };
 		D8BD24D5AE73CD2110564D9A /* libPods-RdToolsProject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 08E0028E7124B1786659EAA3 /* libPods-RdToolsProject.a */; };
 /* End PBXBuildFile section */
 
@@ -94,6 +95,8 @@
 		5708FFFD219BB45000702D7F /* UIButton+RdTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+RdTools.h"; sourceTree = "<group>"; };
 		5708FFFE219BB45000702D7F /* UIImageView+RdTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+RdTools.m"; sourceTree = "<group>"; };
 		5708FFFF219BB45000702D7F /* NSMutableAttributedString+RdTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableAttributedString+RdTools.h"; sourceTree = "<group>"; };
+		5745677F219BFDC800862A09 /* RdVideoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RdVideoView.m; sourceTree = "<group>"; };
+		57456780219BFDC900862A09 /* RdVideoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RdVideoView.h; sourceTree = "<group>"; };
 		779B5804DB8D5E5C21400152 /* Pods-RdToolsProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RdToolsProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-RdToolsProject/Pods-RdToolsProject.release.xcconfig"; sourceTree = "<group>"; };
 		89295A06D8D491DF4C3CEC7F /* Pods-RdToolsProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RdToolsProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RdToolsProject/Pods-RdToolsProject.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -220,6 +223,8 @@
 				57080010219BB45000702D7F /* RdKeyboardTools.m */,
 				57080014219BB45000702D7F /* RdScrollView.h */,
 				57080007219BB45000702D7F /* RdScrollView.m */,
+				57456780219BFDC900862A09 /* RdVideoView.h */,
+				5745677F219BFDC800862A09 /* RdVideoView.m */,
 			);
 			path = RdTools;
 			sourceTree = "<group>";
@@ -390,6 +395,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				57080022219BB45000702D7F /* NSMutableAttributedString+RdTools.m in Sources */,
+				57456781219BFDC900862A09 /* RdVideoView.m in Sources */,
 				57080023219BB45000702D7F /* UIViewController+RdTools.m in Sources */,
 				57080018219BB45000702D7F /* UILabel+RdTools.m in Sources */,
 				57080021219BB45000702D7F /* RdKeyboardTools.m in Sources */,

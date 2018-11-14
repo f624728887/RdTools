@@ -53,6 +53,8 @@
 #define Rd_Color_RGB_A(r,g,b,a) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:(a)]
 #define Rd_ColorWith(color) [UIColor color]
 
+#define Rd_ImageWith(name) [UIImage imageNamed:name]
+
 //#ifndef RdMacroFile_h
 //#define RdMacroFile_h
 //
