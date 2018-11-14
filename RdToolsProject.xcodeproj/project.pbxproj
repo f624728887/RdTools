@@ -1,0 +1,670 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		57080018219BB45000702D7F /* UILabel+RdTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 5708FFFC219BB45000702D7F /* UILabel+RdTools.m */; };
+		57080019219BB45000702D7F /* UIImageView+RdTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 5708FFFE219BB45000702D7F /* UIImageView+RdTools.m */; };
+		5708001A219BB45000702D7F /* RdBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57080000219BB45000702D7F /* RdBaseViewController.m */; };
+		5708001B219BB45000702D7F /* UIView+RdMasonry.m in Sources */ = {isa = PBXBuildFile; fileRef = 57080002219BB45000702D7F /* UIView+RdMasonry.m */; };
+		5708001C219BB45000702D7F /* UIImage+RdTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 57080003219BB45000702D7F /* UIImage+RdTools.m */; };
+		5708001D219BB45000702D7F /* UITableView+RdTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 57080004219BB45000702D7F /* UITableView+RdTools.m */; };
+		5708001E219BB45000702D7F /* RdScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 57080007219BB45000702D7F /* RdScrollView.m */; };
+		5708001F219BB45000702D7F /* UINavigationController+RdTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 57080008219BB45000702D7F /* UINavigationController+RdTools.m */; };
+		57080020219BB45000702D7F /* UIButton+RdTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 5708000A219BB45000702D7F /* UIButton+RdTools.m */; };
+		57080021219BB45000702D7F /* RdKeyboardTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 57080010219BB45000702D7F /* RdKeyboardTools.m */; };
+		57080022219BB45000702D7F /* NSMutableAttributedString+RdTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 57080012219BB45000702D7F /* NSMutableAttributedString+RdTools.m */; };
+		57080023219BB45000702D7F /* UIViewController+RdTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 57080015219BB45000702D7F /* UIViewController+RdTools.m */; };
+		57080024219BB45000702D7F /* UIView+RdTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 57080016219BB45000702D7F /* UIView+RdTools.m */; };
+		5708FFCB219BB41300702D7F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5708FFCA219BB41300702D7F /* AppDelegate.m */; };
+		5708FFCE219BB41300702D7F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5708FFCD219BB41300702D7F /* ViewController.m */; };
+		5708FFD1219BB41300702D7F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5708FFCF219BB41300702D7F /* Main.storyboard */; };
+		5708FFD3219BB41400702D7F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5708FFD2219BB41400702D7F /* Assets.xcassets */; };
+		5708FFD6219BB41400702D7F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5708FFD4219BB41400702D7F /* LaunchScreen.storyboard */; };
+		5708FFD9219BB41400702D7F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5708FFD8219BB41400702D7F /* main.m */; };
+		5708FFE3219BB41400702D7F /* RdToolsProjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5708FFE2219BB41400702D7F /* RdToolsProjectTests.m */; };
+		5708FFEE219BB41400702D7F /* RdToolsProjectUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5708FFED219BB41400702D7F /* RdToolsProjectUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5708FFDF219BB41400702D7F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5708FFBE219BB41300702D7F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5708FFC5219BB41300702D7F;
+			remoteInfo = RdToolsProject;
+		};
+		5708FFEA219BB41400702D7F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5708FFBE219BB41300702D7F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5708FFC5219BB41300702D7F;
+			remoteInfo = RdToolsProject;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		57080000219BB45000702D7F /* RdBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RdBaseViewController.m; sourceTree = "<group>"; };
+		57080001219BB45000702D7F /* RdKeyboardTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RdKeyboardTools.h; sourceTree = "<group>"; };
+		57080002219BB45000702D7F /* UIView+RdMasonry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+RdMasonry.m"; sourceTree = "<group>"; };
+		57080003219BB45000702D7F /* UIImage+RdTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+RdTools.m"; sourceTree = "<group>"; };
+		57080004219BB45000702D7F /* UITableView+RdTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+RdTools.m"; sourceTree = "<group>"; };
+		57080005219BB45000702D7F /* UIViewController+RdTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+RdTools.h"; sourceTree = "<group>"; };
+		57080006219BB45000702D7F /* UIView+RdTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+RdTools.h"; sourceTree = "<group>"; };
+		57080007219BB45000702D7F /* RdScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RdScrollView.m; sourceTree = "<group>"; };
+		57080008219BB45000702D7F /* UINavigationController+RdTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+RdTools.m"; sourceTree = "<group>"; };
+		57080009219BB45000702D7F /* UIImageView+RdTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+RdTools.h"; sourceTree = "<group>"; };
+		5708000A219BB45000702D7F /* UIButton+RdTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+RdTools.m"; sourceTree = "<group>"; };
+		5708000B219BB45000702D7F /* RdToolsHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RdToolsHeader.h; sourceTree = "<group>"; };
+		5708000C219BB45000702D7F /* UILabel+RdTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+RdTools.h"; sourceTree = "<group>"; };
+		5708000D219BB45000702D7F /* RdMacroFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RdMacroFile.h; sourceTree = "<group>"; };
+		5708000E219BB45000702D7F /* UIImage+RdTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+RdTools.h"; sourceTree = "<group>"; };
+		5708000F219BB45000702D7F /* UIView+RdMasonry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+RdMasonry.h"; sourceTree = "<group>"; };
+		57080010219BB45000702D7F /* RdKeyboardTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RdKeyboardTools.m; sourceTree = "<group>"; };
+		57080011219BB45000702D7F /* RdBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RdBaseViewController.h; sourceTree = "<group>"; };
+		57080012219BB45000702D7F /* NSMutableAttributedString+RdTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableAttributedString+RdTools.m"; sourceTree = "<group>"; };
+		57080013219BB45000702D7F /* UINavigationController+RdTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+RdTools.h"; sourceTree = "<group>"; };
+		57080014219BB45000702D7F /* RdScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RdScrollView.h; sourceTree = "<group>"; };
+		57080015219BB45000702D7F /* UIViewController+RdTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+RdTools.m"; sourceTree = "<group>"; };
+		57080016219BB45000702D7F /* UIView+RdTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+RdTools.m"; sourceTree = "<group>"; };
+		57080017219BB45000702D7F /* UITableView+RdTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+RdTools.h"; sourceTree = "<group>"; };
+		5708FFC6219BB41300702D7F /* RdToolsProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RdToolsProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5708FFC9219BB41300702D7F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		5708FFCA219BB41300702D7F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		5708FFCC219BB41300702D7F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		5708FFCD219BB41300702D7F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		5708FFD0219BB41300702D7F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5708FFD2219BB41400702D7F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5708FFD5219BB41400702D7F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5708FFD7219BB41400702D7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5708FFD8219BB41400702D7F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		5708FFDE219BB41400702D7F /* RdToolsProjectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RdToolsProjectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5708FFE2219BB41400702D7F /* RdToolsProjectTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RdToolsProjectTests.m; sourceTree = "<group>"; };
+		5708FFE4219BB41400702D7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5708FFE9219BB41400702D7F /* RdToolsProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RdToolsProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5708FFED219BB41400702D7F /* RdToolsProjectUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RdToolsProjectUITests.m; sourceTree = "<group>"; };
+		5708FFEF219BB41400702D7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5708FFFC219BB45000702D7F /* UILabel+RdTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+RdTools.m"; sourceTree = "<group>"; };
+		5708FFFD219BB45000702D7F /* UIButton+RdTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+RdTools.h"; sourceTree = "<group>"; };
+		5708FFFE219BB45000702D7F /* UIImageView+RdTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+RdTools.m"; sourceTree = "<group>"; };
+		5708FFFF219BB45000702D7F /* NSMutableAttributedString+RdTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableAttributedString+RdTools.h"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5708FFC3219BB41300702D7F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5708FFDB219BB41400702D7F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5708FFE6219BB41400702D7F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5708FFBD219BB41300702D7F = {
+			isa = PBXGroup;
+			children = (
+				5708FFC8219BB41300702D7F /* RdToolsProject */,
+				5708FFE1219BB41400702D7F /* RdToolsProjectTests */,
+				5708FFEC219BB41400702D7F /* RdToolsProjectUITests */,
+				5708FFC7219BB41300702D7F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5708FFC7219BB41300702D7F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5708FFC6219BB41300702D7F /* RdToolsProject.app */,
+				5708FFDE219BB41400702D7F /* RdToolsProjectTests.xctest */,
+				5708FFE9219BB41400702D7F /* RdToolsProjectUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5708FFC8219BB41300702D7F /* RdToolsProject */ = {
+			isa = PBXGroup;
+			children = (
+				5708FFC9219BB41300702D7F /* AppDelegate.h */,
+				5708FFCA219BB41300702D7F /* AppDelegate.m */,
+				5708FFCC219BB41300702D7F /* ViewController.h */,
+				5708FFCD219BB41300702D7F /* ViewController.m */,
+				5708FFFB219BB45000702D7F /* RdTools */,
+				5708FFCF219BB41300702D7F /* Main.storyboard */,
+				5708FFD2219BB41400702D7F /* Assets.xcassets */,
+				5708FFD4219BB41400702D7F /* LaunchScreen.storyboard */,
+				5708FFD7219BB41400702D7F /* Info.plist */,
+				5708FFD8219BB41400702D7F /* main.m */,
+			);
+			path = RdToolsProject;
+			sourceTree = "<group>";
+		};
+		5708FFE1219BB41400702D7F /* RdToolsProjectTests */ = {
+			isa = PBXGroup;
+			children = (
+				5708FFE2219BB41400702D7F /* RdToolsProjectTests.m */,
+				5708FFE4219BB41400702D7F /* Info.plist */,
+			);
+			path = RdToolsProjectTests;
+			sourceTree = "<group>";
+		};
+		5708FFEC219BB41400702D7F /* RdToolsProjectUITests */ = {
+			isa = PBXGroup;
+			children = (
+				5708FFED219BB41400702D7F /* RdToolsProjectUITests.m */,
+				5708FFEF219BB41400702D7F /* Info.plist */,
+			);
+			path = RdToolsProjectUITests;
+			sourceTree = "<group>";
+		};
+		5708FFFB219BB45000702D7F /* RdTools */ = {
+			isa = PBXGroup;
+			children = (
+				5708000B219BB45000702D7F /* RdToolsHeader.h */,
+				5708000D219BB45000702D7F /* RdMacroFile.h */,
+				5708000F219BB45000702D7F /* UIView+RdMasonry.h */,
+				57080002219BB45000702D7F /* UIView+RdMasonry.m */,
+				57080006219BB45000702D7F /* UIView+RdTools.h */,
+				57080016219BB45000702D7F /* UIView+RdTools.m */,
+				5708000C219BB45000702D7F /* UILabel+RdTools.h */,
+				5708FFFC219BB45000702D7F /* UILabel+RdTools.m */,
+				5708FFFD219BB45000702D7F /* UIButton+RdTools.h */,
+				5708000A219BB45000702D7F /* UIButton+RdTools.m */,
+				5708000E219BB45000702D7F /* UIImage+RdTools.h */,
+				57080003219BB45000702D7F /* UIImage+RdTools.m */,
+				57080009219BB45000702D7F /* UIImageView+RdTools.h */,
+				5708FFFE219BB45000702D7F /* UIImageView+RdTools.m */,
+				57080017219BB45000702D7F /* UITableView+RdTools.h */,
+				57080004219BB45000702D7F /* UITableView+RdTools.m */,
+				57080005219BB45000702D7F /* UIViewController+RdTools.h */,
+				57080015219BB45000702D7F /* UIViewController+RdTools.m */,
+				5708FFFF219BB45000702D7F /* NSMutableAttributedString+RdTools.h */,
+				57080012219BB45000702D7F /* NSMutableAttributedString+RdTools.m */,
+				57080013219BB45000702D7F /* UINavigationController+RdTools.h */,
+				57080008219BB45000702D7F /* UINavigationController+RdTools.m */,
+				57080011219BB45000702D7F /* RdBaseViewController.h */,
+				57080000219BB45000702D7F /* RdBaseViewController.m */,
+				57080001219BB45000702D7F /* RdKeyboardTools.h */,
+				57080010219BB45000702D7F /* RdKeyboardTools.m */,
+				57080014219BB45000702D7F /* RdScrollView.h */,
+				57080007219BB45000702D7F /* RdScrollView.m */,
+			);
+			path = RdTools;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5708FFC5219BB41300702D7F /* RdToolsProject */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5708FFF2219BB41400702D7F /* Build configuration list for PBXNativeTarget "RdToolsProject" */;
+			buildPhases = (
+				5708FFC2219BB41300702D7F /* Sources */,
+				5708FFC3219BB41300702D7F /* Frameworks */,
+				5708FFC4219BB41300702D7F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RdToolsProject;
+			productName = RdToolsProject;
+			productReference = 5708FFC6219BB41300702D7F /* RdToolsProject.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5708FFDD219BB41400702D7F /* RdToolsProjectTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5708FFF5219BB41400702D7F /* Build configuration list for PBXNativeTarget "RdToolsProjectTests" */;
+			buildPhases = (
+				5708FFDA219BB41400702D7F /* Sources */,
+				5708FFDB219BB41400702D7F /* Frameworks */,
+				5708FFDC219BB41400702D7F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5708FFE0219BB41400702D7F /* PBXTargetDependency */,
+			);
+			name = RdToolsProjectTests;
+			productName = RdToolsProjectTests;
+			productReference = 5708FFDE219BB41400702D7F /* RdToolsProjectTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		5708FFE8219BB41400702D7F /* RdToolsProjectUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5708FFF8219BB41400702D7F /* Build configuration list for PBXNativeTarget "RdToolsProjectUITests" */;
+			buildPhases = (
+				5708FFE5219BB41400702D7F /* Sources */,
+				5708FFE6219BB41400702D7F /* Frameworks */,
+				5708FFE7219BB41400702D7F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5708FFEB219BB41400702D7F /* PBXTargetDependency */,
+			);
+			name = RdToolsProjectUITests;
+			productName = RdToolsProjectUITests;
+			productReference = 5708FFE9219BB41400702D7F /* RdToolsProjectUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5708FFBE219BB41300702D7F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = Rondo;
+				TargetAttributes = {
+					5708FFC5219BB41300702D7F = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					5708FFDD219BB41400702D7F = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 5708FFC5219BB41300702D7F;
+					};
+					5708FFE8219BB41400702D7F = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 5708FFC5219BB41300702D7F;
+					};
+				};
+			};
+			buildConfigurationList = 5708FFC1219BB41300702D7F /* Build configuration list for PBXProject "RdToolsProject" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5708FFBD219BB41300702D7F;
+			productRefGroup = 5708FFC7219BB41300702D7F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5708FFC5219BB41300702D7F /* RdToolsProject */,
+				5708FFDD219BB41400702D7F /* RdToolsProjectTests */,
+				5708FFE8219BB41400702D7F /* RdToolsProjectUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5708FFC4219BB41300702D7F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5708FFD6219BB41400702D7F /* LaunchScreen.storyboard in Resources */,
+				5708FFD3219BB41400702D7F /* Assets.xcassets in Resources */,
+				5708FFD1219BB41300702D7F /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5708FFDC219BB41400702D7F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5708FFE7219BB41400702D7F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5708FFC2219BB41300702D7F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				57080022219BB45000702D7F /* NSMutableAttributedString+RdTools.m in Sources */,
+				57080023219BB45000702D7F /* UIViewController+RdTools.m in Sources */,
+				57080018219BB45000702D7F /* UILabel+RdTools.m in Sources */,
+				57080021219BB45000702D7F /* RdKeyboardTools.m in Sources */,
+				5708001E219BB45000702D7F /* RdScrollView.m in Sources */,
+				5708FFCE219BB41300702D7F /* ViewController.m in Sources */,
+				57080024219BB45000702D7F /* UIView+RdTools.m in Sources */,
+				5708FFD9219BB41400702D7F /* main.m in Sources */,
+				5708001A219BB45000702D7F /* RdBaseViewController.m in Sources */,
+				5708001D219BB45000702D7F /* UITableView+RdTools.m in Sources */,
+				5708FFCB219BB41300702D7F /* AppDelegate.m in Sources */,
+				5708001B219BB45000702D7F /* UIView+RdMasonry.m in Sources */,
+				5708001F219BB45000702D7F /* UINavigationController+RdTools.m in Sources */,
+				57080020219BB45000702D7F /* UIButton+RdTools.m in Sources */,
+				57080019219BB45000702D7F /* UIImageView+RdTools.m in Sources */,
+				5708001C219BB45000702D7F /* UIImage+RdTools.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5708FFDA219BB41400702D7F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5708FFE3219BB41400702D7F /* RdToolsProjectTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5708FFE5219BB41400702D7F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5708FFEE219BB41400702D7F /* RdToolsProjectUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5708FFE0219BB41400702D7F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5708FFC5219BB41300702D7F /* RdToolsProject */;
+			targetProxy = 5708FFDF219BB41400702D7F /* PBXContainerItemProxy */;
+		};
+		5708FFEB219BB41400702D7F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5708FFC5219BB41300702D7F /* RdToolsProject */;
+			targetProxy = 5708FFEA219BB41400702D7F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		5708FFCF219BB41300702D7F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5708FFD0219BB41300702D7F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		5708FFD4219BB41400702D7F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5708FFD5219BB41400702D7F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5708FFF0219BB41400702D7F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		5708FFF1219BB41400702D7F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5708FFF3219BB41400702D7F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = K993SX32LX;
+				INFOPLIST_FILE = RdToolsProject/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Rondo.RdToolsProject;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5708FFF4219BB41400702D7F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = K993SX32LX;
+				INFOPLIST_FILE = RdToolsProject/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Rondo.RdToolsProject;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		5708FFF6219BB41400702D7F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = RdToolsProjectTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Rondo.RdToolsProjectTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RdToolsProject.app/RdToolsProject";
+			};
+			name = Debug;
+		};
+		5708FFF7219BB41400702D7F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = RdToolsProjectTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Rondo.RdToolsProjectTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RdToolsProject.app/RdToolsProject";
+			};
+			name = Release;
+		};
+		5708FFF9219BB41400702D7F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = RdToolsProjectUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Rondo.RdToolsProjectUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = RdToolsProject;
+			};
+			name = Debug;
+		};
+		5708FFFA219BB41400702D7F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = RdToolsProjectUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Rondo.RdToolsProjectUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = RdToolsProject;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5708FFC1219BB41300702D7F /* Build configuration list for PBXProject "RdToolsProject" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5708FFF0219BB41400702D7F /* Debug */,
+				5708FFF1219BB41400702D7F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5708FFF2219BB41400702D7F /* Build configuration list for PBXNativeTarget "RdToolsProject" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5708FFF3219BB41400702D7F /* Debug */,
+				5708FFF4219BB41400702D7F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5708FFF5219BB41400702D7F /* Build configuration list for PBXNativeTarget "RdToolsProjectTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5708FFF6219BB41400702D7F /* Debug */,
+				5708FFF7219BB41400702D7F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5708FFF8219BB41400702D7F /* Build configuration list for PBXNativeTarget "RdToolsProjectUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5708FFF9219BB41400702D7F /* Debug */,
+				5708FFFA219BB41400702D7F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5708FFBE219BB41300702D7F /* Project object */;
+}
