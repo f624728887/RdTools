@@ -7,6 +7,7 @@
 //
 
 #import "UIView+RdMasonry.h"
+#import "Masonry.h"
 
 @implementation UIView (RdMasonry)
 
