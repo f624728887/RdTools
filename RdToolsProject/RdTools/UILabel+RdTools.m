@@ -8,7 +8,7 @@
 
 #import "UILabel+RdTools.h"
 #import "RdMacroFile.h"
-#import "Masonry.h"
+#import <Masonry.h>
 
 @implementation UILabel (RdTools)
 
