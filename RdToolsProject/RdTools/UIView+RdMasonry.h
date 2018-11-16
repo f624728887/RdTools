@@ -9,13 +9,13 @@
 #import <UIKit/UIKit.h>
 
 typedef NS_ENUM(NSUInteger, RdViewHorizontalWidthType) {
-    UIViewHorizontalWidthFixed,
-    UIViewHorizontalWidthAdapting,
+    RdViewHorizontalWidthFixed,
+    RdViewHorizontalWidthAdapting,
 };
 
 typedef NS_ENUM(NSUInteger, RdViewVerticalHeightType) {
-    UIViewVerticalHeightFixed,
-    UIViewVerticalHeightAdapting,// 适应
+    RdViewVerticalHeightFixed,
+    RdViewVerticalHeightAdapting,// 适应
 };
 
 typedef NS_ENUM(NSUInteger, RdConstraint) {
@@ -38,7 +38,7 @@ typedef NS_ENUM(NSUInteger, RdRelation) {
  *等于
  */
 /// 设置宽高（ rd_widthAndHeightValue() ）
-- (UIView *_Nonnull(^_Nonnull)(CGFloat value))rd_widthAndHeightValue;
+- (UIView *_Nonnull(^_Nonnull)(CGFloat value))rd_squareLengthValue;
 - (UIView *_Nonnull(^_Nonnull)(CGFloat width, CGFloat height))rd_sizeValue;
 
 /**

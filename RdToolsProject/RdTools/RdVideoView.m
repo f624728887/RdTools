@@ -414,12 +414,12 @@ typedef NS_ENUM(NSUInteger, RdVideoHudType) {
     [UIView rd_ViewBGColor:[UIColor grayColor] for:self.toolView].rd_edgeEqualTo(0, 0, 0, 0).alpha = 0.7;
     
     self.playBtn = [UIButton rd_ButtonBGColor:nil superView:self.toolView];
-    self.playBtn.rd_leftEqualTo(nil, Rd_MarginSmall).rd_centerYEqualTo(nil, 0).rd_widthAndHeightValue(40);
+    self.playBtn.rd_leftEqualTo(nil, Rd_MarginSmall).rd_centerYEqualTo(nil, 0).rd_squareLengthValue(40);
     self.playBtn.rd_setButtonImageNormal(@"video_play").rd_setButtonImageSelected(@"video_pause");
     [self.playBtn addTarget:self action:@selector(videoPlayClick) forControlEvents:UIControlEventTouchUpInside];
     
     self.fullBtn = [UIButton rd_ButtonJustImg:@"video_fullscreen" target:self action:@selector(fullClick) superView:self.toolView];
-    self.fullBtn.rd_edgeEqualTo(0, -1, 0, -Rd_MarginSmall).rd_widthAndHeightValue(40);
+    self.fullBtn.rd_edgeEqualTo(0, -1, 0, -Rd_MarginSmall).rd_squareLengthValue(40);
     
     self.timeLabel = [UILabel rd_LabelString:@"00:00:00/00:00:00" fontName:nil fontSize:Rd_FontSizeS lineNumber:1 textColor:[UIColor whiteColor] superView:self.toolView];
     self.timeLabel.rd_edgeEqualTo(0, -1, 0, -1).rd_rightToLeftOf(self.fullBtn, 0).rd_widthValue([self.timeLabel rd_getLabelStringWidth]);
@@ -443,7 +443,7 @@ typedef NS_ENUM(NSUInteger, RdVideoHudType) {
 - (void)makeTitleView{
     [UIView rd_ViewBGColor:Rd_ColorWith(grayColor) for:self.titleView].rd_edgeEqualTo(0, 0, 0, 0).alpha = 0.7;
     UIButton *backBtn = [UIButton rd_ButtonJustImg:@"AppNavigationBack" target:self action:@selector(appWillBack) superView:self.titleView];
-    backBtn.rd_edgeEqualTo((Rd_isiPhoneX ? 0 : 20), 0, 0, -1).rd_widthAndHeightValue(40);
+    backBtn.rd_edgeEqualTo((Rd_isiPhoneX ? 0 : 20), 0, 0, -1).rd_squareLengthValue(40);
     
     self.titleLabel = [UILabel rd_LabelString:nil fontName:nil fontSize:Rd_FontSizeL lineNumber:1 textColor:Rd_ColorWith(whiteColor) superView:self.titleView];
     self.titleLabel.rd_leftToRightOf(backBtn, Rd_MarginDefault).rd_rightEqualTo(nil, -Rd_MarginDefault).rd_edgeEqualTo((Rd_isiPhoneX ? 0 : 20), -1, 0, -1);

@@ -11,9 +11,6 @@
 
 @interface ViewController ()
 
-@property (nonatomic, strong) NSArray *dataArr;
-@property (nonatomic, strong) UITableView *tableView;
-
 @end
 
 @implementation ViewController
@@ -27,13 +24,22 @@
 }
 
 - (void)dataInit{
-    self.dataArr = @[@"布局封装", @"视频封装", @"键盘监听"];
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor = Rd_ColorWith(whiteColor);
 }
 
 - (void)makeView{
-    self.tableView = [UITableView rd_TableView:[UIColor redColor] forView:self.view];
-    self.tableView.rd_edgeEqualTo(Rd_NavibarH, 0, 0, 0);
+    
+    UIView *baseView = [UIView rd_ViewBGColor:Rd_ColorWith(redColor) for:self.view];
+    baseView.rd_edgeEqualTo(Rd_NavibarH + 10, 0, -(Rd_ScreenHeight - Rd_NavibarH)/2.0, 0);
+    
+    UIView *blueView = [UIView rd_ViewBGColor:Rd_ColorWith(blueColor) for:baseView];
+    blueView.rd_edgeEqualTo(0, 0, -1, -1).rd_widthMultipliedBy(nil, 0.5).rd_heightMultipliedBy(nil, 0.5);
+    
+    UIView *yellowView = [UIView rd_ViewBGColor:Rd_ColorWith(yellowColor) for:baseView];
+    yellowView.rd_centerEqualTo(nil).rd_squareLengthValue(40);
+    
+    UIView *orangeView = [UIView rd_ViewBGColor:Rd_ColorWith(orangeColor) for:baseView];
+    orangeView.rd_leftToRightOf(yellowView, 20).rd_centerYEqualTo(yellowView, 0).rd_sizeValue(40, 20);
 }
 
 

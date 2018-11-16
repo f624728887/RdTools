@@ -6,6 +6,22 @@
 //  Copyright © 2018年 Rondo. All rights reserved.
 //
 
+static inline BOOL isIPhoneXSeries() {
+    BOOL iPhoneXSeries = NO;
+    if (UIDevice.currentDevice.userInterfaceIdiom != UIUserInterfaceIdiomPhone) {
+        return iPhoneXSeries;
+    }
+    
+    if (@available(iOS 11.0, *)) {
+        UIWindow *mainWindow = [[[UIApplication sharedApplication] delegate] window];
+        if (mainWindow.safeAreaInsets.bottom > 0.0) {
+            iPhoneXSeries = YES;
+        }
+    }
+    
+    return iPhoneXSeries;
+}
+
 #define Rd_FontNameNormal       @"PingFangSC-Light"
 #define Rd_AnimationDuration    0.26f
 
@@ -15,7 +31,7 @@
 #define Rd_ScreenWidth          [[UIScreen mainScreen] bounds].size.width
 #define Rd_ScreenHeight         [[UIScreen mainScreen] bounds].size.height
 
-#define Rd_isiPhoneX            ((([[UIScreen mainScreen] bounds].size.width == 375 && [[UIScreen mainScreen] bounds].size.height == 812) || ([[UIScreen mainScreen] bounds].size.width == 812 && [[UIScreen mainScreen] bounds].size.height == 375)) ? true : false)
+#define Rd_isiPhoneX            isIPhoneXSeries()
 
 #define Rd_isLandscape          ((Rd_ScreenWidth > Rd_ScreenHeight) ? true : false)
 

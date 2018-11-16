@@ -14,7 +14,7 @@
 /**
  *等于
  */
-- (UIView *_Nonnull(^_Nonnull)(CGFloat value))rd_widthAndHeightValue{
+- (UIView *_Nonnull(^_Nonnull)(CGFloat value))rd_squareLengthValue{
     return ^(CGFloat value) {
         [self mas_updateConstraints:^(MASConstraintMaker *make) {
             make.width.height.equalTo(@(value));
@@ -709,7 +709,7 @@
         if (self.subviews.count == 0) {
             [self addSubview:chileView];
             chileView.rd_leftEqualTo(nil, 0);
-            if (type == UIViewHorizontalWidthAdapting) {
+            if (type == RdViewHorizontalWidthAdapting) {
                 [chileView mas_updateConstraints:^(MASConstraintMaker *make) {
                     make.right.lessThanOrEqualTo(self);
                 }];
@@ -720,7 +720,7 @@
                 UIView *before = self.subviews.lastObject;
                 [self addSubview:chileView];
                 chileView.rd_leftToRightOf(before, interval);
-                if (type == UIViewHorizontalWidthAdapting) {
+                if (type == RdViewHorizontalWidthAdapting) {
                     [chileView mas_updateConstraints:^(MASConstraintMaker *make) {
                         make.right.lessThanOrEqualTo(self);
                     }];
@@ -729,7 +729,7 @@
             else {
                 if (self.subviews.count == 1) {
                     chileView.rd_leftEqualTo(nil, 0);
-                    if (type == UIViewHorizontalWidthAdapting) {
+                    if (type == RdViewHorizontalWidthAdapting) {
                         [chileView mas_updateConstraints:^(MASConstraintMaker *make) {
                             make.right.lessThanOrEqualTo(self);
                         }];
@@ -738,7 +738,7 @@
                 else {
                     UIView *before = [self.subviews objectAtIndex:(self.subviews.count - 2)];
                     chileView.rd_leftToRightOf(before, interval);
-                    if (type == UIViewHorizontalWidthAdapting) {
+                    if (type == RdViewHorizontalWidthAdapting) {
                         [chileView mas_updateConstraints:^(MASConstraintMaker *make) {
                             make.right.lessThanOrEqualTo(self);
                         }];
@@ -820,7 +820,7 @@
         if (self.subviews.count == 0) {
             [self addSubview:chileView];
             chileView.rd_topEqualTo(nil, 0);
-            if (type == UIViewVerticalHeightAdapting) {
+            if (type == RdViewVerticalHeightAdapting) {
                 [chileView mas_updateConstraints:^(MASConstraintMaker *make) {
                     make.bottom.lessThanOrEqualTo(self);
                 }];
@@ -831,7 +831,7 @@
                 UIView *before = self.subviews.lastObject;
                 [self addSubview:chileView];
                 chileView.rd_topToBottmOf(before, interval);
-                if (type == UIViewVerticalHeightAdapting) {
+                if (type == RdViewVerticalHeightAdapting) {
                     [chileView mas_updateConstraints:^(MASConstraintMaker *make) {
                         make.bottom.lessThanOrEqualTo(self);
                     }];
@@ -840,7 +840,7 @@
             else {
                 if (self.subviews.count == 1) {
                     chileView.rd_topEqualTo(nil, 0);
-                    if (type == UIViewVerticalHeightAdapting) {
+                    if (type == RdViewVerticalHeightAdapting) {
                         [chileView mas_updateConstraints:^(MASConstraintMaker *make) {
                             make.bottom.lessThanOrEqualTo(self);
                         }];
@@ -849,7 +849,7 @@
                 else {
                     UIView *before = [self.subviews objectAtIndex:(self.subviews.count - 2)];
                     chileView.rd_topToBottmOf(before, interval);
-                    if (type == UIViewVerticalHeightAdapting) {
+                    if (type == RdViewVerticalHeightAdapting) {
                         [chileView mas_updateConstraints:^(MASConstraintMaker *make) {
                             make.bottom.lessThanOrEqualTo(self);
                         }];
