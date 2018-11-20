@@ -1,5 +1,7 @@
 # RdTools
 
+pod 'RdTools'
+
 在要使用的文件引入`import <RdToolsHeader.h>`即可
 
 `UIView+RdMasonry`，该分类对Masonry进行了链式函数的封装，简化了`Masonry`的使用。
