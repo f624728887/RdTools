@@ -29,6 +29,8 @@
 		5708FFE3219BB41400702D7F /* RdToolsProjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5708FFE2219BB41400702D7F /* RdToolsProjectTests.m */; };
 		5708FFEE219BB41400702D7F /* RdToolsProjectUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5708FFED219BB41400702D7F /* RdToolsProjectUITests.m */; };
 		57456784219C047500862A09 /* RdVideoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 57456783219C047500862A09 /* RdVideoView.m */; };
+		57EDE0A321AB9991001652B8 /* RdOnceTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 57EDE0A221AB9991001652B8 /* RdOnceTimer.m */; };
+		57EDE0A921ABBCF6001652B8 /* RdRepeatTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 57EDE0A821ABBCF6001652B8 /* RdRepeatTimer.m */; };
 		D8BD24D5AE73CD2110564D9A /* libPods-RdToolsProject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 08E0028E7124B1786659EAA3 /* libPods-RdToolsProject.a */; };
 /* End PBXBuildFile section */
 
@@ -97,6 +99,10 @@
 		5708FFFF219BB45000702D7F /* NSMutableAttributedString+RdTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableAttributedString+RdTools.h"; sourceTree = "<group>"; };
 		57456782219C047500862A09 /* RdVideoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RdVideoView.h; sourceTree = "<group>"; };
 		57456783219C047500862A09 /* RdVideoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RdVideoView.m; sourceTree = "<group>"; };
+		57EDE0A121AB9991001652B8 /* RdOnceTimer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RdOnceTimer.h; sourceTree = "<group>"; };
+		57EDE0A221AB9991001652B8 /* RdOnceTimer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RdOnceTimer.m; sourceTree = "<group>"; };
+		57EDE0A721ABBCF6001652B8 /* RdRepeatTimer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RdRepeatTimer.h; sourceTree = "<group>"; };
+		57EDE0A821ABBCF6001652B8 /* RdRepeatTimer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RdRepeatTimer.m; sourceTree = "<group>"; };
 		779B5804DB8D5E5C21400152 /* Pods-RdToolsProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RdToolsProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-RdToolsProject/Pods-RdToolsProject.release.xcconfig"; sourceTree = "<group>"; };
 		89295A06D8D491DF4C3CEC7F /* Pods-RdToolsProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RdToolsProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RdToolsProject/Pods-RdToolsProject.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -225,6 +231,10 @@
 				57080007219BB45000702D7F /* RdScrollView.m */,
 				57456782219C047500862A09 /* RdVideoView.h */,
 				57456783219C047500862A09 /* RdVideoView.m */,
+				57EDE0A721ABBCF6001652B8 /* RdRepeatTimer.h */,
+				57EDE0A821ABBCF6001652B8 /* RdRepeatTimer.m */,
+				57EDE0A121AB9991001652B8 /* RdOnceTimer.h */,
+				57EDE0A221AB9991001652B8 /* RdOnceTimer.m */,
 			);
 			path = RdTools;
 			sourceTree = "<group>";
@@ -396,12 +406,14 @@
 			files = (
 				57080022219BB45000702D7F /* NSMutableAttributedString+RdTools.m in Sources */,
 				57456784219C047500862A09 /* RdVideoView.m in Sources */,
+				57EDE0A921ABBCF6001652B8 /* RdRepeatTimer.m in Sources */,
 				57080023219BB45000702D7F /* UIViewController+RdTools.m in Sources */,
 				57080018219BB45000702D7F /* UILabel+RdTools.m in Sources */,
 				57080021219BB45000702D7F /* RdKeyboardTools.m in Sources */,
 				5708001E219BB45000702D7F /* RdScrollView.m in Sources */,
 				5708FFCE219BB41300702D7F /* ViewController.m in Sources */,
 				57080024219BB45000702D7F /* UIView+RdTools.m in Sources */,
+				57EDE0A321AB9991001652B8 /* RdOnceTimer.m in Sources */,
 				5708FFD9219BB41400702D7F /* main.m in Sources */,
 				5708001A219BB45000702D7F /* RdBaseViewController.m in Sources */,
 				5708001D219BB45000702D7F /* UITableView+RdTools.m in Sources */,

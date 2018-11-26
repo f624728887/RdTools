@@ -18,6 +18,8 @@
 #import "UITableView+RdTools.h"
 #import "UIImage+RdTools.h"
 #import "RdKeyboardTools.h"
+#import "RdRepeatTimer.h"
+#import "RdOnceTimer.h"
 
 
 //#ifndef RdToolsHeader_h

@@ -40,6 +40,15 @@
     
     UIView *orangeView = [UIView rd_ViewBGColor:Rd_ColorWith(orangeColor) for:baseView];
     orangeView.rd_leftToRightOf(yellowView, 20).rd_centerYEqualTo(yellowView, 0).rd_sizeValue(40, 20);
+    
+    RdRepeatTimer *timer = [RdRepeatTimer rd_setRepeatTimer:2.0 actionBlock:^{
+        NSLog(@"hehe");
+    }];
+    
+    [RdOnceTimer rd_setOnceTimer:10.0 actionBlock:^{
+        NSLog(@"hahaha");
+        [timer rd_cancelRepeatTimer];
+    }];
 }
 
 
