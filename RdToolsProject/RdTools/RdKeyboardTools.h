@@ -11,8 +11,6 @@
 
 @interface RdKeyboardTools : NSObject
 
-+ (RdKeyboardTools *)rd_Keyboard;
-
 - (void)rd_setShow:(void (^)(CGFloat time, CGFloat kbHeight))block;
 - (void)rd_setHidden:(void (^)(CGFloat time, CGFloat kbHeight))block;
 

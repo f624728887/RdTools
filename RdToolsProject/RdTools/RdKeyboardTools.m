@@ -18,12 +18,12 @@
 
 @implementation RdKeyboardTools
 
-+ (RdKeyboardTools *)rd_Keyboard{
-    RdKeyboardTools *keyboard = [[RdKeyboardTools alloc] init];
-    
-    [keyboard addObsever];
-    
-    return keyboard;
+- (instancetype)init{
+    self = [super init];
+    if (self) {
+        [self addObsever];
+    }
+    return self;
 }
 
 - (void)addObsever{

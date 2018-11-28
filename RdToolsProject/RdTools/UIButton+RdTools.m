@@ -68,6 +68,7 @@
     if (Rd_FontNameNormal.length != 0) {
         button.titleLabel.font = [UIFont fontWithName:Rd_FontNameNormal size:button.titleLabel.font.pointSize];
     }
+    button.clipsToBounds = YES;
     return button;
 }
 
@@ -79,6 +80,7 @@
     if (Rd_FontNameNormal.length != 0) {
         button.titleLabel.font = [UIFont fontWithName:Rd_FontNameNormal size:button.titleLabel.font.pointSize];
     }
+    button.clipsToBounds = YES;
     return button;
 }
 
@@ -91,6 +93,7 @@
     if (Rd_FontNameNormal.length != 0) {
         button.titleLabel.font = [UIFont fontWithName:Rd_FontNameNormal size:button.titleLabel.font.pointSize];
     }
+    button.clipsToBounds = YES;
     return button;
 }
 

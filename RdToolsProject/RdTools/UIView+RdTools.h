@@ -32,5 +32,7 @@
 
 - (void)rd_removeAllSubViews;
 
+- (void)rd_animation;
+
 @end
 

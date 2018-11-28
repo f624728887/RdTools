@@ -99,5 +99,9 @@
     }
 }
 
+- (void)rd_animation{
+    [self.superview layoutIfNeeded];
+}
+
 @end
 

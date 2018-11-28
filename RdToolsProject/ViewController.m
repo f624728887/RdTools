@@ -11,6 +11,8 @@
 
 @interface ViewController ()
 
+@property (nonatomic, strong) RdKeyboardTools *kbTools;
+
 @end
 
 @implementation ViewController
@@ -49,6 +51,42 @@
         NSLog(@"hahaha");
         [timer rd_cancelRepeatTimer];
     }];
+    
+    UIView *bottomView = [UIView rd_ViewBGColor:Rd_ColorWith(greenColor) for:self.view];
+    bottomView.rd_sizeValue(Rd_ScreenWidth, 50).rd_bottomEqualTo(nil, 0);
+    
+    UITextField *field = [[UITextField alloc] init];
+    [bottomView addSubview:field];
+    field.backgroundColor = Rd_ColorWith(whiteColor);
+    field.borderStyle = UITextBorderStyleRoundedRect;
+    field.rd_leftEqualTo(nil, Rd_MarginDefault).rd_centerYEqualTo(nil, 0).rd_heightValue(40).rd_rightEqualTo(nil, -60);
+    
+    UIButton *cancel = [UIButton rd_ButtonJustTitle:@"完成" target:self action:@selector(cancelClick) superView:bottomView];
+    cancel.rd_leftToRightOf(field, Rd_MarginDefault).rd_rightEqualTo(nil, -Rd_MarginDefault).rd_centerYEqualTo(nil, 0); cancel.rd_setButtonBgColorNormal(Rd_ColorWith(whiteColor)).rd_setButtonTitleColorNormal(Rd_ColorWith(blackColor));
+    cancel.rd_setLayerCornerRadius(3);
+    
+    self.kbTools = [[RdKeyboardTools alloc] init];
+    [self.kbTools rd_setShow:^(CGFloat time, CGFloat kbHeight) {
+        [UIView animateWithDuration:time animations:^{
+            bottomView.rd_bottomEqualTo(nil, -kbHeight);
+            [bottomView rd_animation];
+        }];
+    }];
+    
+    [self.kbTools rd_setHidden:^(CGFloat time, CGFloat kbHeight) {
+        [UIView animateWithDuration:time animations:^{
+            bottomView.rd_bottomEqualTo(nil, 0);
+            [bottomView rd_animation];
+        }];
+    }];
+}
+
+- (void)cancelClick{
+    [self.view endEditing:YES];
+}
+
+- (void)dealloc{
+    [self.kbTools rd_KeyboardRemoveObserver];
 }
 
 
