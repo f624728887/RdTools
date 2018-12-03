@@ -8,18 +8,40 @@
 
 static inline BOOL isIPhoneXSeries() {
     BOOL iPhoneXSeries = NO;
-    if (UIDevice.currentDevice.userInterfaceIdiom != UIUserInterfaceIdiomPhone) {
-        return iPhoneXSeries;
-    }
     
     if (@available(iOS 11.0, *)) {
         UIWindow *mainWindow = [[[UIApplication sharedApplication] delegate] window];
         if (mainWindow.safeAreaInsets.bottom > 0.0) {
             iPhoneXSeries = YES;
         }
+        NSLog(@"%f, %f, %f, %f", mainWindow.safeAreaInsets.top, mainWindow.safeAreaInsets.left, mainWindow.safeAreaInsets.bottom, mainWindow.safeAreaInsets.right);
     }
     
     return iPhoneXSeries;
+}
+
+static inline float safeAreaTop() {
+    if (@available(iOS 11.0, *)) {
+        UIWindow *mainWindow = [[[UIApplication sharedApplication] delegate] window];
+        return mainWindow.safeAreaInsets.top;
+    }
+    return 20;
+}
+
+static inline float safeAreaSide() {
+    if (@available(iOS 11.0, *)) {
+        UIWindow *mainWindow = [[[UIApplication sharedApplication] delegate] window];
+        return mainWindow.safeAreaInsets.left;
+    }
+    return 0;
+}
+
+static inline float safeAreaBottom() {
+    if (@available(iOS 11.0, *)) {
+        UIWindow *mainWindow = [[[UIApplication sharedApplication] delegate] window];
+        return mainWindow.safeAreaInsets.bottom;
+    }
+    return 0;
 }
 
 #define Rd_FontNameNormal       @"PingFangSC-Light"
@@ -31,17 +53,17 @@ static inline BOOL isIPhoneXSeries() {
 #define Rd_ScreenWidth          [[UIScreen mainScreen] bounds].size.width
 #define Rd_ScreenHeight         [[UIScreen mainScreen] bounds].size.height
 
+#define Rd_SafeAreaTop          safeAreaTop()
+#define Rd_SafeAreaSides        safeAreaSide()
+#define Rd_SafeAreaBottom       safeAreaBottom()
+
 #define Rd_isiPhoneX            isIPhoneXSeries()
 
 #define Rd_isLandscape          ((Rd_ScreenWidth > Rd_ScreenHeight) ? true : false)
 
-#define Rd_NavibarH             (Rd_isiPhoneX ? (float)88 : (float)64)
-#define Rd_TabbarH              (Rd_isiPhoneX ? (float)(49 + 34) : (float)49)
-#define Rd_StatusbarH           (Rd_isiPhoneX ? (float)44 : (float)20)
-#define Rd_SafeAreaBottomH      (Rd_isiPhoneX ? (Rd_isLandscape ? (float)21 : (float)34): (float)0)
-#define Rd_SafeAreaSidesH       ((Rd_isiPhoneX && Rd_isLandscape) ? (float)44 : (float)0)
-#define Rd_SafeAreaLandscapeBottomH ((Rd_isiPhoneX && Rd_isLandscape) ? (float)21 : (float)0)
-#define Rd_StatusLandscapeH     ((Rd_isiPhoneX && Rd_isLandscape) ? (float)0 : (float)20)
+#define Rd_NavibarH             ((float)44 + Rd_SafeAreaTop)
+#define Rd_TabbarH              ((float)49 + Rd_SafeAreaBottomH)
+#define Rd_StatusbarH           (Rd_SafeAreaTop)
 
 
 #define Rd_IMG_HEI_16_9         (Rd_ScreenWidth / 16.0 * 9.0)

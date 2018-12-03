@@ -67,7 +67,7 @@
     }
     else {
         if (self.keyboardHidden) {
-            self.keyboardHidden(tim, Rd_SafeAreaBottomH);
+            self.keyboardHidden(tim, Rd_SafeAreaBottom);
         }
     }
 }

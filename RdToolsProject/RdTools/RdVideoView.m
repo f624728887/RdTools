@@ -81,11 +81,11 @@ typedef NS_ENUM(NSUInteger, RdVideoHudType) {
         
         // tool
         self.toolView = [UIView rd_ViewBGColor:nil for:self];
-        self.toolView.rd_edgeEqualTo(-1, Rd_SafeAreaSidesH, -Rd_SafeAreaLandscapeBottomH, -Rd_SafeAreaSidesH).rd_heightValue(40);
+        self.toolView.rd_edgeEqualTo(-1, Rd_SafeAreaSides, -Rd_SafeAreaBottom, -Rd_SafeAreaSides).rd_heightValue(40);
         [self makeToolView];
         
         self.titleView = [UIView rd_ViewBGColor:nil for:self];
-        self.titleView.rd_edgeEqualTo(-(40 + (Rd_isiPhoneX ? 0 : 20)), Rd_SafeAreaSidesH, -1, -Rd_SafeAreaSidesH).rd_heightValue(40 + (Rd_isiPhoneX ? 0 : 20));
+        self.titleView.rd_edgeEqualTo(-(40 + (Rd_isiPhoneX ? 0 : 20)), Rd_SafeAreaSides, -1, -Rd_SafeAreaSides).rd_heightValue(40 + (Rd_isiPhoneX ? 0 : 20));
         [self makeTitleView];
         
         // hud
@@ -167,8 +167,8 @@ typedef NS_ENUM(NSUInteger, RdVideoHudType) {
 }
 
 - (void)resetTitleToolsView{
-    self.toolView.rd_edgeEqualTo(-1, Rd_SafeAreaSidesH, -Rd_SafeAreaLandscapeBottomH, -Rd_SafeAreaSidesH).rd_heightValue(40);
-    self.titleView.rd_edgeEqualTo(-(Rd_isLandscape ? 0 : (40 + (Rd_isiPhoneX ? 0 : 20))), Rd_SafeAreaSidesH, -1, -Rd_SafeAreaSidesH).rd_heightValue(40 + (Rd_isiPhoneX ? 0 : 20));
+    self.toolView.rd_edgeEqualTo(-1, Rd_SafeAreaSides, -Rd_SafeAreaBottom, -Rd_SafeAreaSides).rd_heightValue(40);
+    self.titleView.rd_edgeEqualTo(-(Rd_isLandscape ? 0 : (40 + (Rd_isiPhoneX ? 0 : 20))), Rd_SafeAreaSides, -1, -Rd_SafeAreaSides).rd_heightValue(40 + (Rd_isiPhoneX ? 0 : 20));
 }
 
 - (void)leftFullClick{

@@ -53,7 +53,7 @@
     }];
     
     UIView *bottomView = [UIView rd_ViewBGColor:Rd_ColorWith(greenColor) for:self.view];
-    bottomView.rd_sizeValue(Rd_ScreenWidth, 50).rd_bottomEqualTo(nil, 0);
+    bottomView.rd_sizeValue(Rd_ScreenWidth, 50).rd_bottomEqualTo(nil, -Rd_SafeAreaBottom);
     
     UITextField *field = [[UITextField alloc] init];
     [bottomView addSubview:field];
@@ -75,7 +75,7 @@
     
     [self.kbTools rd_setHidden:^(CGFloat time, CGFloat kbHeight) {
         [UIView animateWithDuration:time animations:^{
-            bottomView.rd_bottomEqualTo(nil, 0);
+            bottomView.rd_bottomEqualTo(nil, -Rd_SafeAreaBottom);
             [bottomView rd_animation];
         }];
     }];
