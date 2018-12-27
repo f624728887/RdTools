@@ -11,7 +11,17 @@
 
 @implementation RdScrollView
 
-+ (RdScrollView *_Nonnull)rd_ScrollViewBgColor:(UIColor *_Nullable)bgColor scrollModel:(RdScrollViewScrollModel)model for:(UIView *_Nonnull)superView{
++ (instancetype _Nonnull)rd_verticalScrollViewBgColor:(UIColor *_Nullable)bgColor for:(UIView *_Nonnull)superView{
+    RdScrollView *view = [RdScrollView rd_ScrollViewBgColor:bgColor scrollModel:RdScrollViewScrollVertical for:superView];
+    return view;
+}
+
++ (instancetype _Nonnull)rd_horizontalScrollViewBgColor:(UIColor *_Nullable)bgColor for:(UIView *_Nonnull)superView{
+    RdScrollView *view = [RdScrollView rd_ScrollViewBgColor:bgColor scrollModel:RdScrollViewScrollHorizontal for:superView];
+    return view;
+}
+
++ (instancetype _Nonnull)rd_ScrollViewBgColor:(UIColor *_Nullable)bgColor scrollModel:(RdScrollViewScrollModel)model for:(UIView *_Nonnull)superView{
     RdScrollView *view = [[RdScrollView alloc] init];
     view.backgroundColor = bgColor ? bgColor : [UIColor clearColor];
     view.showsVerticalScrollIndicator = NO;

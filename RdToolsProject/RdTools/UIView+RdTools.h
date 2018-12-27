@@ -13,7 +13,7 @@
 + (instancetype _Nonnull)rd_ViewBGColor:(UIColor *_Nullable)bgColor for:(UIView *_Nonnull)superView;
 
 
-+ (UIView *_Nonnull)rd_LineColor:(UIColor *_Nonnull)color widthOrHeight:(CGFloat)widHei topMargin:(CGFloat)top leftMargin:(CGFloat)left bottomMargin:(CGFloat)bottom rightMargin:(CGFloat)right for:(UIView *_Nonnull)superView;
++ (instancetype _Nonnull)rd_LineColor:(UIColor *_Nonnull)color widthOrHeight:(CGFloat)widHei topMargin:(CGFloat)top leftMargin:(CGFloat)left bottomMargin:(CGFloat)bottom rightMargin:(CGFloat)right for:(UIView *_Nonnull)superView;
 
 /// 设置圆角 （ rd_cornerRadius(5) ）
 - (UIView *_Nonnull(^_Nonnull)(CGFloat radius))rd_setLayerCornerRadius;

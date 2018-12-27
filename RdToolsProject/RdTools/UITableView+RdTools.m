@@ -10,7 +10,7 @@
 
 @implementation UITableView (RdTools)
 
-+ (UITableView *_Nonnull)rd_TableView:(UIColor *_Nullable)bgColor forView:(UIView *_Nonnull)superView{
++ (instancetype _Nonnull)rd_TableView:(UIColor *_Nullable)bgColor forView:(UIView *_Nonnull)superView{
     UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
     [superView addSubview:tableView];
     tableView.tableFooterView = [[UIView alloc] init];

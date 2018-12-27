@@ -648,62 +648,6 @@
     };
 }
 
-- (UIView *_Nonnull(^_Nonnull)(RdConstraint childConstraint, RdRelation relation, UIView *_Nullable view, RdConstraint constraint))rd_userDefinedRelation{
-    return ^(RdConstraint childConstraint, RdRelation relation, UIView *view, RdConstraint constraint) {
-        UIView *relationView = (view == nil ? self.superview : view);
-        
-        MASViewAttribute *relationCon;
-        if (constraint == RdConstraintTop) {
-            relationCon = relationView.mas_top;
-        }
-        else if (constraint == RdConstraintLeft) {
-            relationCon = relationView.mas_left;
-        }
-        else if (constraint == RdConstraintBottom) {
-            relationCon = relationView.mas_bottom;
-        }
-        else if (constraint == RdConstraintRight) {
-            relationCon = relationView.mas_right;
-        }
-        else if (constraint == RdConstraintWidth) {
-            relationCon = relationView.mas_width;
-        }
-        else if (constraint == RdConstraintHeight) {
-            relationCon = relationView.mas_height;
-        }
-        
-        [self mas_updateConstraints:^(MASConstraintMaker *make) {
-            MASConstraint *chileCon;
-            if (childConstraint == RdConstraintTop) {
-                chileCon = make.top;
-            }
-            else if (childConstraint == RdConstraintLeft) {
-                chileCon = make.left;
-            }
-            else if (childConstraint == RdConstraintBottom) {
-                chileCon = make.bottom;
-            }
-            else if (childConstraint == RdConstraintRight) {
-                chileCon = make.right;
-            }
-            else if (childConstraint == RdConstraintWidth) {
-                chileCon = make.width;
-            }
-            else if (childConstraint == RdConstraintHeight) {
-                chileCon = make.height;
-            }
-            
-            if (relation == RdRelationLessThanOrEqual) {
-                chileCon.lessThanOrEqualTo(relationCon);
-            }
-            else {
-                chileCon.greaterThanOrEqualTo(relationCon);
-            }
-        }];
-        return self;
-    };
-}
-
 - (UIView *_Nonnull(^_Nonnull)(UIView *_Nonnull chileView, CGFloat interval, RdViewHorizontalWidthType type))rd_addHorizontalSubview{
     return ^(UIView *chileView, CGFloat interval, RdViewHorizontalWidthType type) {
         if (self.subviews.count == 0) {
@@ -752,66 +696,13 @@
 
 - (UIView *_Nonnull(^_Nonnull)(UIView *_Nonnull chileView, CGFloat interval))rd_addHorizontalWidthAdaptingSubview{
     return ^(UIView *chileView, CGFloat interval) {
-        if (self.subviews.count == 0) {
-            [self addSubview:chileView];
-            chileView.rd_leftEqualTo(nil, 0);
-            
-            [chileView mas_updateConstraints:^(MASConstraintMaker *make) {
-                make.right.lessThanOrEqualTo(self);
-            }];
-        }
-        else {
-            if (self.subviews.lastObject != chileView) {
-                UIView *before = self.subviews.lastObject;
-                [self addSubview:chileView];
-                chileView.rd_leftToRightOf(before, interval);
-                [chileView mas_updateConstraints:^(MASConstraintMaker *make) {
-                    make.right.lessThanOrEqualTo(self);
-                }];
-            }
-            else {
-                if (self.subviews.count == 1) {
-                    chileView.rd_leftEqualTo(nil, 0);
-                    [chileView mas_updateConstraints:^(MASConstraintMaker *make) {
-                        make.right.lessThanOrEqualTo(self);
-                    }];
-                }
-                else {
-                    UIView *before = [self.subviews objectAtIndex:(self.subviews.count - 2)];
-                    chileView.rd_leftToRightOf(before, interval);
-                    [chileView mas_updateConstraints:^(MASConstraintMaker *make) {
-                        make.right.lessThanOrEqualTo(self);
-                    }];
-                }
-            }
-        }
-        return self;
+        return self.rd_addHorizontalSubview(chileView, RdViewHorizontalWidthAdapting, interval);
     };
 }
 
 - (UIView *_Nonnull(^_Nonnull)(UIView *_Nonnull chileView, CGFloat interval))rd_addHorizontalWidthFixedSubview{
     return ^(UIView *chileView, CGFloat interval) {
-        if (self.subviews.count == 0) {
-            [self addSubview:chileView];
-            chileView.rd_leftEqualTo(nil, 0);
-        }
-        else {
-            if (self.subviews.lastObject != chileView) {
-                UIView *before = self.subviews.lastObject;
-                [self addSubview:chileView];
-                chileView.rd_leftToRightOf(before, interval);
-            }
-            else {
-                if (self.subviews.count == 1) {
-                    chileView.rd_leftEqualTo(nil, 0);
-                }
-                else {
-                    UIView *before = [self.subviews objectAtIndex:(self.subviews.count - 2)];
-                    chileView.rd_leftToRightOf(before, interval);
-                }
-            }
-        }
-        return self;
+        return self.rd_addHorizontalSubview(chileView, RdViewHorizontalWidthFixed, interval);
     };
 }
 
@@ -863,65 +754,13 @@
 
 - (UIView *_Nonnull(^_Nonnull)(UIView *_Nonnull chileView, CGFloat interval))rd_addVerticalHeightAdaptingSubview{
     return ^(UIView *chileView, CGFloat interval) {
-        if (self.subviews.count == 0) {
-            [self addSubview:chileView];
-            chileView.rd_topEqualTo(nil, 0);
-            [chileView mas_updateConstraints:^(MASConstraintMaker *make) {
-                make.bottom.lessThanOrEqualTo(self);
-            }];
-        }
-        else {
-            if (self.subviews.lastObject != chileView) {
-                UIView *before = self.subviews.lastObject;
-                [self addSubview:chileView];
-                chileView.rd_topToBottmOf(before, interval);
-                [chileView mas_updateConstraints:^(MASConstraintMaker *make) {
-                    make.bottom.lessThanOrEqualTo(self);
-                }];
-            }
-            else {
-                if (self.subviews.count == 1) {
-                    chileView.rd_topEqualTo(nil, 0);
-                    [chileView mas_updateConstraints:^(MASConstraintMaker *make) {
-                        make.bottom.lessThanOrEqualTo(self);
-                    }];
-                }
-                else {
-                    UIView *before = [self.subviews objectAtIndex:(self.subviews.count - 2)];
-                    chileView.rd_topToBottmOf(before, interval);
-                    [chileView mas_updateConstraints:^(MASConstraintMaker *make) {
-                        make.bottom.lessThanOrEqualTo(self);
-                    }];
-                }
-            }
-        }
-        return self;
+        return self.rd_addVerticalSubview(chileView, RdViewVerticalHeightAdapting, interval);
     };
 }
 
 - (UIView *_Nonnull(^_Nonnull)(UIView *_Nonnull chileView, CGFloat interval))rd_addVerticalHeightFixedSubview{
     return ^(UIView *chileView, CGFloat interval) {
-        if (self.subviews.count == 0) {
-            [self addSubview:chileView];
-            chileView.rd_topEqualTo(nil, 0);
-        }
-        else {
-            if (self.subviews.lastObject != chileView) {
-                UIView *before = self.subviews.lastObject;
-                [self addSubview:chileView];
-                chileView.rd_topToBottmOf(before, interval);
-            }
-            else {
-                if (self.subviews.count == 1) {
-                    chileView.rd_topEqualTo(nil, 0);
-                }
-                else {
-                    UIView *before = [self.subviews objectAtIndex:(self.subviews.count - 2)];
-                    chileView.rd_topToBottmOf(before, interval);
-                }
-            }
-        }
-        return self;
+        return self.rd_addVerticalSubview(chileView, RdViewVerticalHeightFixed, interval);
     };
 }
 

@@ -17,21 +17,21 @@ typedef NS_ENUM(NSUInteger, RdButtonImageType) {
 };
 
 /// color为 nil 时背景色为clearColor
-+ (UIButton *_Nonnull)rd_ButtonBGColor:(UIColor *_Nullable)bgColor superView:(UIView *_Nonnull)superView;
++ (instancetype _Nonnull)rd_ButtonBGColor:(UIColor *_Nullable)bgColor superView:(UIView *_Nonnull)superView;
 
-+ (UIButton *_Nonnull)rd_ButtonBGColor:(UIColor *_Nullable)bgColor target:(id _Nonnull)target action:(SEL _Nonnull)sel superView:(UIView *_Nonnull)superView;
++ (instancetype _Nonnull)rd_ButtonBGColor:(UIColor *_Nullable)bgColor target:(id _Nonnull)target action:(SEL _Nonnull)sel superView:(UIView *_Nonnull)superView;
 
-+ (UIButton *_Nonnull)rd_ButtonJustTitle:(NSString *_Nonnull)title target:(id _Nonnull)target action:(SEL _Nonnull)sel superView:(UIView *_Nonnull)superView;
++ (instancetype _Nonnull)rd_ButtonJustTitle:(NSString *_Nonnull)title target:(id _Nonnull)target action:(SEL _Nonnull)sel superView:(UIView *_Nonnull)superView;
 
-+ (UIButton *_Nonnull)rd_ButtonJustImg:(NSString *_Nonnull)imgName target:(id _Nonnull)target action:(SEL _Nonnull)sel superView:(UIView *_Nonnull)superView;
++ (instancetype _Nonnull)rd_ButtonJustImg:(NSString *_Nonnull)imgName target:(id _Nonnull)target action:(SEL _Nonnull)sel superView:(UIView *_Nonnull)superView;
 
-+ (UIButton *_Nonnull)rd_ButtonTitle:(NSString *_Nonnull)title img:(NSString *_Nonnull)imgName target:(id _Nonnull)target action:(SEL _Nonnull)sel superView:(UIView *_Nonnull)superView;
++ (instancetype _Nonnull)rd_ButtonTitle:(NSString *_Nonnull)title img:(NSString *_Nonnull)imgName target:(id _Nonnull)target action:(SEL _Nonnull)sel superView:(UIView *_Nonnull)superView;
 
-+ (UIButton *_Nonnull)rd_ButtonJustTitle:(NSString *_Nonnull)title target:(id _Nonnull)target action:(SEL _Nonnull)sel;
++ (instancetype _Nonnull)rd_ButtonJustTitle:(NSString *_Nonnull)title target:(id _Nonnull)target action:(SEL _Nonnull)sel;
 
-+ (UIButton *_Nonnull)rd_ButtonJustImg:(NSString *_Nonnull)imgName target:(id _Nonnull)target action:(SEL _Nonnull)sel;
++ (instancetype _Nonnull)rd_ButtonJustImg:(NSString *_Nonnull)imgName target:(id _Nonnull)target action:(SEL _Nonnull)sel;
 
-+ (UIButton *_Nonnull)rd_ButtonTitle:(NSString *_Nonnull)title img:(NSString *_Nonnull)imgName target:(id _Nonnull)target action:(SEL _Nonnull)sel;
++ (instancetype _Nonnull)rd_ButtonTitle:(NSString *_Nonnull)title img:(NSString *_Nonnull)imgName target:(id _Nonnull)target action:(SEL _Nonnull)sel;
 
 /// 设置button title （ rd_setXXX(title) ）
 - (UIButton *_Nonnull(^_Nonnull)(NSString * _Nonnull title))rd_setButtonTitle;
@@ -50,6 +50,8 @@ typedef NS_ENUM(NSUInteger, RdButtonImageType) {
 
 /// 设置button title颜色 （ rd_setXXX(color) ）
 - (UIButton *_Nonnull(^_Nonnull)(UIColor * _Nonnull color))rd_setButtonTitleColorSelected;
+
+- (UIButton *_Nonnull(^_Nonnull)(UIColor * _Nonnull color))rd_setButtonTitleColorDisabled;
 
 /// 设置button 高亮 title颜色 （ rd_setXXX(color) ）
 - (UIButton *_Nonnull(^_Nonnull)(UIColor * _Nonnull color))rd_setButtonTitleColorHightlighted;

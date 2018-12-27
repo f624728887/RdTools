@@ -10,6 +10,6 @@
 
 @interface UITableView (RdTools)
 
-+ (UITableView *_Nonnull)rd_TableView:(UIColor *_Nullable)bgColor forView:(UIView *_Nonnull)superView;
++ (instancetype _Nonnull)rd_TableView:(UIColor *_Nullable)bgColor forView:(UIView *_Nonnull)superView;
 
 @end

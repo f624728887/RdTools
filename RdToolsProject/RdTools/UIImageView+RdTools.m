@@ -12,11 +12,12 @@
 
 @implementation UIImageView (RdTools)
 
-+ (UIImageView *_Nonnull)rd_ImageView:(UIColor *)bgColor for:(UIView *_Nonnull)superView{
++ (instancetype _Nonnull)rd_ImageView:(UIColor *)bgColor for:(UIView *_Nonnull)superView{
     UIImageView *view = [[UIImageView alloc] init];
     view.backgroundColor = bgColor;
     view.contentMode = UIViewContentModeScaleAspectFill;
     view.clipsToBounds = YES;
+    view.userInteractionEnabled = YES;
     [superView addSubview:view];
     
     [view mas_updateConstraints:^(MASConstraintMaker *make) {
@@ -27,10 +28,11 @@
     return view;
 }
 
-+ (UIImageView *_Nonnull)rd_ImageViewImage:(NSString *_Nullable)imageName for:(UIView *_Nonnull)superView{
++ (instancetype _Nonnull)rd_ImageViewImage:(NSString *_Nullable)imageName for:(UIView *_Nonnull)superView{
     UIImageView *view = [[UIImageView alloc] initWithImage:[UIImage imageNamed:(imageName ? imageName : @"")]];
     view.contentMode = UIViewContentModeScaleAspectFill;
     view.clipsToBounds = YES;
+    view.userInteractionEnabled = YES;
     [superView addSubview:view];
     
     [view mas_updateConstraints:^(MASConstraintMaker *make) {
@@ -43,11 +45,12 @@
     return view;
 }
 
-+ (UIImageView *_Nonnull)rd_ImageViewPlaceholder:(NSString *_Nonnull)phName url:(NSString *_Nonnull)url for:(UIView *_Nonnull)superView{
++ (instancetype _Nonnull)rd_ImageViewPlaceholder:(NSString *_Nonnull)phName url:(NSString *_Nonnull)url for:(UIView *_Nonnull)superView{
     UIImageView *imageView = [[UIImageView alloc] init];
     [imageView sd_setImageWithURL:[NSURL URLWithString:url] placeholderImage:[UIImage imageNamed:phName]];
     imageView.contentMode = UIViewContentModeScaleAspectFill;
     imageView.clipsToBounds = YES;
+    imageView.userInteractionEnabled = YES;
     [superView addSubview:imageView];
     return imageView;
 }

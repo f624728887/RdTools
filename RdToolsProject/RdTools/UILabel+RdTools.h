@@ -10,7 +10,7 @@
 
 @interface UILabel (RdTools)
 
-+ (UILabel *_Nonnull)rd_LabelString:(NSString *_Nullable)string fontName:(NSString *_Nullable)name fontSize:(CGFloat)size lineNumber:(NSInteger)number textColor:(UIColor *_Nullable)color superView:(UIView *_Nonnull)superView;
++ (instancetype _Nonnull)rd_LabelString:(NSString *_Nullable)string fontName:(NSString *_Nullable)name fontSize:(CGFloat)size lineNumber:(NSInteger)number textColor:(UIColor *_Nullable)color superView:(UIView *_Nonnull)superView;
 
 - (void)rd_setTextAlignmentRight;
 - (void)rd_setTextAlignmentCenter;

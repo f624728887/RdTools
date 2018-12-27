@@ -248,9 +248,6 @@ typedef NS_ENUM(NSUInteger, RdRelation) {
 /// 右中 依赖 （ rd_XXXGreaterOrEqualToXXXOf(otherView, offset) ） otherView可以为nil，此时相对于superView依赖
 - (UIView *_Nonnull(^_Nonnull)(UIView * _Nullable otherView, CGFloat offset))rd_rightGreaterOrEqualToCenterXOf;
 
-/// rd_userDefinedRelation(childConstraint, relation, relationView(nil为superView), relationViewConstraint)
-- (UIView *_Nonnull(^_Nonnull)(RdConstraint childConstraint, RdRelation relation, UIView *_Nullable view, RdConstraint constraint))rd_userDefinedRelation;
-
 /// 水平添加View （ rd_addHorizontalSubview(view, 10, UIViewHorizontalWidthFixed) ）
 - (UIView *_Nonnull(^_Nonnull)(UIView *_Nonnull chileView, CGFloat interval, RdViewHorizontalWidthType type))rd_addHorizontalSubview;
 

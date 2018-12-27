@@ -11,7 +11,7 @@
 
 @implementation UIButton (RdTools)
 
-+ (UIButton *_Nonnull)rd_ButtonBGColor:(UIColor *_Nullable)bgColor superView:(UIView *_Nonnull)superView{
++ (instancetype _Nonnull)rd_ButtonBGColor:(UIColor *_Nullable)bgColor superView:(UIView *_Nonnull)superView{
     UIButton *button = [[UIButton alloc] init];
     button.backgroundColor = (bgColor == nil ? [UIColor clearColor] : bgColor);
     if (Rd_FontNameNormal.length != 0) {
@@ -23,7 +23,7 @@
     return button;
 }
 
-+ (UIButton *_Nonnull)rd_ButtonBGColor:(UIColor *_Nullable)bgColor target:(id _Nonnull)target action:(SEL _Nonnull)sel superView:(UIView *_Nonnull)superView{
++ (instancetype _Nonnull)rd_ButtonBGColor:(UIColor *_Nullable)bgColor target:(id _Nonnull)target action:(SEL _Nonnull)sel superView:(UIView *_Nonnull)superView{
     UIButton *button = [[UIButton alloc] init];
     button.backgroundColor = (bgColor == nil ? [UIColor clearColor] : bgColor);
     if (Rd_FontNameNormal.length != 0) {
@@ -36,7 +36,7 @@
     return button;
 }
 
-+ (UIButton *_Nonnull)rd_ButtonJustTitle:(NSString *_Nonnull)title target:(id _Nonnull)target action:(SEL _Nonnull)sel superView:(UIView *_Nonnull)superView{
++ (instancetype _Nonnull)rd_ButtonJustTitle:(NSString *_Nonnull)title target:(id _Nonnull)target action:(SEL _Nonnull)sel superView:(UIView *_Nonnull)superView{
     
     UIButton *button = [UIButton rd_ButtonJustTitle:title target:target action:sel];
     [superView addSubview:button];
@@ -44,7 +44,7 @@
     return button;
 }
 
-+ (UIButton *_Nonnull)rd_ButtonJustImg:(NSString *_Nonnull)imgName target:(id _Nonnull)target action:(SEL _Nonnull)sel superView:(UIView *_Nonnull)superView{
++ (instancetype _Nonnull)rd_ButtonJustImg:(NSString *_Nonnull)imgName target:(id _Nonnull)target action:(SEL _Nonnull)sel superView:(UIView *_Nonnull)superView{
     
     UIButton *button = [UIButton rd_ButtonJustImg:imgName target:target action:sel];
     [superView addSubview:button];
@@ -52,7 +52,7 @@
     return button;
 }
 
-+ (UIButton *_Nonnull)rd_ButtonTitle:(NSString *_Nonnull)title img:(NSString *_Nonnull)imgName target:(id _Nonnull)target action:(SEL _Nonnull)sel superView:(UIView *_Nonnull)superView{
++ (instancetype _Nonnull)rd_ButtonTitle:(NSString *_Nonnull)title img:(NSString *_Nonnull)imgName target:(id _Nonnull)target action:(SEL _Nonnull)sel superView:(UIView *_Nonnull)superView{
     
     UIButton *button = [UIButton rd_ButtonTitle:title img:imgName target:target action:sel];
     [superView addSubview:button];
@@ -60,7 +60,7 @@
     return button;
 }
 
-+ (UIButton *_Nonnull)rd_ButtonJustTitle:(NSString *_Nonnull)title target:(id _Nonnull)target action:(SEL _Nonnull)sel{
++ (instancetype _Nonnull)rd_ButtonJustTitle:(NSString *_Nonnull)title target:(id _Nonnull)target action:(SEL _Nonnull)sel{
     
     UIButton *button = [[UIButton alloc] init];
     [button setTitle:title forState:UIControlStateNormal];
@@ -72,7 +72,7 @@
     return button;
 }
 
-+ (UIButton *_Nonnull)rd_ButtonJustImg:(NSString *_Nonnull)imgName target:(id _Nonnull)target action:(SEL _Nonnull)sel{
++ (instancetype _Nonnull)rd_ButtonJustImg:(NSString *_Nonnull)imgName target:(id _Nonnull)target action:(SEL _Nonnull)sel{
     
     UIButton *button = [[UIButton alloc] init];
     [button setImage:[UIImage imageNamed:imgName] forState:UIControlStateNormal];
@@ -84,7 +84,7 @@
     return button;
 }
 
-+ (UIButton *_Nonnull)rd_ButtonTitle:(NSString *_Nonnull)title img:(NSString *_Nonnull)imgName target:(id _Nonnull)target action:(SEL _Nonnull)sel{
++ (instancetype _Nonnull)rd_ButtonTitle:(NSString *_Nonnull)title img:(NSString *_Nonnull)imgName target:(id _Nonnull)target action:(SEL _Nonnull)sel{
     
     UIButton *button = [[UIButton alloc] init];
     [button setTitle:title forState:UIControlStateNormal];
@@ -150,6 +150,13 @@
 - (UIButton *_Nonnull(^_Nonnull)(UIColor * _Nonnull color))rd_setButtonTitleColorSelected{
     return ^(UIColor *color) {
         [self setTitleColor:color forState:UIControlStateSelected];
+        return self;
+    };
+}
+
+- (UIButton * _Nonnull (^)(UIColor * _Nonnull))rd_setButtonTitleColorDisabled{
+    return ^(UIColor *color) {
+        [self setTitleColor:color forState:UIControlStateDisabled];
         return self;
     };
 }

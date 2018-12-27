@@ -18,6 +18,10 @@ typedef NS_ENUM(NSUInteger, RdScrollViewScrollModel) {
 
 @property (nonatomic, strong)UIView *rd_contentView;
 
-+ (RdScrollView *_Nonnull)rd_ScrollViewBgColor:(UIColor *_Nullable)bgColor scrollModel:(RdScrollViewScrollModel)model for:(UIView *_Nonnull)superView;
++ (instancetype _Nonnull)rd_verticalScrollViewBgColor:(UIColor *_Nullable)bgColor for:(UIView *_Nonnull)superView;
+
++ (instancetype _Nonnull)rd_horizontalScrollViewBgColor:(UIColor *_Nullable)bgColor for:(UIView *_Nonnull)superView;
+
++ (instancetype _Nonnull)rd_ScrollViewBgColor:(UIColor *_Nullable)bgColor scrollModel:(RdScrollViewScrollModel)model for:(UIView *_Nonnull)superView;
 
 @end

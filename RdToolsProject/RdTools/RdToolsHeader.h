@@ -20,6 +20,7 @@
 #import "RdKeyboardTools.h"
 #import "RdRepeatTimer.h"
 #import "RdOnceTimer.h"
+#import "UITextField+RdTools.h"
 
 
 //#ifndef RdToolsHeader_h
