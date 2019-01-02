@@ -8,8 +8,61 @@
 
 #import "UIButton+RdTools.h"
 #import "RdMacroFile.h"
+#import <objc/runtime.h>
+
+static char rdButtonActionBlockKey;
+
+@interface UIButton ()
+
+@property (nonatomic, strong) void (^rdActionBlock)(UIButton *sender);
+
+@end
 
 @implementation UIButton (RdTools)
+
++ (instancetype)rd_BtnImage:(NSString *)imgName forView:(UIView *)superView responder:(void (^)(UIButton *sender))block{
+    UIButton *button = [UIButton ButtonImg:imgName forView:superView];
+    [button addTarget:button action:@selector(rdbuttonClick:) forControlEvents:UIControlEventTouchUpInside];
+    [button setRdActionBlock:block];
+    
+    return button;
+}
+
++ (instancetype)rd_BtnTitle:(NSString *)title forView:(UIView *)superView responder:(void (^)(UIButton *sender))block{
+    UIButton *button = [UIButton ButtonTitle:title forView:superView];
+    [button addTarget:button action:@selector(rdbuttonClick:) forControlEvents:UIControlEventTouchUpInside];
+    [button setRdActionBlock:block];
+    return button;
+}
+
++ (instancetype)rd_BtnTitle:(NSString *)title image:(NSString *)imgName forView:(UIView *)superView responder:(void (^)(UIButton *sender))block{
+    UIButton *button = [UIButton ButtonTitle:title img:imgName forView:superView];
+    [button addTarget:button action:@selector(rdbuttonClick:) forControlEvents:UIControlEventTouchUpInside];
+    [button setRdActionBlock:block];
+    return button;
+}
+
++ (instancetype)rd_BtnImage:(NSString *)imgName responder:(void (^)(UIButton *sender))block{
+    UIButton *button = [UIButton ButtonImg:imgName forView:nil];
+    [button addTarget:button action:@selector(rdbuttonClick:) forControlEvents:UIControlEventTouchUpInside];
+    [button setRdActionBlock:block];
+    
+    return button;
+}
+
++ (instancetype)rd_BtnTitle:(NSString *)title responder:(void (^)(UIButton *sender))block{
+    UIButton *button = [UIButton ButtonTitle:title forView:nil];
+    [button addTarget:button action:@selector(rdbuttonClick:) forControlEvents:UIControlEventTouchUpInside];
+    [button setRdActionBlock:block];
+    return button;
+}
+
++ (instancetype)rd_BtnTitle:(NSString *)title image:(NSString *)imgName responder:(void (^)(UIButton *sender))block{
+    UIButton *button = [UIButton ButtonTitle:title img:imgName forView:nil];
+    [button addTarget:button action:@selector(rdbuttonClick:) forControlEvents:UIControlEventTouchUpInside];
+    [button setRdActionBlock:block];
+    return button;
+}
 
 + (instancetype _Nonnull)rd_ButtonBGColor:(UIColor *_Nullable)bgColor superView:(UIView *_Nonnull)superView{
     UIButton *button = [[UIButton alloc] init];
@@ -90,6 +143,46 @@
     [button setTitle:title forState:UIControlStateNormal];
     [button setImage:[UIImage imageNamed:imgName] forState:UIControlStateNormal];
     [button addTarget:target action:sel forControlEvents:UIControlEventTouchUpInside];
+    if (Rd_FontNameNormal.length != 0) {
+        button.titleLabel.font = [UIFont fontWithName:Rd_FontNameNormal size:button.titleLabel.font.pointSize];
+    }
+    button.clipsToBounds = YES;
+    return button;
+}
+
++ (instancetype)ButtonImg:(NSString *)imgName forView:(UIView *_Nullable)superView{
+    UIButton *button = [[UIButton alloc] init];
+    if (superView) {
+        [superView addSubview:button];
+    }
+    [button setImage:[UIImage imageNamed:imgName] forState:UIControlStateNormal];
+    if (Rd_FontNameNormal.length != 0) {
+        button.titleLabel.font = [UIFont fontWithName:Rd_FontNameNormal size:button.titleLabel.font.pointSize];
+    }
+    button.clipsToBounds = YES;
+    return button;
+}
+
++ (instancetype)ButtonTitle:(NSString *)title forView:(UIView *_Nullable)superView{
+    UIButton *button = [[UIButton alloc] init];
+    if (superView) {
+        [superView addSubview:button];
+    }
+    [button setTitle:title forState:UIControlStateNormal];
+    if (Rd_FontNameNormal.length != 0) {
+        button.titleLabel.font = [UIFont fontWithName:Rd_FontNameNormal size:button.titleLabel.font.pointSize];
+    }
+    button.clipsToBounds = YES;
+    return button;
+}
+
++ (instancetype)ButtonTitle:(NSString *)title img:(NSString *)imgName  forView:(UIView *_Nullable)superView{
+    UIButton *button = [[UIButton alloc] init];
+    if (superView) {
+        [superView addSubview:button];
+    }
+    [button setTitle:title forState:UIControlStateNormal];
+    [button setImage:[UIImage imageNamed:imgName] forState:UIControlStateNormal];
     if (Rd_FontNameNormal.length != 0) {
         button.titleLabel.font = [UIFont fontWithName:Rd_FontNameNormal size:button.titleLabel.font.pointSize];
     }
@@ -276,6 +369,19 @@
     return image;
 }
 
+- (void)rdbuttonClick:(UIButton *)sender{
+    if (self.rdActionBlock) {
+        self.rdActionBlock(sender);
+    }
+}
+
+- (void)setRdActionBlock:(void (^)(UIButton *))rdActionBlock{
+    objc_setAssociatedObject(self, &rdButtonActionBlockKey, rdActionBlock, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (void (^)(UIButton *))rdActionBlock{
+    return objc_getAssociatedObject(self, &rdButtonActionBlockKey);
+}
 
 @end
 

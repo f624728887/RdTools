@@ -13,8 +13,11 @@ NS_ASSUME_NONNULL_BEGIN
 @interface RdRepeatTimer : NSObject
 
 + (RdRepeatTimer *)rd_setRepeatTimer:(NSTimeInterval)period actionBlock:(void (^)(void))block;
+// 重新开始
 - (void)rd_resumeRepeatTimer;
+// 暂停
 - (void)rd_suspendRepeatTimer;
+// 取消
 - (void)rd_cancelRepeatTimer;
 
 @end

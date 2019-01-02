@@ -27,25 +27,25 @@
     [superView addSubview:view];
     
     [view mas_makeConstraints:^(MASConstraintMaker *make) {
-        if (top != -1) {
+        if (top != CGFLOAT_MAX) {
             make.top.equalTo(superView).offset(top);
         }
         else {
             make.height.equalTo(@(widHei));
         }
-        if (left != -1) {
+        if (left != CGFLOAT_MAX) {
             make.left.equalTo(superView).offset(left);
         }
         else {
             make.width.equalTo(@(widHei));
         }
-        if (bottom != -1) {
+        if (bottom != CGFLOAT_MAX) {
             make.bottom.equalTo(superView).offset(bottom);
         }
         else {
             make.height.equalTo(@(widHei));
         }
-        if (right != -1) {
+        if (right != CGFLOAT_MAX) {
             make.right.equalTo(superView).offset(right);
         }
         else {

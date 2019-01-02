@@ -10,7 +10,6 @@
 #import "UIButton+RdTools.h"
 #import "UILabel+RdTools.h"
 #import "UIView+RdTools.h"
-#import "RdScrollView.h"
 #import "UIImageView+RdTools.h"
 #import "NSMutableAttributedString+RdTools.h"
 #import "RdMacroFile.h"
@@ -21,6 +20,8 @@
 #import "RdRepeatTimer.h"
 #import "RdOnceTimer.h"
 #import "UITextField+RdTools.h"
+#import "UIControl+RdTools.h"
+#import "UIScrollView+RdTools.h"
 
 
 //#ifndef RdToolsHeader_h

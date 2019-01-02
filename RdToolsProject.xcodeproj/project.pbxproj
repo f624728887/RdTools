@@ -13,7 +13,6 @@
 		5708001B219BB45000702D7F /* UIView+RdMasonry.m in Sources */ = {isa = PBXBuildFile; fileRef = 57080002219BB45000702D7F /* UIView+RdMasonry.m */; };
 		5708001C219BB45000702D7F /* UIImage+RdTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 57080003219BB45000702D7F /* UIImage+RdTools.m */; };
 		5708001D219BB45000702D7F /* UITableView+RdTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 57080004219BB45000702D7F /* UITableView+RdTools.m */; };
-		5708001E219BB45000702D7F /* RdScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 57080007219BB45000702D7F /* RdScrollView.m */; };
 		5708001F219BB45000702D7F /* UINavigationController+RdTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 57080008219BB45000702D7F /* UINavigationController+RdTools.m */; };
 		57080020219BB45000702D7F /* UIButton+RdTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 5708000A219BB45000702D7F /* UIButton+RdTools.m */; };
 		57080021219BB45000702D7F /* RdKeyboardTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 57080010219BB45000702D7F /* RdKeyboardTools.m */; };
@@ -28,8 +27,13 @@
 		5708FFD9219BB41400702D7F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5708FFD8219BB41400702D7F /* main.m */; };
 		5708FFE3219BB41400702D7F /* RdToolsProjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5708FFE2219BB41400702D7F /* RdToolsProjectTests.m */; };
 		5708FFEE219BB41400702D7F /* RdToolsProjectUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5708FFED219BB41400702D7F /* RdToolsProjectUITests.m */; };
+		570F243421DC5967004AAC1F /* MasonryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 570F243321DC5967004AAC1F /* MasonryViewController.m */; };
+		572AEBDE21DC60D900F520AE /* TimerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 572AEBDD21DC60D900F520AE /* TimerViewController.m */; };
 		57456784219C047500862A09 /* RdVideoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 57456783219C047500862A09 /* RdVideoView.m */; };
+		57E8B54221D5E9D1008BC1C2 /* UIControl+RdTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E8B54121D5E9D1008BC1C2 /* UIControl+RdTools.m */; };
+		57EA986C21DC41C5009BB5B7 /* ScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57EA986B21DC41C5009BB5B7 /* ScrollViewController.m */; };
 		57ECEE7A21D4653E0079F5CE /* UITextField+RdTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 57ECEE7921D4653E0079F5CE /* UITextField+RdTools.m */; };
+		57ED8B3421D7115B00F822F9 /* UIScrollView+RdTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 57ED8B3321D7115B00F822F9 /* UIScrollView+RdTools.m */; };
 		57EDE0A321AB9991001652B8 /* RdOnceTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 57EDE0A221AB9991001652B8 /* RdOnceTimer.m */; };
 		57EDE0A921ABBCF6001652B8 /* RdRepeatTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 57EDE0A821ABBCF6001652B8 /* RdRepeatTimer.m */; };
 		D8BD24D5AE73CD2110564D9A /* libPods-RdToolsProject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 08E0028E7124B1786659EAA3 /* libPods-RdToolsProject.a */; };
@@ -61,7 +65,6 @@
 		57080004219BB45000702D7F /* UITableView+RdTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+RdTools.m"; sourceTree = "<group>"; };
 		57080005219BB45000702D7F /* UIViewController+RdTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+RdTools.h"; sourceTree = "<group>"; };
 		57080006219BB45000702D7F /* UIView+RdTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+RdTools.h"; sourceTree = "<group>"; };
-		57080007219BB45000702D7F /* RdScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RdScrollView.m; sourceTree = "<group>"; };
 		57080008219BB45000702D7F /* UINavigationController+RdTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+RdTools.m"; sourceTree = "<group>"; };
 		57080009219BB45000702D7F /* UIImageView+RdTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+RdTools.h"; sourceTree = "<group>"; };
 		5708000A219BB45000702D7F /* UIButton+RdTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+RdTools.m"; sourceTree = "<group>"; };
@@ -74,7 +77,6 @@
 		57080011219BB45000702D7F /* RdBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RdBaseViewController.h; sourceTree = "<group>"; };
 		57080012219BB45000702D7F /* NSMutableAttributedString+RdTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableAttributedString+RdTools.m"; sourceTree = "<group>"; };
 		57080013219BB45000702D7F /* UINavigationController+RdTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+RdTools.h"; sourceTree = "<group>"; };
-		57080014219BB45000702D7F /* RdScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RdScrollView.h; sourceTree = "<group>"; };
 		57080015219BB45000702D7F /* UIViewController+RdTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+RdTools.m"; sourceTree = "<group>"; };
 		57080016219BB45000702D7F /* UIView+RdTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+RdTools.m"; sourceTree = "<group>"; };
 		57080017219BB45000702D7F /* UITableView+RdTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+RdTools.h"; sourceTree = "<group>"; };
@@ -98,10 +100,20 @@
 		5708FFFD219BB45000702D7F /* UIButton+RdTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+RdTools.h"; sourceTree = "<group>"; };
 		5708FFFE219BB45000702D7F /* UIImageView+RdTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+RdTools.m"; sourceTree = "<group>"; };
 		5708FFFF219BB45000702D7F /* NSMutableAttributedString+RdTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableAttributedString+RdTools.h"; sourceTree = "<group>"; };
+		570F243221DC5967004AAC1F /* MasonryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasonryViewController.h; sourceTree = "<group>"; };
+		570F243321DC5967004AAC1F /* MasonryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasonryViewController.m; sourceTree = "<group>"; };
+		572AEBDC21DC60D900F520AE /* TimerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TimerViewController.h; sourceTree = "<group>"; };
+		572AEBDD21DC60D900F520AE /* TimerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TimerViewController.m; sourceTree = "<group>"; };
 		57456782219C047500862A09 /* RdVideoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RdVideoView.h; sourceTree = "<group>"; };
 		57456783219C047500862A09 /* RdVideoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RdVideoView.m; sourceTree = "<group>"; };
+		57E8B54021D5E9D1008BC1C2 /* UIControl+RdTools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIControl+RdTools.h"; sourceTree = "<group>"; };
+		57E8B54121D5E9D1008BC1C2 /* UIControl+RdTools.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIControl+RdTools.m"; sourceTree = "<group>"; };
+		57EA986A21DC41C5009BB5B7 /* ScrollViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScrollViewController.h; sourceTree = "<group>"; };
+		57EA986B21DC41C5009BB5B7 /* ScrollViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScrollViewController.m; sourceTree = "<group>"; };
 		57ECEE7821D4653E0079F5CE /* UITextField+RdTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+RdTools.h"; sourceTree = "<group>"; };
 		57ECEE7921D4653E0079F5CE /* UITextField+RdTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+RdTools.m"; sourceTree = "<group>"; };
+		57ED8B3221D7115B00F822F9 /* UIScrollView+RdTools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+RdTools.h"; sourceTree = "<group>"; };
+		57ED8B3321D7115B00F822F9 /* UIScrollView+RdTools.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+RdTools.m"; sourceTree = "<group>"; };
 		57EDE0A121AB9991001652B8 /* RdOnceTimer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RdOnceTimer.h; sourceTree = "<group>"; };
 		57EDE0A221AB9991001652B8 /* RdOnceTimer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RdOnceTimer.m; sourceTree = "<group>"; };
 		57EDE0A721ABBCF6001652B8 /* RdRepeatTimer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RdRepeatTimer.h; sourceTree = "<group>"; };
@@ -173,6 +185,12 @@
 				5708FFCA219BB41300702D7F /* AppDelegate.m */,
 				5708FFCC219BB41300702D7F /* ViewController.h */,
 				5708FFCD219BB41300702D7F /* ViewController.m */,
+				57EA986A21DC41C5009BB5B7 /* ScrollViewController.h */,
+				57EA986B21DC41C5009BB5B7 /* ScrollViewController.m */,
+				570F243221DC5967004AAC1F /* MasonryViewController.h */,
+				570F243321DC5967004AAC1F /* MasonryViewController.m */,
+				572AEBDC21DC60D900F520AE /* TimerViewController.h */,
+				572AEBDD21DC60D900F520AE /* TimerViewController.m */,
 				5708FFFB219BB45000702D7F /* RdTools */,
 				5708FFCF219BB41300702D7F /* Main.storyboard */,
 				5708FFD2219BB41400702D7F /* Assets.xcassets */,
@@ -210,6 +228,8 @@
 				57080002219BB45000702D7F /* UIView+RdMasonry.m */,
 				57080006219BB45000702D7F /* UIView+RdTools.h */,
 				57080016219BB45000702D7F /* UIView+RdTools.m */,
+				57E8B54021D5E9D1008BC1C2 /* UIControl+RdTools.h */,
+				57E8B54121D5E9D1008BC1C2 /* UIControl+RdTools.m */,
 				5708000C219BB45000702D7F /* UILabel+RdTools.h */,
 				5708FFFC219BB45000702D7F /* UILabel+RdTools.m */,
 				5708FFFD219BB45000702D7F /* UIButton+RdTools.h */,
@@ -220,6 +240,10 @@
 				5708FFFE219BB45000702D7F /* UIImageView+RdTools.m */,
 				57080017219BB45000702D7F /* UITableView+RdTools.h */,
 				57080004219BB45000702D7F /* UITableView+RdTools.m */,
+				57ECEE7821D4653E0079F5CE /* UITextField+RdTools.h */,
+				57ECEE7921D4653E0079F5CE /* UITextField+RdTools.m */,
+				57ED8B3221D7115B00F822F9 /* UIScrollView+RdTools.h */,
+				57ED8B3321D7115B00F822F9 /* UIScrollView+RdTools.m */,
 				57080005219BB45000702D7F /* UIViewController+RdTools.h */,
 				57080015219BB45000702D7F /* UIViewController+RdTools.m */,
 				5708FFFF219BB45000702D7F /* NSMutableAttributedString+RdTools.h */,
@@ -230,16 +254,12 @@
 				57080000219BB45000702D7F /* RdBaseViewController.m */,
 				57080001219BB45000702D7F /* RdKeyboardTools.h */,
 				57080010219BB45000702D7F /* RdKeyboardTools.m */,
-				57080014219BB45000702D7F /* RdScrollView.h */,
-				57080007219BB45000702D7F /* RdScrollView.m */,
 				57456782219C047500862A09 /* RdVideoView.h */,
 				57456783219C047500862A09 /* RdVideoView.m */,
 				57EDE0A721ABBCF6001652B8 /* RdRepeatTimer.h */,
 				57EDE0A821ABBCF6001652B8 /* RdRepeatTimer.m */,
 				57EDE0A121AB9991001652B8 /* RdOnceTimer.h */,
 				57EDE0A221AB9991001652B8 /* RdOnceTimer.m */,
-				57ECEE7821D4653E0079F5CE /* UITextField+RdTools.h */,
-				57ECEE7921D4653E0079F5CE /* UITextField+RdTools.m */,
 			);
 			path = RdTools;
 			sourceTree = "<group>";
@@ -409,20 +429,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				572AEBDE21DC60D900F520AE /* TimerViewController.m in Sources */,
+				570F243421DC5967004AAC1F /* MasonryViewController.m in Sources */,
 				57080022219BB45000702D7F /* NSMutableAttributedString+RdTools.m in Sources */,
+				57ED8B3421D7115B00F822F9 /* UIScrollView+RdTools.m in Sources */,
 				57456784219C047500862A09 /* RdVideoView.m in Sources */,
 				57EDE0A921ABBCF6001652B8 /* RdRepeatTimer.m in Sources */,
 				57080023219BB45000702D7F /* UIViewController+RdTools.m in Sources */,
 				57080018219BB45000702D7F /* UILabel+RdTools.m in Sources */,
 				57080021219BB45000702D7F /* RdKeyboardTools.m in Sources */,
-				5708001E219BB45000702D7F /* RdScrollView.m in Sources */,
 				5708FFCE219BB41300702D7F /* ViewController.m in Sources */,
 				57080024219BB45000702D7F /* UIView+RdTools.m in Sources */,
+				57E8B54221D5E9D1008BC1C2 /* UIControl+RdTools.m in Sources */,
 				57EDE0A321AB9991001652B8 /* RdOnceTimer.m in Sources */,
 				5708FFD9219BB41400702D7F /* main.m in Sources */,
 				5708001A219BB45000702D7F /* RdBaseViewController.m in Sources */,
 				5708001D219BB45000702D7F /* UITableView+RdTools.m in Sources */,
 				57ECEE7A21D4653E0079F5CE /* UITextField+RdTools.m in Sources */,
+				57EA986C21DC41C5009BB5B7 /* ScrollViewController.m in Sources */,
 				5708FFCB219BB41300702D7F /* AppDelegate.m in Sources */,
 				5708001B219BB45000702D7F /* UIView+RdMasonry.m in Sources */,
 				5708001F219BB45000702D7F /* UINavigationController+RdTools.m in Sources */,

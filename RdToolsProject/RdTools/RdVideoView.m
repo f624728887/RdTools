@@ -81,11 +81,11 @@ typedef NS_ENUM(NSUInteger, RdVideoHudType) {
         
         // tool
         self.toolView = [UIView rd_ViewBGColor:nil for:self];
-        self.toolView.rd_edgeEqualTo(-1, Rd_SafeAreaSides, -Rd_SafeAreaBottom, -Rd_SafeAreaSides).rd_heightValue(40);
+        self.toolView.rd_edgeEqualTo(Rd_IGNORE, Rd_SafeAreaSides, -Rd_SafeAreaBottom, -Rd_SafeAreaSides).rd_heightValue(40);
         [self makeToolView];
         
         self.titleView = [UIView rd_ViewBGColor:nil for:self];
-        self.titleView.rd_edgeEqualTo(-(40 + (Rd_isiPhoneX ? 0 : 20)), Rd_SafeAreaSides, -1, -Rd_SafeAreaSides).rd_heightValue(40 + (Rd_isiPhoneX ? 0 : 20));
+        self.titleView.rd_edgeEqualTo(-(40 + (Rd_isiPhoneX ? 0 : 20)), Rd_SafeAreaSides, Rd_IGNORE, -Rd_SafeAreaSides).rd_heightValue(40 + (Rd_isiPhoneX ? 0 : 20));
         [self makeTitleView];
         
         // hud
@@ -167,8 +167,8 @@ typedef NS_ENUM(NSUInteger, RdVideoHudType) {
 }
 
 - (void)resetTitleToolsView{
-    self.toolView.rd_edgeEqualTo(-1, Rd_SafeAreaSides, -Rd_SafeAreaBottom, -Rd_SafeAreaSides).rd_heightValue(40);
-    self.titleView.rd_edgeEqualTo(-(Rd_isLandscape ? 0 : (40 + (Rd_isiPhoneX ? 0 : 20))), Rd_SafeAreaSides, -1, -Rd_SafeAreaSides).rd_heightValue(40 + (Rd_isiPhoneX ? 0 : 20));
+    self.toolView.rd_edgeEqualTo(Rd_IGNORE, Rd_SafeAreaSides, -Rd_SafeAreaBottom, -Rd_SafeAreaSides).rd_heightValue(40);
+    self.titleView.rd_edgeEqualTo(-(Rd_isLandscape ? 0 : (40 + (Rd_isiPhoneX ? 0 : 20))), Rd_SafeAreaSides, Rd_IGNORE, -Rd_SafeAreaSides).rd_heightValue(40 + (Rd_isiPhoneX ? 0 : 20));
 }
 
 - (void)leftFullClick{
@@ -419,10 +419,10 @@ typedef NS_ENUM(NSUInteger, RdVideoHudType) {
     [self.playBtn addTarget:self action:@selector(videoPlayClick) forControlEvents:UIControlEventTouchUpInside];
     
     self.fullBtn = [UIButton rd_ButtonJustImg:@"video_fullscreen" target:self action:@selector(fullClick) superView:self.toolView];
-    self.fullBtn.rd_edgeEqualTo(0, -1, 0, -Rd_MarginSmall).rd_squareLengthValue(40);
+    self.fullBtn.rd_edgeEqualTo(0, Rd_IGNORE, 0, -Rd_MarginSmall).rd_squareLengthValue(40);
     
     self.timeLabel = [UILabel rd_LabelString:@"00:00:00/00:00:00" fontName:nil fontSize:Rd_FontSizeS lineNumber:1 textColor:[UIColor whiteColor] superView:self.toolView];
-    self.timeLabel.rd_edgeEqualTo(0, -1, 0, -1).rd_rightToLeftOf(self.fullBtn, 0).rd_widthValue([self.timeLabel rd_getLabelStringWidth]);
+    self.timeLabel.rd_edgeEqualTo(0, Rd_IGNORE, 0, Rd_IGNORE).rd_rightToLeftOf(self.fullBtn, 0).rd_widthValue([self.timeLabel rd_getLabelStringWidth]);
     [self.timeLabel rd_setTextAlignmentCenter];
     
     self.progressBar = [[UISlider alloc] init];
@@ -437,16 +437,16 @@ typedef NS_ENUM(NSUInteger, RdVideoHudType) {
                      action:@selector(videoSliderChangeBegin:)
            forControlEvents:UIControlEventEditingDidBegin];
     [self.toolView addSubview:self.progressBar];
-    self.progressBar.rd_edgeEqualTo (0, -1, 0, -1).rd_leftToRightOf(self.playBtn, Rd_MarginSmall).rd_rightToLeftOf(self.timeLabel, -Rd_MarginSmall);
+    self.progressBar.rd_edgeEqualTo (0, Rd_IGNORE, 0, Rd_IGNORE).rd_leftToRightOf(self.playBtn, Rd_MarginSmall).rd_rightToLeftOf(self.timeLabel, -Rd_MarginSmall);
 }
 
 - (void)makeTitleView{
     [UIView rd_ViewBGColor:Rd_ColorWith(grayColor) for:self.titleView].rd_edgeEqualTo(0, 0, 0, 0).alpha = 0.7;
     UIButton *backBtn = [UIButton rd_ButtonJustImg:@"AppNavigationBack" target:self action:@selector(appWillBack) superView:self.titleView];
-    backBtn.rd_edgeEqualTo((Rd_isiPhoneX ? 0 : 20), 0, 0, -1).rd_squareLengthValue(40);
+    backBtn.rd_edgeEqualTo((Rd_isiPhoneX ? 0 : 20), 0, 0, Rd_IGNORE).rd_squareLengthValue(40);
     
     self.titleLabel = [UILabel rd_LabelString:nil fontName:nil fontSize:Rd_FontSizeL lineNumber:1 textColor:Rd_ColorWith(whiteColor) superView:self.titleView];
-    self.titleLabel.rd_leftToRightOf(backBtn, Rd_MarginDefault).rd_rightEqualTo(nil, -Rd_MarginDefault).rd_edgeEqualTo((Rd_isiPhoneX ? 0 : 20), -1, 0, -1);
+    self.titleLabel.rd_leftToRightOf(backBtn, Rd_MarginDefault).rd_rightEqualTo(nil, -Rd_MarginDefault).rd_edgeEqualTo((Rd_isiPhoneX ? 0 : 20), Rd_IGNORE, 0, Rd_IGNORE);
 }
 
 - (void)toolHidden{

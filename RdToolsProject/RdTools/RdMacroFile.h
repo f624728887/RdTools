@@ -44,6 +44,8 @@ static inline float safeAreaBottom() {
     return 0;
 }
 
+#define Rd_IGNORE               CGFLOAT_MAX
+
 #define Rd_FontNameNormal       @"PingFangSC-Light"
 #define Rd_AnimationDuration    0.26f
 

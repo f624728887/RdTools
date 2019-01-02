@@ -80,13 +80,13 @@ typedef NS_ENUM(NSUInteger, RdRelation) {
 /**
  *等于
  */
-/// 依赖superView  ( td_XXXEqualto(10, 10, -10, -1) ※-1为不设定约束 )
+/// 依赖superView  ( td_XXXEqualto(10, 10, -10, Rd_IGNORE) ※Rd_IGNORE为不设定约束 )
 - (UIView *_Nonnull(^_Nonnull)(CGFloat top, CGFloat left, CGFloat bottom, CGFloat right))rd_edgeEqualTo;
 
 /**
  *小于等于
  */
-/// 依赖superView  ( td_XXXLessOrEqualto(10, 10, -10, -1) ※-1为不设定约束 )
+/// 依赖superView  ( td_XXXLessOrEqualto(10, 10, -10, Rd_IGNORE) ※Rd_IGNORE为不设定约束 )
 - (UIView *_Nonnull(^_Nonnull)(CGFloat top, CGFloat left, CGFloat bottom, CGFloat right))rd_edgeLessOrEqualTo;
 
 /**

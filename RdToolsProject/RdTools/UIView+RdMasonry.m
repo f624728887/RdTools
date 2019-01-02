@@ -124,16 +124,16 @@
  */
 - (UIView *_Nonnull(^_Nonnull)(CGFloat top, CGFloat left, CGFloat bottom, CGFloat right))rd_edgeEqualTo{
     return ^(CGFloat top, CGFloat left, CGFloat bottom, CGFloat right) {
-        if (top != -1) {
+        if (top != CGFLOAT_MAX) {
             self.rd_topEqualTo(nil, top);
         }
-        if (left != -1) {
+        if (left != CGFLOAT_MAX) {
             self.rd_leftEqualTo(nil, left);
         }
-        if (bottom != -1) {
+        if (bottom != CGFLOAT_MAX) {
             self.rd_bottomEqualTo(nil, bottom);
         }
-        if (right != -1) {
+        if (right != CGFLOAT_MAX) {
             self.rd_rightEqualTo(nil, right);
         }
         return self;
@@ -145,16 +145,16 @@
  */
 - (UIView *_Nonnull(^_Nonnull)(CGFloat top, CGFloat left, CGFloat bottom, CGFloat right))rd_edgeLessOrEqualTo{
     return ^(CGFloat top, CGFloat left, CGFloat bottom, CGFloat right) {
-        if (top != -1) {
+        if (top != CGFLOAT_MAX) {
             self.rd_topLessOrEqualTo(nil, top);
         }
-        if (left != -1) {
+        if (left != CGFLOAT_MAX) {
             self.rd_leftLessOrEqualTo(nil, left);
         }
-        if (bottom != -1) {
+        if (bottom != CGFLOAT_MAX) {
             self.rd_bottomLessOrEqualTo(nil, bottom);
         }
-        if (right != -1) {
+        if (right != CGFLOAT_MAX) {
             self.rd_rightLessOrEqualTo(nil, right);
         }
         return self;
@@ -696,13 +696,13 @@
 
 - (UIView *_Nonnull(^_Nonnull)(UIView *_Nonnull chileView, CGFloat interval))rd_addHorizontalWidthAdaptingSubview{
     return ^(UIView *chileView, CGFloat interval) {
-        return self.rd_addHorizontalSubview(chileView, RdViewHorizontalWidthAdapting, interval);
+        return self.rd_addHorizontalSubview(chileView, interval, RdViewHorizontalWidthAdapting);
     };
 }
 
 - (UIView *_Nonnull(^_Nonnull)(UIView *_Nonnull chileView, CGFloat interval))rd_addHorizontalWidthFixedSubview{
     return ^(UIView *chileView, CGFloat interval) {
-        return self.rd_addHorizontalSubview(chileView, RdViewHorizontalWidthFixed, interval);
+        return self.rd_addHorizontalSubview(chileView, interval, RdViewHorizontalWidthFixed);
     };
 }
 
@@ -754,13 +754,13 @@
 
 - (UIView *_Nonnull(^_Nonnull)(UIView *_Nonnull chileView, CGFloat interval))rd_addVerticalHeightAdaptingSubview{
     return ^(UIView *chileView, CGFloat interval) {
-        return self.rd_addVerticalSubview(chileView, RdViewVerticalHeightAdapting, interval);
+        return self.rd_addVerticalSubview(chileView, interval, RdViewVerticalHeightAdapting);
     };
 }
 
 - (UIView *_Nonnull(^_Nonnull)(UIView *_Nonnull chileView, CGFloat interval))rd_addVerticalHeightFixedSubview{
     return ^(UIView *chileView, CGFloat interval) {
-        return self.rd_addVerticalSubview(chileView, RdViewVerticalHeightFixed, interval);
+        return self.rd_addVerticalSubview(chileView, interval, RdViewVerticalHeightFixed);
     };
 }
 

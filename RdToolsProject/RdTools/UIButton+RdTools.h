@@ -16,6 +16,18 @@ typedef NS_ENUM(NSUInteger, RdButtonImageType) {
     RdButtonImageBottom,
 };
 
++ (instancetype)rd_BtnImage:(NSString *)imgName forView:(UIView *)superView responder:(void (^)(UIButton *sender))block;
+
++ (instancetype)rd_BtnTitle:(NSString *)title forView:(UIView *)superView responder:(void (^)(UIButton *sender))block;
+
++ (instancetype)rd_BtnTitle:(NSString *)title image:(NSString *)imgName forView:(UIView *)superView responder:(void (^)(UIButton *sender))block;
+
++ (instancetype)rd_BtnImage:(NSString *)imgName responder:(void (^)(UIButton *sender))block;
+
++ (instancetype)rd_BtnTitle:(NSString *)title responder:(void (^)(UIButton *sender))block;
+
++ (instancetype)rd_BtnTitle:(NSString *)title image:(NSString *)imgName responder:(void (^)(UIButton *sender))block;
+
 /// color为 nil 时背景色为clearColor
 + (instancetype _Nonnull)rd_ButtonBGColor:(UIColor *_Nullable)bgColor superView:(UIView *_Nonnull)superView;
 
