@@ -9,6 +9,16 @@
 #import "UIView+RdMasonry.h"
 #import "Masonry.h"
 
+typedef NS_ENUM(NSUInteger, RdViewHorizontalWidthType) {
+    RdViewHorizontalWidthFixed,
+    RdViewHorizontalWidthAdapting,
+};
+
+typedef NS_ENUM(NSUInteger, RdViewVerticalHeightType) {
+    RdViewVerticalHeightFixed,
+    RdViewVerticalHeightAdapting,// 适应
+};
+
 @implementation UIView (RdMasonry)
 
 /**

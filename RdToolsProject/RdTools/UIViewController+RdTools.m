@@ -32,50 +32,54 @@ typedef NS_ENUM(NSUInteger, RdBarButtonType) {
 
 - (UIButton *_Nonnull)rd_SetDefaultTitleBackBtn{
     [self rd_ClearBarLeftBtn];
-    return [self rd_SetBtnPos:RdBarButtonTypeLeft type:RdBarButtonTypeJustTitle content:@"返回" target:self action:@selector(rd_backqweClick)];
+    return [self rd_SetBtnPos:RdBarButtonTypeLeft type:RdBarButtonTypeJustTitle content:@"返回" responder:^(UIButton *sender) {
+        [self.navigationController popViewControllerAnimated:YES];
+    }];
 }
 
 - (UIButton *_Nonnull)rd_SetDefaultImgBackBtn{
     [self rd_ClearBarLeftBtn];
-    return [self rd_SetBtnPos:RdBarButtonTypeLeft type:RdBarButtonTypeJustImg content:@"chargeBlack" target:self action:@selector(rd_backqweClick)];
+    return [self rd_SetBtnPos:RdBarButtonTypeLeft type:RdBarButtonTypeJustImg content:@"chargeBlack" responder:^(UIButton *sender) {
+        [self.navigationController popViewControllerAnimated:YES];
+    }];
 }
 
-- (UIButton *_Nonnull)rd_SetLeftBtnJustTitle:(NSString *_Nonnull)title target:(id _Nonnull)target action:(SEL _Nonnull)sel{
-    return [self rd_SetBtnPos:RdBarButtonTypeLeft type:RdBarButtonTypeJustTitle content:title target:target action:sel];
+- (UIButton *_Nonnull)rd_SetLeftBtnJustTitle:(NSString *_Nonnull)title responder:(void (^)(UIButton *sender))block{
+    return [self rd_SetBtnPos:RdBarButtonTypeLeft type:RdBarButtonTypeJustTitle content:title responder:block];
 }
 
-- (UIButton *_Nonnull)rd_SetLeftBtnJustImg:(NSString *_Nonnull)imgName target:(id _Nonnull)target action:(SEL _Nonnull)sel{
-    return [self rd_SetBtnPos:RdBarButtonTypeLeft type:RdBarButtonTypeJustImg content:imgName target:target action:sel];
+- (UIButton *_Nonnull)rd_SetLeftBtnJustImg:(NSString *_Nonnull)imgName responder:(void (^)(UIButton *sender))block{
+    return [self rd_SetBtnPos:RdBarButtonTypeLeft type:RdBarButtonTypeJustImg content:imgName responder:block];
 }
 
-- (UIButton *_Nonnull)rd_SetLeftBtnTitle:(NSString *_Nonnull)title img:(NSString *_Nonnull)imgName target:(id _Nonnull)target action:(SEL _Nonnull)sel{
-    return [self rd_SetBtnPos:RdBarButtonTypeLeft title:title imgName:imgName target:target action:sel];
+- (UIButton *_Nonnull)rd_SetLeftBtnTitle:(NSString *_Nonnull)title img:(NSString *_Nonnull)imgName responder:(void (^)(UIButton *sender))block{
+    return [self rd_SetBtnPos:RdBarButtonTypeLeft title:title imgName:imgName responder:block];
 }
 
-- (UIButton *_Nonnull)rd_SetRightBtnJustTitle:(NSString *_Nonnull)title target:(id _Nonnull)target action:(SEL _Nonnull)sel{
-    return [self rd_SetBtnPos:RdBarButtonTypeRight type:RdBarButtonTypeJustTitle content:title target:target action:sel];
+- (UIButton *_Nonnull)rd_SetRightBtnJustTitle:(NSString *_Nonnull)title responder:(void (^)(UIButton *sender))block{
+    return [self rd_SetBtnPos:RdBarButtonTypeRight type:RdBarButtonTypeJustTitle content:title responder:block];
 }
 
-- (UIButton *_Nonnull)rd_SetRightBtnJustImg:(NSString *_Nonnull)imgName target:(id _Nonnull)target action:(SEL _Nonnull)sel{
-    return [self rd_SetBtnPos:RdBarButtonTypeRight type:RdBarButtonTypeJustImg content:imgName target:target action:sel];
+- (UIButton *_Nonnull)rd_SetRightBtnJustImg:(NSString *_Nonnull)imgName responder:(void (^)(UIButton *sender))block{
+    return [self rd_SetBtnPos:RdBarButtonTypeRight type:RdBarButtonTypeJustImg content:imgName responder:block];
     
 }
 
-- (UIButton *_Nonnull)rd_SetRightBtnTitle:(NSString *_Nonnull)title img:(NSString *_Nonnull)imgName target:(id _Nonnull)target action:(SEL _Nonnull)sel{
-    return [self rd_SetBtnPos:RdBarButtonTypeRight title:title imgName:imgName target:target action:sel];
+- (UIButton *_Nonnull)rd_SetRightBtnTitle:(NSString *_Nonnull)title img:(NSString *_Nonnull)imgName responder:(void (^)(UIButton *sender))block{
+    return [self rd_SetBtnPos:RdBarButtonTypeRight title:title imgName:imgName responder:block];
 }
 
 // 私有方法
-- (UIButton *)rd_SetBtnPos:(RdBarButtonType)pos type:(RdBarButtonType)type content:(NSString *)content target:(id)target action:(SEL)action{
+- (UIButton *)rd_SetBtnPos:(RdBarButtonType)pos type:(RdBarButtonType)type content:(NSString *)content responder:(void (^)(UIButton *sender))block{
     UIButton *btn;
     CGFloat width = 0.0;
     if (type == RdBarButtonTypeJustTitle) {
-        btn = [UIButton rd_ButtonJustTitle:content target:target action:action];
+        btn = [UIButton rd_BtnTitle:content responder:block];
         btn.rd_setButtonTitleFontSize(Rd_FontSizeM).rd_setButtonTitleColorNormal(Rd_ColorWith(blackColor));
         width = [self rd_getBtnWidth:[btn.titleLabel rd_getLabelStringWidth]];
     }
     else if (type == RdBarButtonTypeJustImg) {
-        btn = [UIButton rd_ButtonJustImg:content target:target action:action];
+        btn = [UIButton rd_BtnImage:content responder:block];
         width = [self rd_getBtnWidth:btn.imageView.image.size.width];
     }
     btn.frame = CGRectMake(0, 0, width, 44);
@@ -95,8 +99,8 @@ typedef NS_ENUM(NSUInteger, RdBarButtonType) {
     return btn;
 }
 
-- (UIButton *)rd_SetBtnPos:(RdBarButtonType)pos title:(NSString *)title imgName:(NSString *)imageName target:(id)target action:(SEL)action{
-    UIButton *btn = [UIButton rd_ButtonTitle:title img:imageName target:target action:action];
+- (UIButton *)rd_SetBtnPos:(RdBarButtonType)pos title:(NSString *)title imgName:(NSString *)imageName responder:(void (^)(UIButton *sender))block{
+    UIButton *btn = [UIButton rd_BtnTitle:title image:imageName responder:block];
     CGFloat width = [self rd_getBtnWidth:(btn.imageView.image.size.width + [btn.titleLabel rd_getLabelStringWidth])];
     btn.frame = CGRectMake(0, 0, width, 44);
     btn.rd_setButtonTitleFontSize(Rd_FontSizeM).rd_setButtonTitleColorNormal(Rd_ColorWith(blackColor));
@@ -137,7 +141,6 @@ typedef NS_ENUM(NSUInteger, RdBarButtonType) {
 }
 
 - (void)rd_backqweClick{
-    NSLog(@"返回点击了");
     [self.navigationController popViewControllerAnimated:YES];
 }
 

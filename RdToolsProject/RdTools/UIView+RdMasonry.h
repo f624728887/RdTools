@@ -8,15 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-typedef NS_ENUM(NSUInteger, RdViewHorizontalWidthType) {
-    RdViewHorizontalWidthFixed,
-    RdViewHorizontalWidthAdapting,
-};
-
-typedef NS_ENUM(NSUInteger, RdViewVerticalHeightType) {
-    RdViewVerticalHeightFixed,
-    RdViewVerticalHeightAdapting,// 适应
-};
+//typedef NS_ENUM(NSUInteger, RdViewHorizontalWidthType) {
+//    RdViewHorizontalWidthFixed,
+//    RdViewHorizontalWidthAdapting,
+//};
+//
+//typedef NS_ENUM(NSUInteger, RdViewVerticalHeightType) {
+//    RdViewVerticalHeightFixed,
+//    RdViewVerticalHeightAdapting,// 适应
+//};
 
 typedef NS_ENUM(NSUInteger, RdConstraint) {
     RdConstraintTop,
@@ -248,15 +248,15 @@ typedef NS_ENUM(NSUInteger, RdRelation) {
 /// 右中 依赖 （ rd_XXXGreaterOrEqualToXXXOf(otherView, offset) ） otherView可以为nil，此时相对于superView依赖
 - (UIView *_Nonnull(^_Nonnull)(UIView * _Nullable otherView, CGFloat offset))rd_rightGreaterOrEqualToCenterXOf;
 
-/// 水平添加View （ rd_addHorizontalSubview(view, 10, UIViewHorizontalWidthFixed) ）
-- (UIView *_Nonnull(^_Nonnull)(UIView *_Nonnull chileView, CGFloat interval, RdViewHorizontalWidthType type))rd_addHorizontalSubview;
+///// 水平添加View （ rd_addHorizontalSubview(view, 10, UIViewHorizontalWidthFixed) ）
+//- (UIView *_Nonnull(^_Nonnull)(UIView *_Nonnull chileView, CGFloat interval, RdViewHorizontalWidthType type))rd_addHorizontalSubview;
 
 - (UIView *_Nonnull(^_Nonnull)(UIView *_Nonnull chileView, CGFloat interval))rd_addHorizontalWidthAdaptingSubview;
 
 - (UIView *_Nonnull(^_Nonnull)(UIView *_Nonnull chileView, CGFloat interval))rd_addHorizontalWidthFixedSubview;
 
-/// 垂直添加View （ rd_addVerticalSubview(view, 10, UIViewVerticalHeightFixed) ）
-- (UIView *_Nonnull(^_Nonnull)(UIView *_Nonnull chileView, CGFloat interval, RdViewVerticalHeightType type))rd_addVerticalSubview;
+///// 垂直添加View （ rd_addVerticalSubview(view, 10, UIViewVerticalHeightFixed) ）
+//- (UIView *_Nonnull(^_Nonnull)(UIView *_Nonnull chileView, CGFloat interval, RdViewVerticalHeightType type))rd_addVerticalSubview;
 
 - (UIView *_Nonnull(^_Nonnull)(UIView *_Nonnull chileView, CGFloat interval))rd_addVerticalHeightAdaptingSubview;
 
