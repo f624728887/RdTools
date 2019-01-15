@@ -40,6 +40,12 @@
     
     UIView *orangeView = [UIView rd_ViewBGColor:Rd_ColorWith(orangeColor) for:baseView];
     orangeView.rd_leftToRightOf(yellowView, 20).rd_centerYEqualTo(yellowView, 0).rd_sizeValue(40, 20);
+    
+    UIView *tapView = [UIView rd_ViewBGColor:Rd_ColorWith(greenColor) for:self.view];
+    tapView.rd_centerXEqualTo(nil, 0).rd_topToBottmOf(baseView, Rd_MarginDefault * 2).rd_sizeValue(40, 25);
+    [tapView rd_setSingleTap:^(UITapGestureRecognizer *sender) {
+        NSLog(@"hehe");
+    }];
 
 }
 

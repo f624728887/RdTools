@@ -8,6 +8,15 @@
 
 #import "UIView+RdTools.h"
 #import "Masonry.h"
+#import <objc/runtime.h>
+
+static char rdViewActionBlockKey;
+
+@interface UIView ()
+
+@property (nonatomic, strong) void (^rdActionBlock)(UITapGestureRecognizer *sender);
+
+@end
 
 @implementation UIView (RdTools)
 
@@ -101,6 +110,34 @@
 
 - (void)rd_animation{
     [self.superview layoutIfNeeded];
+}
+
+- (void)rd_setSingleTap:(void (^)(UITapGestureRecognizer *sender))block{
+    //单击的手势
+    UITapGestureRecognizer *tapRecognize = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
+    tapRecognize.numberOfTapsRequired = 1;
+//    tapRecognize.delegate = self;
+    [tapRecognize setEnabled :YES];
+    [tapRecognize delaysTouchesBegan];
+    [tapRecognize cancelsTouchesInView];
+    
+    [self addGestureRecognizer:tapRecognize];
+    
+    [self setRdActionBlock:block];
+}
+
+- (void)handleTap:(UITapGestureRecognizer *)sender{
+    if (self.rdActionBlock) {
+        self.rdActionBlock(sender);
+    }
+}
+
+- (void)setRdActionBlock:(void (^)(UITapGestureRecognizer *))rdActionBlock{
+    objc_setAssociatedObject(self, &rdViewActionBlockKey, rdActionBlock, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (void (^)(UIResponder *))rdActionBlock{
+    return objc_getAssociatedObject(self, &rdViewActionBlockKey);
 }
 
 @end

@@ -34,5 +34,7 @@
 
 - (void)rd_animation;
 
+- (void)rd_setSingleTap:(void (^)(UITapGestureRecognizer *sender))block;
+
 @end
 
