@@ -82,8 +82,6 @@ static char rdLabelDefaultFontNameKey;
         }];
     }
     
-    label.userInteractionEnabled = YES;
-    
     return label;
 }
 
