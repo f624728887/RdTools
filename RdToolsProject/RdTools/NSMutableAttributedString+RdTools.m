@@ -55,7 +55,7 @@
 /// 设置粗体 rd_setAttributeStringStrong（strongFontName, startIdx, leagth） 从0开始数
 - (NSMutableAttributedString *_Nonnull (^_Nonnull)(NSString * _Nonnull strongFontName, CGFloat fontSize, NSInteger startIdx, NSInteger leagth))rd_setAttributeStringStrong{
     return ^(NSString * _Nonnull strongFontName, CGFloat fontSize, NSInteger startIdx, NSInteger leagth) {
-        [self addAttribute:NSFontAttributeName value:[UIFont fontWithName:Rd_FontNameNormal size:fontSize] range:NSMakeRange(startIdx, leagth)];
+        [self addAttribute:NSFontAttributeName value:[UIFont fontWithName:strongFontName size:fontSize] range:NSMakeRange(startIdx, leagth)];
         return self;
     };
 }

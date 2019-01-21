@@ -6,6 +6,8 @@
 //  Copyright © 2018年 Rondo. All rights reserved.
 //
 
+#import "UILabel+RdTools.h"
+
 static inline BOOL isIPhoneXSeries() {
     BOOL iPhoneXSeries = NO;
     
@@ -46,7 +48,7 @@ static inline float safeAreaBottom() {
 
 #define Rd_IGNORE               CGFLOAT_MAX
 
-#define Rd_FontNameNormal       @"PingFangSC-Light"
+#define Rd_FontNameNormal       ([UILabel rd_getLabelDefaulFontName] == nil ? @"" : [UILabel rd_getLabelDefaulFontName])
 #define Rd_AnimationDuration    0.26f
 
 #define Rd_WeakSelf(type)        __weak typeof(type) weak##type = type

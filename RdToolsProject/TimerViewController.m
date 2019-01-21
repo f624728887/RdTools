@@ -71,6 +71,10 @@
     
     self.bottomView = [UIView rd_ViewBGColor:Rd_ColorWith(greenColor) for:self.view];
     self.bottomView.rd_sizeValue(Rd_ScreenWidth, 40 + Rd_SafeAreaBottom).rd_leftEqualTo(nil, 0).rd_bottomEqualTo(nil, 0);
+    [self.bottomView rd_setSingleTap:^(UITapGestureRecognizer *sender) {
+        Rd_StrongSelf(self);
+        [self.view endEditing:YES];
+    }];
     
     self.kbManager = [[RdKeyboardTools alloc] init];
     [self.kbManager rd_setShow:^(CGFloat time, CGFloat kbHeight) {

@@ -36,5 +36,7 @@
 
 - (void)rd_setSingleTap:(void (^)(UITapGestureRecognizer *sender))block;
 
+- (CGRect)rd_getFrame;
+
 @end
 

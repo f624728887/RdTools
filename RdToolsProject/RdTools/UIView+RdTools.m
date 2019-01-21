@@ -112,6 +112,11 @@ static char rdViewActionBlockKey;
     [self.superview layoutIfNeeded];
 }
 
+- (CGRect)rd_getFrame{
+    [self.superview layoutIfNeeded];
+    return self.frame;
+}
+
 - (void)rd_setSingleTap:(void (^)(UITapGestureRecognizer *sender))block{
     //单击的手势
     UITapGestureRecognizer *tapRecognize = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];

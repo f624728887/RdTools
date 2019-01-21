@@ -36,7 +36,7 @@
         UIColor *color = i % 2 == 0 ? Rd_ColorWith(yellowColor) : Rd_ColorWith(redColor);
         UIView *view = [UIView rd_ViewBGColor:color for:vScrollView.contentView];
         view.rd_heightValue(cellHei).rd_leftEqualTo(nil, 0).rd_rightEqualTo(nil, 0);
-        vScrollView.contentView.rd_addVerticalHeightAdaptingSubview(view, 0);
+        vScrollView.contentView.rd_addVerticalSubview(view, 0);
         
     }
     
@@ -47,7 +47,7 @@
         UIColor *color = i % 2 == 0 ? Rd_ColorWith(yellowColor) : Rd_ColorWith(redColor);
         UIView *view = [UIView rd_ViewBGColor:color for:hScrollView.contentView];
         view.rd_widthValue(cellWid).rd_topEqualTo(nil, 0).rd_bottomEqualTo(nil, 0);
-        hScrollView.contentView.rd_addHorizontalWidthAdaptingSubview(view, 0);
+        hScrollView.contentView.rd_addHorizontalSubview(view, 0);
     }
 }
 

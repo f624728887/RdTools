@@ -9,8 +9,46 @@
 #import "UILabel+RdTools.h"
 #import "RdMacroFile.h"
 #import "Masonry.h"
+#import <objc/runtime.h>
+
+static UILabel *onceLabel = nil;
+static char rdLabelDefaultFontNameKey;
+
+@interface UILabel ()
+
+@property (nonatomic, strong) NSString *rd_fontName;
+
+@end
 
 @implementation UILabel (RdTools)
+
++ (instancetype _Nonnull)rd_sharedLabel{
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        onceLabel = [[UILabel allocWithZone:NULL] init];
+    });
+    return onceLabel;
+}
+
+
++ (void)rd_setLabelDefaulFontName:(NSString *)name{
+    UILabel *label = [UILabel rd_sharedLabel];
+    [label setRd_fontName:name];
+}
+
++ (NSString *)rd_getLabelDefaulFontName{
+    UILabel *label = [UILabel rd_sharedLabel];
+    return label.rd_fontName;
+}
+
+- (void)setRd_fontName:(NSString *)rd_fontName{
+    objc_setAssociatedObject(self, &rdLabelDefaultFontNameKey, rd_fontName, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (NSString *)rd_fontName{
+    return objc_getAssociatedObject(self, &rdLabelDefaultFontNameKey);
+}
+
 
 + (instancetype _Nonnull)rd_LabelString:(NSString *_Nullable)string fontName:(NSString *_Nullable)name fontSize:(CGFloat)size lineNumber:(NSInteger)number textColor:(UIColor *_Nullable)color superView:(UIView *_Nonnull)superView{
     UILabel *label = [[UILabel alloc] init];
@@ -44,6 +82,8 @@
         }];
     }
     
+    label.userInteractionEnabled = YES;
+    
     return label;
 }
 
@@ -54,12 +94,9 @@
     self.textAlignment = NSTextAlignmentCenter;
 }
 
-- (UILabel *_Nonnull(^_Nonnull)(NSString * _Nonnull text))rd_setTextWidthFit{
-    return ^(NSString *text) {
-        self.text = text;
-        [self rd_labelWidthApading];
-        return self;
-    };
+- (void)rd_setTextWidthFit:(NSString *)text{
+    self.text = text;
+    [self rd_labelWidthApading];
 }
 
 - (void)rd_labelWidthApading{

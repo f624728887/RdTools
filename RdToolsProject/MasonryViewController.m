@@ -46,7 +46,33 @@
     [tapView rd_setSingleTap:^(UITapGestureRecognizer *sender) {
         NSLog(@"hehe");
     }];
+    
+    UIImageView *image = [UIImageView rd_ImageView:Rd_ColorWith(redColor) for:self.view];
+    image.rd_centerXEqualTo(tapView, 0).rd_topToBottmOf(tapView, Rd_MarginSmall).rd_sizeValue(40, 25);
+    [image rd_setSingleTap:^(UITapGestureRecognizer *sender) {
+        NSLog(@"haha");
+    }];
+    
+    image.image = Rd_ImageWith(@"hill");
+    
+    UILabel *label = [UILabel rd_LabelString:@"hehe" fontName:nil fontSize:Rd_FontSizeM lineNumber:1 textColor:Rd_ColorWith(blackColor) superView:self.view];
+    label.userInteractionEnabled = YES;
+    label.rd_centerXEqualTo(image, 0).rd_topToBottmOf(image, Rd_MarginDefault);
+    [label rd_setSingleTap:^(UITapGestureRecognizer *sender) {
+        NSLog(@"lala");
+    }];
 
+    UIView *maxView = [UIView rd_ViewBGColor:Rd_ColorWith(yellowColor) for:self.view];
+    maxView.rd_topToBottmOf(label, Rd_MarginLarge).rd_leftEqualTo(nil, Rd_MarginLarge).rd_rightEqualTo(nil, -Rd_MarginLarge).rd_heightValue(40);
+    
+    UILabel *leftLabel = [UILabel rd_LabelString:@"阿卡丽时代峻峰和爱哭的就是发火打算" fontName:nil fontSize:Rd_FontSizeM lineNumber:1 textColor:Rd_ColorWith(blueColor) superView:maxView];
+    leftLabel.rd_leftEqualTo(nil, 0).rd_heightValue(30).rd_centerYEqualTo(nil, 0).rd_widthValuePriority([leftLabel rd_getLabelStringWidth], 1000);
+    leftLabel.backgroundColor = Rd_ColorWith(redColor);
+    
+    UILabel *rightLabel = [UILabel rd_LabelString:@"爱哭吉林省电话费阿克江的说法啊卡就是电话费" fontName:nil fontSize:Rd_FontSizeM lineNumber:1 textColor:Rd_ColorWith(blueColor) superView:maxView];
+    rightLabel.rd_leftToRightOf(leftLabel, 0).rd_heightValue(30).rd_centerYEqualTo(nil, 0).rd_widthValuePriority([rightLabel rd_getLabelStringWidth], 500).rd_rightEqualTo(nil, 0);
+    rightLabel.backgroundColor = Rd_ColorWith(greenColor);
+    
 }
 
 /*

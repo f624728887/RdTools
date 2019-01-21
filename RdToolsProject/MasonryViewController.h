@@ -6,11 +6,11 @@
 //  Copyright © 2019 Rondo. All rights reserved.
 //
 
-#import "RdBaseViewController.h"
+#import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MasonryViewController : RdBaseViewController
+@interface MasonryViewController : UIViewController
 
 @end
 

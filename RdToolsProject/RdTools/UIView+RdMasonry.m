@@ -9,16 +9,6 @@
 #import "UIView+RdMasonry.h"
 #import "Masonry.h"
 
-typedef NS_ENUM(NSUInteger, RdViewHorizontalWidthType) {
-    RdViewHorizontalWidthFixed,
-    RdViewHorizontalWidthAdapting,
-};
-
-typedef NS_ENUM(NSUInteger, RdViewVerticalHeightType) {
-    RdViewVerticalHeightFixed,
-    RdViewVerticalHeightAdapting,// 适应
-};
-
 @implementation UIView (RdMasonry)
 
 /**
@@ -124,6 +114,28 @@ typedef NS_ENUM(NSUInteger, RdViewVerticalHeightType) {
     return ^(CGFloat height) {
         [self mas_updateConstraints:^(MASConstraintMaker *make) {
             make.height.greaterThanOrEqualTo(@(height));
+        }];
+        return self;
+    };
+}
+
+/**
+ *优先级
+ */
+/// 数值越大优先级越高.最高1000. high = 750, medium = 250~750, Low = 250.
+- (UIView *_Nonnull(^_Nonnull)(CGFloat width, CGFloat priority))rd_widthValuePriority{
+    return ^(CGFloat width, CGFloat priority) {
+        [self mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.width.equalTo(@(width)).priority(priority);
+        }];
+        return self;
+    };
+}
+
+- (UIView *_Nonnull(^_Nonnull)(CGFloat height, CGFloat priority))rd_heightValuePriority{
+    return ^(CGFloat height, CGFloat priority) {
+        [self mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.height.equalTo(@(height)).priority(priority);
         }];
         return self;
     };
@@ -290,6 +302,45 @@ typedef NS_ENUM(NSUInteger, RdViewVerticalHeightType) {
 }
 
 /**
+ *优先级
+ */
+- (UIView *_Nonnull(^_Nonnull)(UIView * _Nullable otherView, CGFloat offset, CGFloat priority))rd_topEqualPriorityTo{
+    return ^(UIView *otherView, CGFloat offset, CGFloat priority) {
+        [self mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo((otherView == nil ? self.superview : otherView)).offset(offset).priority(priority);
+        }];
+        return self;
+    };
+}
+
+- (UIView *_Nonnull(^_Nonnull)(UIView * _Nullable otherView, CGFloat offset, CGFloat priority))rd_bottomEqualPriorityTo{
+    return ^(UIView *otherView, CGFloat offset, CGFloat priority) {
+        [self mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.bottom.equalTo((otherView == nil ? self.superview : otherView)).offset(offset).priority(priority);
+        }];
+        return self;
+    };
+}
+
+- (UIView *_Nonnull(^_Nonnull)(UIView * _Nullable otherView, CGFloat offset, CGFloat priority))rd_leftEqualPriorityTo{
+    return ^(UIView *otherView, CGFloat offset, CGFloat priority) {
+        [self mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo((otherView == nil ? self.superview : otherView)).offset(offset).priority(priority);
+        }];
+        return self;
+    };
+}
+
+- (UIView *_Nonnull(^_Nonnull)(UIView * _Nullable otherView, CGFloat offset, CGFloat priority))rd_rightEqualPriorityTo{
+    return ^(UIView *otherView, CGFloat offset, CGFloat priority) {
+        [self mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.right.equalTo((otherView == nil ? self.superview : otherView)).offset(offset).priority(priority);
+        }];
+        return self;
+    };
+}
+
+/**
  *等于
  */
 - (UIView *_Nonnull(^_Nonnull)(UIView * _Nullable otherView, CGFloat offset))rd_centerXEqualTo{
@@ -362,6 +413,38 @@ typedef NS_ENUM(NSUInteger, RdViewVerticalHeightType) {
 }
 
 /**
+ *优先级
+ */
+/// 数值越大优先级越高.最高1000. high = 750, medium = 250~750, Low = 250.
+- (UIView *_Nonnull(^_Nonnull)(UIView * _Nullable otherView, CGFloat offset, CGFloat priority))rd_centerXEqualPriorityTo{
+    return ^(UIView *otherView, CGFloat offset, CGFloat priority) {
+        [self mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.centerX.equalTo((otherView == nil ? self.superview : otherView)).offset(offset).priority(priority);
+        }];
+        return self;
+    };
+}
+
+- (UIView *_Nonnull(^_Nonnull)(UIView * _Nullable otherView, CGFloat offset, CGFloat priority))rd_centerYEqualPriorityTo{
+    return ^(UIView *otherView, CGFloat offset, CGFloat priority) {
+        [self mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.centerY.equalTo((otherView == nil ? self.superview : otherView)).offset(offset).priority(priority);
+        }];
+        return self;
+    };
+}
+
+- (UIView *_Nonnull(^_Nonnull)(UIView * _Nullable otherView, CGFloat priority))rd_centerEqualPriorityTo{
+    return ^(UIView *otherView, CGFloat priority) {
+        [self mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.center.equalTo((otherView == nil ? self.superview : otherView)).priority(priority);
+        }];
+        return self;
+    };
+}
+
+
+/**
  *等于
  */
 - (UIView *_Nonnull(^_Nonnull)(UIView * _Nullable otherView, CGFloat multiple))rd_widthMultipliedBy{
@@ -419,6 +502,28 @@ typedef NS_ENUM(NSUInteger, RdViewVerticalHeightType) {
     return ^(UIView *otherView, CGFloat multiple) {
         [self mas_updateConstraints:^(MASConstraintMaker *make) {
             make.height.greaterThanOrEqualTo((otherView == nil ? self.superview : otherView)).multipliedBy(multiple);
+        }];
+        return self;
+    };
+}
+
+/**
+ *优先级
+ */
+/// 数值越大优先级越高.最高1000. high = 750, medium = 250~750, Low = 250.
+- (UIView *_Nonnull(^_Nonnull)(UIView * _Nullable otherView, CGFloat multiple, CGFloat priority))rd_widthMultipliedPriorityBy{
+    return ^(UIView *otherView, CGFloat multiple, CGFloat priority) {
+        [self mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.width.equalTo((otherView == nil ? self.superview : otherView)).multipliedBy(multiple).priority(priority);
+        }];
+        return self;
+    };
+}
+
+- (UIView *_Nonnull(^_Nonnull)(UIView * _Nullable otherView, CGFloat multiple, CGFloat priority))rd_heightMultipliedPriorityBy{
+    return ^(UIView *otherView, CGFloat multiple, CGFloat priority) {
+        [self mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.height.equalTo((otherView == nil ? self.superview : otherView)).multipliedBy(multiple).priority(priority);
         }];
         return self;
     };
@@ -542,6 +647,45 @@ typedef NS_ENUM(NSUInteger, RdViewVerticalHeightType) {
 }
 
 /**
+ *优先级
+ */
+/// 数值越大优先级越高.最高1000. high = 750, medium = 250~750, Low = 250.
+- (UIView *_Nonnull(^_Nonnull)(UIView * _Nullable otherView, CGFloat offset, CGFloat priority))rd_topToBottmPriorityOf{
+    return ^(UIView *otherView, CGFloat offset, CGFloat priority) {
+        [self mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo((otherView == nil ? self.superview : otherView).mas_bottom).offset(offset).priority(priority);
+        }];
+        return self;
+    };
+}
+
+- (UIView *_Nonnull(^_Nonnull)(UIView * _Nullable otherView, CGFloat offset, CGFloat priority))rd_bottomToTopPriorityOf{
+    return ^(UIView *otherView, CGFloat offset, CGFloat priority) {
+        [self mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.bottom.equalTo((otherView == nil ? self.superview : otherView).mas_top).offset(offset).priority(priority);
+        }];
+        return self;
+    };
+}
+
+- (UIView *_Nonnull(^_Nonnull)(UIView * _Nullable otherView, CGFloat offset, CGFloat priority))rd_leftToRightPriorityOf{
+    return ^(UIView *otherView, CGFloat offset, CGFloat priority) {
+        [self mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo((otherView == nil ? self.superview : otherView).mas_right).offset(offset).priority(priority);
+        }];
+        return self;
+    };
+}
+- (UIView *_Nonnull(^_Nonnull)(UIView * _Nullable otherView, CGFloat offset, CGFloat priority))rd_rightToLeftPriorityOf{
+    return ^(UIView *otherView, CGFloat offset, CGFloat priority) {
+        [self mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo((otherView == nil ? self.superview : otherView).mas_right).offset(offset).priority(priority);
+        }];
+        return self;
+    };
+}
+
+/**
  *等于
  */
 - (UIView *_Nonnull(^_Nonnull)(UIView * _Nullable otherView, CGFloat offset))rd_topToCenterYOf{
@@ -658,45 +802,77 @@ typedef NS_ENUM(NSUInteger, RdViewVerticalHeightType) {
     };
 }
 
-- (UIView *_Nonnull(^_Nonnull)(UIView *_Nonnull chileView, CGFloat interval, RdViewHorizontalWidthType type))rd_addHorizontalSubview{
-    return ^(UIView *chileView, CGFloat interval, RdViewHorizontalWidthType type) {
+/**
+ *优先级
+ */
+/// 数值越大优先级越高.最高1000. high = 750, medium = 250~750, Low = 250.
+- (UIView *_Nonnull(^_Nonnull)(UIView * _Nullable otherView, CGFloat offset, CGFloat priority))rd_topToCenterYPriorityOf{
+    return ^(UIView *otherView, CGFloat offset, CGFloat priority) {
+        [self mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo((otherView == nil ? self.superview : otherView).mas_centerY).offset(offset).priority(priority);
+        }];
+        return self;
+    };
+}
+
+- (UIView *_Nonnull(^_Nonnull)(UIView * _Nullable otherView, CGFloat offset, CGFloat priority))rd_bottomToCenterYPriorityOf{
+    return ^(UIView *otherView, CGFloat offset, CGFloat priority) {
+        [self mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.bottom.equalTo((otherView == nil ? self.superview : otherView).mas_centerY).offset(offset).priority(priority);
+        }];
+        return self;
+    };
+}
+
+- (UIView *_Nonnull(^_Nonnull)(UIView * _Nullable otherView, CGFloat offset, CGFloat priority))rd_leftToCenterXPriorityOf{
+    return ^(UIView *otherView, CGFloat offset, CGFloat priority) {
+        [self mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo((otherView == nil ? self.superview : otherView).mas_centerX).offset(offset).priority(priority);
+        }];
+        return self;
+    };
+}
+
+- (UIView *_Nonnull(^_Nonnull)(UIView * _Nullable otherView, CGFloat offset, CGFloat priority))rd_rightToCenterXPriorityOf{
+    return ^(UIView *otherView, CGFloat offset, CGFloat priority) {
+        [self mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.right.equalTo((otherView == nil ? self.superview : otherView).mas_centerX).offset(offset).priority(priority);
+        }];
+        return self;
+    };
+}
+
+- (UIView *_Nonnull(^_Nonnull)(UIView *_Nonnull chileView, CGFloat interval))rd_addHorizontalSubview{
+    return ^(UIView *chileView, CGFloat interval) {
         if (self.subviews.count == 0) {
             [self addSubview:chileView];
             chileView.rd_leftEqualTo(nil, 0);
-            if (type == RdViewHorizontalWidthAdapting) {
-                [chileView mas_updateConstraints:^(MASConstraintMaker *make) {
-                    make.right.lessThanOrEqualTo(self);
-                }];
-            }
+            [chileView mas_updateConstraints:^(MASConstraintMaker *make) {
+                make.right.lessThanOrEqualTo(self);
+            }];
         }
         else {
             if (self.subviews.lastObject != chileView) {
                 UIView *before = self.subviews.lastObject;
                 [self addSubview:chileView];
                 chileView.rd_leftToRightOf(before, interval);
-                if (type == RdViewHorizontalWidthAdapting) {
-                    [chileView mas_updateConstraints:^(MASConstraintMaker *make) {
-                        make.right.lessThanOrEqualTo(self);
-                    }];
-                }
+                [chileView mas_updateConstraints:^(MASConstraintMaker *make) {
+                    make.right.lessThanOrEqualTo(self);
+                }];
             }
             else {
                 if (self.subviews.count == 1) {
                     chileView.rd_leftEqualTo(nil, 0);
-                    if (type == RdViewHorizontalWidthAdapting) {
-                        [chileView mas_updateConstraints:^(MASConstraintMaker *make) {
-                            make.right.lessThanOrEqualTo(self);
-                        }];
-                    }
+                    [chileView mas_updateConstraints:^(MASConstraintMaker *make) {
+                        make.right.lessThanOrEqualTo(self);
+                    }];
                 }
                 else {
                     UIView *before = [self.subviews objectAtIndex:(self.subviews.count - 2)];
                     chileView.rd_leftToRightOf(before, interval);
-                    if (type == RdViewHorizontalWidthAdapting) {
-                        [chileView mas_updateConstraints:^(MASConstraintMaker *make) {
-                            make.right.lessThanOrEqualTo(self);
-                        }];
-                    }
+                    [chileView mas_updateConstraints:^(MASConstraintMaker *make) {
+                        make.right.lessThanOrEqualTo(self);
+                    }];
                 }
             }
         }
@@ -704,73 +880,41 @@ typedef NS_ENUM(NSUInteger, RdViewVerticalHeightType) {
     };
 }
 
-- (UIView *_Nonnull(^_Nonnull)(UIView *_Nonnull chileView, CGFloat interval))rd_addHorizontalWidthAdaptingSubview{
+- (UIView *_Nonnull(^_Nonnull)(UIView *_Nonnull chileView, CGFloat interval))rd_addVerticalSubview{
     return ^(UIView *chileView, CGFloat interval) {
-        return self.rd_addHorizontalSubview(chileView, interval, RdViewHorizontalWidthAdapting);
-    };
-}
-
-- (UIView *_Nonnull(^_Nonnull)(UIView *_Nonnull chileView, CGFloat interval))rd_addHorizontalWidthFixedSubview{
-    return ^(UIView *chileView, CGFloat interval) {
-        return self.rd_addHorizontalSubview(chileView, interval, RdViewHorizontalWidthFixed);
-    };
-}
-
-- (UIView *_Nonnull(^_Nonnull)(UIView *_Nonnull chileView, CGFloat interval, RdViewVerticalHeightType type))rd_addVerticalSubview{
-    return ^(UIView *chileView, CGFloat interval, RdViewVerticalHeightType type) {
         if (self.subviews.count == 0) {
             [self addSubview:chileView];
             chileView.rd_topEqualTo(nil, 0);
-            if (type == RdViewVerticalHeightAdapting) {
-                [chileView mas_updateConstraints:^(MASConstraintMaker *make) {
-                    make.bottom.lessThanOrEqualTo(self);
-                }];
-            }
+            [chileView mas_updateConstraints:^(MASConstraintMaker *make) {
+                make.bottom.lessThanOrEqualTo(self);
+            }];
         }
         else {
             if (self.subviews.lastObject != chileView) {
                 UIView *before = self.subviews.lastObject;
                 [self addSubview:chileView];
                 chileView.rd_topToBottmOf(before, interval);
-                if (type == RdViewVerticalHeightAdapting) {
+                [chileView mas_updateConstraints:^(MASConstraintMaker *make) {
+                    make.bottom.lessThanOrEqualTo(self);
+                }];
+            }
+            else {
+                if (self.subviews.count == 1) {
+                    chileView.rd_topEqualTo(nil, 0);
+                    [chileView mas_updateConstraints:^(MASConstraintMaker *make) {
+                        make.bottom.lessThanOrEqualTo(self);
+                    }];
+                }
+                else {
+                    UIView *before = [self.subviews objectAtIndex:(self.subviews.count - 2)];
+                    chileView.rd_topToBottmOf(before, interval);
                     [chileView mas_updateConstraints:^(MASConstraintMaker *make) {
                         make.bottom.lessThanOrEqualTo(self);
                     }];
                 }
             }
-            else {
-                if (self.subviews.count == 1) {
-                    chileView.rd_topEqualTo(nil, 0);
-                    if (type == RdViewVerticalHeightAdapting) {
-                        [chileView mas_updateConstraints:^(MASConstraintMaker *make) {
-                            make.bottom.lessThanOrEqualTo(self);
-                        }];
-                    }
-                }
-                else {
-                    UIView *before = [self.subviews objectAtIndex:(self.subviews.count - 2)];
-                    chileView.rd_topToBottmOf(before, interval);
-                    if (type == RdViewVerticalHeightAdapting) {
-                        [chileView mas_updateConstraints:^(MASConstraintMaker *make) {
-                            make.bottom.lessThanOrEqualTo(self);
-                        }];
-                    }
-                }
-            }
         }
         return self;
-    };
-}
-
-- (UIView *_Nonnull(^_Nonnull)(UIView *_Nonnull chileView, CGFloat interval))rd_addVerticalHeightAdaptingSubview{
-    return ^(UIView *chileView, CGFloat interval) {
-        return self.rd_addVerticalSubview(chileView, interval, RdViewVerticalHeightAdapting);
-    };
-}
-
-- (UIView *_Nonnull(^_Nonnull)(UIView *_Nonnull chileView, CGFloat interval))rd_addVerticalHeightFixedSubview{
-    return ^(UIView *chileView, CGFloat interval) {
-        return self.rd_addVerticalSubview(chileView, interval, RdViewVerticalHeightFixed);
     };
 }
 

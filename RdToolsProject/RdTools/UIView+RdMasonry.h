@@ -8,30 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-//typedef NS_ENUM(NSUInteger, RdViewHorizontalWidthType) {
-//    RdViewHorizontalWidthFixed,
-//    RdViewHorizontalWidthAdapting,
-//};
-//
-//typedef NS_ENUM(NSUInteger, RdViewVerticalHeightType) {
-//    RdViewVerticalHeightFixed,
-//    RdViewVerticalHeightAdapting,// 适应
-//};
-
-typedef NS_ENUM(NSUInteger, RdConstraint) {
-    RdConstraintTop,
-    RdConstraintLeft,
-    RdConstraintBottom,
-    RdConstraintRight,
-    RdConstraintWidth,
-    RdConstraintHeight,
-};
-
-typedef NS_ENUM(NSUInteger, RdRelation) {
-    RdRelationLessThanOrEqual,
-    RdRelationGreaterThanOrEqual,
-};
-
 @interface UIView (RdMasonry)
 
 /**
@@ -76,6 +52,13 @@ typedef NS_ENUM(NSUInteger, RdRelation) {
 - (UIView *_Nonnull(^_Nonnull)(CGFloat width))rd_widthMinValue;
 /// 设置最小高度（ rd_heightMinValue() ）
 - (UIView *_Nonnull(^_Nonnull)(CGFloat height))rd_heightMinValue;
+
+/**
+ *优先级
+ */
+/// 数值越大优先级越高.最高1000. high = 750, medium = 250~750, Low = 250.
+- (UIView *_Nonnull(^_Nonnull)(CGFloat width, CGFloat priority))rd_widthValuePriority;
+- (UIView *_Nonnull(^_Nonnull)(CGFloat height, CGFloat priority))rd_heightValuePriority;
 
 /**
  *等于
@@ -126,6 +109,15 @@ typedef NS_ENUM(NSUInteger, RdRelation) {
 - (UIView *_Nonnull(^_Nonnull)(UIView * _Nullable otherView, CGFloat offset))rd_rightGreaterOrEqualTo;
 
 /**
+ *优先级
+ */
+/// 数值越大优先级越高.最高1000. high = 750, medium = 250~750, Low = 250.
+- (UIView *_Nonnull(^_Nonnull)(UIView * _Nullable otherView, CGFloat offset, CGFloat priority))rd_topEqualPriorityTo;
+- (UIView *_Nonnull(^_Nonnull)(UIView * _Nullable otherView, CGFloat offset, CGFloat priority))rd_bottomEqualPriorityTo;
+- (UIView *_Nonnull(^_Nonnull)(UIView * _Nullable otherView, CGFloat offset, CGFloat priority))rd_leftEqualPriorityTo;
+- (UIView *_Nonnull(^_Nonnull)(UIView * _Nullable otherView, CGFloat offset, CGFloat priority))rd_rightEqualPriorityTo;
+
+/**
  *等于
  */
 /// 中心横向依赖（ rd_XXXEqualTo(otherView, offset) ）otherView可以为nil，此时相对于superView依赖
@@ -153,6 +145,14 @@ typedef NS_ENUM(NSUInteger, RdRelation) {
 - (UIView *_Nonnull(^_Nonnull)(UIView * _Nullable otherView, CGFloat offset))rd_centerYGreaterOrEqualTo;
 
 /**
+ *优先级
+ */
+/// 数值越大优先级越高.最高1000. high = 750, medium = 250~750, Low = 250.
+- (UIView *_Nonnull(^_Nonnull)(UIView * _Nullable otherView, CGFloat offset, CGFloat priority))rd_centerXEqualPriorityTo;
+- (UIView *_Nonnull(^_Nonnull)(UIView * _Nullable otherView, CGFloat offset, CGFloat priority))rd_centerYEqualPriorityTo;
+- (UIView *_Nonnull(^_Nonnull)(UIView * _Nullable otherView, CGFloat priority))rd_centerEqualPriorityTo;
+
+/**
  *等于
  */
 /// 宽度倍数（ rd_XXXMultipliedBy(otherView) ）otherView可以为nil，此时相对于superView依赖
@@ -175,6 +175,13 @@ typedef NS_ENUM(NSUInteger, RdRelation) {
 - (UIView *_Nonnull(^_Nonnull)(UIView * _Nullable otherView, CGFloat multiple))rd_widthGreaterOrEqualMultipliedBy;
 /// 高度倍数（ rd_XXXGreaterOrEqualMultipliedBy(otherView) ）otherView可以为nil，此时相对于superView依赖
 - (UIView *_Nonnull(^_Nonnull)(UIView * _Nullable otherView, CGFloat multiple))rd_heightGreaterOrEqualMultipliedBy;
+
+/**
+ *优先级
+ */
+/// 数值越大优先级越高.最高1000. high = 750, medium = 250~750, Low = 250.
+- (UIView *_Nonnull(^_Nonnull)(UIView * _Nullable otherView, CGFloat multiple, CGFloat priority))rd_widthMultipliedPriorityBy;
+- (UIView *_Nonnull(^_Nonnull)(UIView * _Nullable otherView, CGFloat multiple, CGFloat priority))rd_heightMultipliedPriorityBy;
 
 /**
  *等于
@@ -213,6 +220,15 @@ typedef NS_ENUM(NSUInteger, RdRelation) {
 - (UIView *_Nonnull(^_Nonnull)(UIView * _Nullable otherView, CGFloat offset))rd_rightGreaterOrEqualToLeftOf;
 
 /**
+ *优先级
+ */
+/// 数值越大优先级越高.最高1000. high = 750, medium = 250~750, Low = 250.
+- (UIView *_Nonnull(^_Nonnull)(UIView * _Nullable otherView, CGFloat offset, CGFloat priority))rd_topToBottmPriorityOf;
+- (UIView *_Nonnull(^_Nonnull)(UIView * _Nullable otherView, CGFloat offset, CGFloat priority))rd_bottomToTopPriorityOf;
+- (UIView *_Nonnull(^_Nonnull)(UIView * _Nullable otherView, CGFloat offset, CGFloat priority))rd_leftToRightPriorityOf;
+- (UIView *_Nonnull(^_Nonnull)(UIView * _Nullable otherView, CGFloat offset, CGFloat priority))rd_rightToLeftPriorityOf;
+
+/**
  *等于
  */
 /// 上中 依赖 （ rd_XXXToXXXOf(otherView, offset) ） otherView可以为nil，此时相对于superView依赖
@@ -248,19 +264,25 @@ typedef NS_ENUM(NSUInteger, RdRelation) {
 /// 右中 依赖 （ rd_XXXGreaterOrEqualToXXXOf(otherView, offset) ） otherView可以为nil，此时相对于superView依赖
 - (UIView *_Nonnull(^_Nonnull)(UIView * _Nullable otherView, CGFloat offset))rd_rightGreaterOrEqualToCenterXOf;
 
-///// 水平添加View （ rd_addHorizontalSubview(view, 10, UIViewHorizontalWidthFixed) ）
-//- (UIView *_Nonnull(^_Nonnull)(UIView *_Nonnull chileView, CGFloat interval, RdViewHorizontalWidthType type))rd_addHorizontalSubview;
+/**
+ *优先级
+ */
+/// 数值越大优先级越高.最高1000. high = 750, medium = 250~750, Low = 250.
+- (UIView *_Nonnull(^_Nonnull)(UIView * _Nullable otherView, CGFloat offset, CGFloat priority))rd_topToCenterYPriorityOf;
+- (UIView *_Nonnull(^_Nonnull)(UIView * _Nullable otherView, CGFloat offset, CGFloat priority))rd_bottomToCenterYPriorityOf;
+- (UIView *_Nonnull(^_Nonnull)(UIView * _Nullable otherView, CGFloat offset, CGFloat priority))rd_leftToCenterXPriorityOf;
+- (UIView *_Nonnull(^_Nonnull)(UIView * _Nullable otherView, CGFloat offset, CGFloat priority))rd_rightToCenterXPriorityOf;
 
-- (UIView *_Nonnull(^_Nonnull)(UIView *_Nonnull chileView, CGFloat interval))rd_addHorizontalWidthAdaptingSubview;
+/**
+ *优先级
+ */
+/// 数值越大优先级越高.最高1000. high = 750, medium = 250~750, Low = 250.
 
-- (UIView *_Nonnull(^_Nonnull)(UIView *_Nonnull chileView, CGFloat interval))rd_addHorizontalWidthFixedSubview;
+/// 水平添加View （ rd_addHorizontalSubview(view, 10) ）
+- (UIView *_Nonnull(^_Nonnull)(UIView *_Nonnull chileView, CGFloat interval))rd_addHorizontalSubview;
 
-///// 垂直添加View （ rd_addVerticalSubview(view, 10, UIViewVerticalHeightFixed) ）
-//- (UIView *_Nonnull(^_Nonnull)(UIView *_Nonnull chileView, CGFloat interval, RdViewVerticalHeightType type))rd_addVerticalSubview;
-
-- (UIView *_Nonnull(^_Nonnull)(UIView *_Nonnull chileView, CGFloat interval))rd_addVerticalHeightAdaptingSubview;
-
-- (UIView *_Nonnull(^_Nonnull)(UIView *_Nonnull chileView, CGFloat interval))rd_addVerticalHeightFixedSubview;
+/// 垂直添加View （ rd_addVerticalSubview(view, 10) ）
+- (UIView *_Nonnull(^_Nonnull)(UIView *_Nonnull chileView, CGFloat interval))rd_addVerticalSubview;
 
 - (void)rd_removeConstraint;
 
