@@ -34,16 +34,16 @@
 }
 
 - (void)makeView{
-//    [self group];
+    [self group];
     
 //    [self semaphore];
     
-    [self semaphore2];
+//    [self semaphore2];
 }
 
 - (void)group{
     NSLog(@"开始group任务");
-    RdGCDGroup *group = [RdGCDGroup rd_GroupManager];
+    RdGCDGroup *group = [RdGCDGroup rd_Group];
     [group rd_addGroupAction:^{
         for (int i = 0 ; i < 3; i ++) {
             [NSThread sleepForTimeInterval:2];
