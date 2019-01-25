@@ -8,8 +8,6 @@
 
 #import "RdGCDTools.h"
 
-static RdGCDGroup *groupManager = nil;
-
 @implementation RdGCDTools
 
 @end
@@ -24,12 +22,9 @@ static RdGCDGroup *groupManager = nil;
 
 @implementation RdGCDGroup
 
-+ (instancetype)rd_GroupManager{
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        groupManager = [[RdGCDGroup alloc] init];
-        groupManager.actionList = [NSMutableArray arrayWithCapacity:0];
-    });
++ (instancetype)rd_Group{
+    RdGCDGroup *groupManager = [[RdGCDGroup alloc] init];
+    groupManager.actionList = [NSMutableArray arrayWithCapacity:0];
     return groupManager;
 }
 

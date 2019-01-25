@@ -18,7 +18,8 @@ typedef void (^RdActionBlock)(void);
 
 @interface RdGCDGroup : RdGCDTools
 
-+ (instancetype)rd_GroupManager;
+/// 不是单例
++ (instancetype)rd_Group;
 
 - (void)rd_addGroupAction:(RdActionBlock)block;
 
