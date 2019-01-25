@@ -29,6 +29,8 @@
 		570F243421DC5967004AAC1F /* MasonryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 570F243321DC5967004AAC1F /* MasonryViewController.m */; };
 		572AEBDE21DC60D900F520AE /* TimerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 572AEBDD21DC60D900F520AE /* TimerViewController.m */; };
 		57456784219C047500862A09 /* RdVideoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 57456783219C047500862A09 /* RdVideoView.m */; };
+		57E894C221F992D7000B8323 /* RdGCDTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E894C121F992D7000B8323 /* RdGCDTools.m */; };
+		57E894C521F99411000B8323 /* GCDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E894C421F99411000B8323 /* GCDViewController.m */; };
 		57E8B54221D5E9D1008BC1C2 /* UIControl+RdTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E8B54121D5E9D1008BC1C2 /* UIControl+RdTools.m */; };
 		57EA232A21EDCECF004E9D73 /* Image.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57EA232921EDCECF004E9D73 /* Image.xcassets */; };
 		57EA986C21DC41C5009BB5B7 /* ScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57EA986B21DC41C5009BB5B7 /* ScrollViewController.m */; };
@@ -104,6 +106,10 @@
 		572AEBDD21DC60D900F520AE /* TimerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TimerViewController.m; sourceTree = "<group>"; };
 		57456782219C047500862A09 /* RdVideoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RdVideoView.h; sourceTree = "<group>"; };
 		57456783219C047500862A09 /* RdVideoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RdVideoView.m; sourceTree = "<group>"; };
+		57E894C021F992D7000B8323 /* RdGCDTools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RdGCDTools.h; sourceTree = "<group>"; };
+		57E894C121F992D7000B8323 /* RdGCDTools.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RdGCDTools.m; sourceTree = "<group>"; };
+		57E894C321F99411000B8323 /* GCDViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GCDViewController.h; sourceTree = "<group>"; };
+		57E894C421F99411000B8323 /* GCDViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GCDViewController.m; sourceTree = "<group>"; };
 		57E8B54021D5E9D1008BC1C2 /* UIControl+RdTools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIControl+RdTools.h"; sourceTree = "<group>"; };
 		57E8B54121D5E9D1008BC1C2 /* UIControl+RdTools.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIControl+RdTools.m"; sourceTree = "<group>"; };
 		57EA232921EDCECF004E9D73 /* Image.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Image.xcassets; sourceTree = "<group>"; };
@@ -190,6 +196,8 @@
 				570F243321DC5967004AAC1F /* MasonryViewController.m */,
 				572AEBDC21DC60D900F520AE /* TimerViewController.h */,
 				572AEBDD21DC60D900F520AE /* TimerViewController.m */,
+				57E894C321F99411000B8323 /* GCDViewController.h */,
+				57E894C421F99411000B8323 /* GCDViewController.m */,
 				5708FFFB219BB45000702D7F /* RdTools */,
 				5708FFCF219BB41300702D7F /* Main.storyboard */,
 				5708FFD2219BB41400702D7F /* Assets.xcassets */,
@@ -258,6 +266,8 @@
 				57EDE0A821ABBCF6001652B8 /* RdRepeatTimer.m */,
 				57EDE0A121AB9991001652B8 /* RdOnceTimer.h */,
 				57EDE0A221AB9991001652B8 /* RdOnceTimer.m */,
+				57E894C021F992D7000B8323 /* RdGCDTools.h */,
+				57E894C121F992D7000B8323 /* RdGCDTools.m */,
 			);
 			path = RdTools;
 			sourceTree = "<group>";
@@ -436,6 +446,7 @@
 				57EDE0A921ABBCF6001652B8 /* RdRepeatTimer.m in Sources */,
 				57080023219BB45000702D7F /* UIViewController+RdTools.m in Sources */,
 				57080018219BB45000702D7F /* UILabel+RdTools.m in Sources */,
+				57E894C521F99411000B8323 /* GCDViewController.m in Sources */,
 				57080021219BB45000702D7F /* RdKeyboardTools.m in Sources */,
 				5708FFCE219BB41300702D7F /* ViewController.m in Sources */,
 				57080024219BB45000702D7F /* UIView+RdTools.m in Sources */,
@@ -448,6 +459,7 @@
 				5708FFCB219BB41300702D7F /* AppDelegate.m in Sources */,
 				5708001B219BB45000702D7F /* UIView+RdMasonry.m in Sources */,
 				5708001F219BB45000702D7F /* UINavigationController+RdTools.m in Sources */,
+				57E894C221F992D7000B8323 /* RdGCDTools.m in Sources */,
 				57080020219BB45000702D7F /* UIButton+RdTools.m in Sources */,
 				57080019219BB45000702D7F /* UIImageView+RdTools.m in Sources */,
 				5708001C219BB45000702D7F /* UIImage+RdTools.m in Sources */,

@@ -38,7 +38,7 @@ static char rdLabelDefaultFontNameKey;
 
 + (NSString *)rd_getLabelDefaulFontName{
     UILabel *label = [UILabel rd_sharedLabel];
-    return label.rd_fontName;
+    return (label.rd_fontName == nil ? @"" : label.rd_fontName);
 }
 
 - (void)setRd_fontName:(NSString *)rd_fontName{

@@ -48,7 +48,7 @@ static inline float safeAreaBottom() {
 
 #define Rd_IGNORE               CGFLOAT_MAX
 
-#define Rd_FontNameNormal       ([UILabel rd_getLabelDefaulFontName] == nil ? @"" : [UILabel rd_getLabelDefaulFontName])
+#define Rd_FontNameNormal       [UILabel rd_getLabelDefaulFontName]
 #define Rd_AnimationDuration    0.26f
 
 #define Rd_WeakSelf(type)        __weak typeof(type) weak##type = type

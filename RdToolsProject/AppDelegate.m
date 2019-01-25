@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "RdTools/RdToolsHeader.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +18,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+//    [UILabel rd_setLabelDefaulFontName:@""];
+    
     return YES;
 }
 
