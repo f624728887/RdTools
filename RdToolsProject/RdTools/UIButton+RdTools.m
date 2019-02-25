@@ -76,6 +76,20 @@ static char rdButtonActionBlockKey;
     return button;
 }
 
++ (instancetype)rd_BtnBGColor:(UIColor *_Nullable)bgColor superView:(UIView *_Nonnull)superView responder:(void (^)(UIButton *sender))block{
+    UIButton *button = [[UIButton alloc] init];
+    button.backgroundColor = (bgColor == nil ? [UIColor clearColor] : bgColor);
+    if (Rd_FontNameNormal.length != 0) {
+        button.titleLabel.font = [UIFont fontWithName:Rd_FontNameNormal size:button.titleLabel.font.pointSize];
+    }
+    [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    button.clipsToBounds = YES;
+    [superView addSubview:button];
+    
+    [button setRdActionBlock:block];
+    return button;
+}
+
 + (instancetype)ButtonImg:(NSString *)imgName forView:(UIView *_Nullable)superView{
     UIButton *button = [[UIButton alloc] init];
     if (superView) {
@@ -229,6 +243,13 @@ static char rdButtonActionBlockKey;
 - (UIButton *_Nonnull(^_Nonnull)(NSString * _Nonnull imageName))rd_setButtonBgImageNormal{
     return ^(NSString *imageName) {
         [self setBackgroundImage:[UIImage imageNamed:imageName] forState:UIControlStateNormal];
+        return self;
+    };
+}
+
+- (UIButton * _Nonnull (^)(NSString * _Nonnull))rd_setButtonBgImageSelected{
+    return ^(NSString *imageName) {
+        [self setBackgroundImage:[UIImage imageNamed:imageName] forState:UIControlStateSelected];
         return self;
     };
 }

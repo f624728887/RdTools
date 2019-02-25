@@ -29,7 +29,9 @@ typedef NS_ENUM(NSUInteger, RdButtonImageType) {
 + (instancetype)rd_BtnTitle:(NSString *)title image:(NSString *)imgName responder:(void (^)(UIButton *sender))block;
 
 /// color为 nil 时背景色为clearColor
-+ (instancetype _Nonnull)rd_BtnBGColor:(UIColor *_Nullable)bgColor superView:(UIView *_Nonnull)superView;
++ (instancetype)rd_BtnBGColor:(UIColor *_Nullable)bgColor superView:(UIView *_Nonnull)superView;
+
++ (instancetype)rd_BtnBGColor:(UIColor *_Nullable)bgColor superView:(UIView *_Nonnull)superView responder:(void (^)(UIButton *sender))block;
 
 /// 设置button title （ rd_setXXX(title) ）
 - (UIButton *_Nonnull(^_Nonnull)(NSString * _Nonnull title))rd_setButtonTitle;
@@ -65,6 +67,9 @@ typedef NS_ENUM(NSUInteger, RdButtonImageType) {
 
 /// 设置button normal 背景图片（ rd_setXXX(image) ）
 - (UIButton *_Nonnull(^_Nonnull)(NSString * _Nonnull imageName))rd_setButtonBgImageNormal;
+
+/// 设置button Selected 背景图片（ rd_setXXX(image) ）
+- (UIButton *_Nonnull(^_Nonnull)(NSString * _Nonnull imageName))rd_setButtonBgImageSelected;
 
 /// 设置button hightlighted 背景图片（ rd_setXXX(image) ）
 - (UIButton *_Nonnull(^_Nonnull)(NSString * _Nonnull imageName))rd_setButtonBgImageHightlighted;

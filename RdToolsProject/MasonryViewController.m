@@ -60,6 +60,7 @@
     label.rd_centerXEqualTo(image, 0).rd_topToBottmOf(image, Rd_MarginDefault);
     [label rd_setSingleTap:^(UITapGestureRecognizer *sender) {
         NSLog(@"lala");
+        sender.view.backgroundColor = Rd_ColorWith(yellowColor);
     }];
 
     UIView *maxView = [UIView rd_ViewBGColor:Rd_ColorWith(yellowColor) for:self.view];
