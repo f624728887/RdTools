@@ -10,6 +10,17 @@
 
 @interface UIView (RdTools)
 
+@property (nonatomic, assign, readonly) CGFloat rd_MinX;
+@property (nonatomic, assign, readonly) CGFloat rd_MidX;
+@property (nonatomic, assign, readonly) CGFloat rd_MaxX;
+
+@property (nonatomic, assign, readonly) CGFloat rd_MinY;
+@property (nonatomic, assign, readonly) CGFloat rd_MidY;
+@property (nonatomic, assign, readonly) CGFloat rd_MaxY;
+
+@property (nonatomic, assign, readonly) CGFloat rd_Width;
+@property (nonatomic, assign, readonly) CGFloat rd_Height;
+
 + (instancetype _Nonnull)rd_ViewBGColor:(UIColor *_Nullable)bgColor for:(UIView *_Nonnull)superView;
 
 

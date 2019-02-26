@@ -20,6 +20,38 @@ static char rdViewActionBlockKey;
 
 @implementation UIView (RdTools)
 
+- (CGFloat)rd_MinX{
+    return CGRectGetMinX([self rd_getFrame]);
+}
+
+- (CGFloat)rd_MidX{
+    return CGRectGetMidX([self rd_getFrame]);
+}
+
+- (CGFloat)rd_MaxX{
+    return CGRectGetMaxX([self rd_getFrame]);
+}
+
+- (CGFloat)rd_MinY{
+    return CGRectGetMinY([self rd_getFrame]);
+}
+
+- (CGFloat)rd_MidY{
+    return CGRectGetMidY([self rd_getFrame]);
+}
+
+- (CGFloat)rd_MaxY{
+    return CGRectGetMaxY([self rd_getFrame]);
+}
+
+- (CGFloat)rd_Width{
+    return CGRectGetWidth([self rd_getFrame]);
+}
+
+- (CGFloat)rd_Height{
+    return CGRectGetHeight([self rd_getFrame]);
+}
+
 + (instancetype _Nonnull)rd_ViewBGColor:(UIColor *_Nullable)bgColor for:(UIView *_Nonnull)superView{
     UIView *view = [[UIView alloc] init];
     view.backgroundColor = (bgColor == nil ? [UIColor clearColor] : bgColor);

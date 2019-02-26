@@ -74,6 +74,8 @@
     rightLabel.rd_leftToRightOf(leftLabel, 0).rd_heightValue(30).rd_centerYEqualTo(nil, 0).rd_widthValuePriority([rightLabel rd_getLabelStringWidth], 500).rd_rightEqualTo(nil, 0);
     rightLabel.backgroundColor = Rd_ColorWith(greenColor);
     
+    NSLog(@"%f", maxView.rd_MinX);
+    
 }
 
 /*

@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "RdTools"
-  s.version      = "0.3.0"
+  s.version      = "0.3.2"
   s.summary      = "It is my layout file base on Masonry."
 
   s.authors     = { 'Rondo' => 'f624728887@163.com' }

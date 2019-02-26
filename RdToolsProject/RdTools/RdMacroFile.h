@@ -66,7 +66,7 @@ static inline float safeAreaBottom() {
 #define Rd_isLandscape          ((Rd_ScreenWidth > Rd_ScreenHeight) ? true : false)
 
 #define Rd_NavibarH             ((float)44 + Rd_SafeAreaTop)
-#define Rd_TabbarH              ((float)49 + Rd_SafeAreaBottomH)
+#define Rd_TabbarH              ((float)49 + Rd_SafeAreaBottom)
 #define Rd_StatusbarH           (Rd_SafeAreaTop)
 
 
