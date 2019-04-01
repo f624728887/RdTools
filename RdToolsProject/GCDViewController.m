@@ -8,7 +8,6 @@
 
 #import "GCDViewController.h"
 #import "RdTools/RdToolsHeader.h"
-#import "RdTools/RdGCDTools.h"
 
 @interface GCDViewController ()
 

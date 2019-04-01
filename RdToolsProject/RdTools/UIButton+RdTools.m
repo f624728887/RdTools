@@ -86,6 +86,8 @@ static char rdButtonActionBlockKey;
     button.clipsToBounds = YES;
     [superView addSubview:button];
     
+    [button addTarget:button action:@selector(rdbuttonClick:) forControlEvents:UIControlEventTouchUpInside];
+    
     [button setRdActionBlock:block];
     return button;
 }

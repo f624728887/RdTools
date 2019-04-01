@@ -160,6 +160,10 @@ static char rdViewActionBlockKey;
     
     [self addGestureRecognizer:tapRecognize];
     
+    if ([self isKindOfClass:[UILabel class]]) {
+        self.userInteractionEnabled = YES;
+    }
+    
     [self setRdActionBlock:block];
 }
 

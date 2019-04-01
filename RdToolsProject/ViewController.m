@@ -12,6 +12,8 @@
 #import "MasonryViewController.h"
 #import "TimerViewController.h"
 #import "GCDViewController.h"
+#import "TestViewController.h"
+#import "Scroll2ViewController.h"
 
 @interface ViewController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -34,7 +36,7 @@
 
 - (void)dataInit{
     self.view.backgroundColor = Rd_ColorWith(whiteColor);
-    self.dataArr = [NSMutableArray arrayWithArray:@[@"scrollVIew", @"view", @"timer", @"gcd"]];
+    self.dataArr = [NSMutableArray arrayWithArray:@[@"scrollVIew", @"view", @"timer", @"gcd", @"test", @"scrollView2"]];
 }
 
 - (void)makeView{
@@ -124,6 +126,14 @@
     }
     else if (indexPath.row == 3) {
         GCDViewController *vc = [[GCDViewController alloc] init];
+        [self.navigationController pushViewController:vc animated:YES];
+    }
+    else if (indexPath.row == 4) {
+        TestViewController *vc = [[TestViewController alloc] init];
+        [self.navigationController pushViewController:vc animated:YES];
+    }
+    else if (indexPath.row == 5) {
+        Scroll2ViewController *vc = [[Scroll2ViewController alloc] init];
         [self.navigationController pushViewController:vc animated:YES];
     }
 }
