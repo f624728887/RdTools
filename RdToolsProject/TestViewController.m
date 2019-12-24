@@ -41,6 +41,17 @@
         }];
     }];
     
+    BOOL hehe = NO;
+    hehe ?: NSLog(@"haha");
+    
+    RdPageView *lala = [[RdPageView alloc] init];
+    Class c1 = [lala class];
+    Class c2 = [RdPageView class];
+    
+    
+    NSLog(@"%p, %p", c1, c2);
+    
+    
 }
 
 /*

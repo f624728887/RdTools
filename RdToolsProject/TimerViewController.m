@@ -26,6 +26,15 @@
     
     [self dataInit];
     [self makeView];
+    
+    SEL aSel = @selector(makeView);
+    NSLog(@"%p", aSel);
+}
+
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    
+    NSLog(@"qweasd");
 }
 
 - (void)dataInit{

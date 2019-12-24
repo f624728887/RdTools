@@ -25,6 +25,15 @@
     
     [self dataInit];
     [self makeView];
+    
+    SEL aSel = @selector(makeView);
+    NSLog(@"%p", aSel);
+}
+
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    
+    NSLog(@"123456");
 }
 
 - (void)dataInit{
@@ -33,32 +42,32 @@
 }
 
 - (void)makeView{
-    dispatch_queue_t mainQueue = dispatch_get_main_queue();
-    dispatch_queue_set_specific(mainQueue, "key", "main", NULL);
-    dispatch_queue_t serialQueue = dispatch_queue_create("serial.queue", DISPATCH_QUEUE_SERIAL);
-    dispatch_queue_t globalQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0);
-    
-    dispatch_async(globalQueue, ^{
-        BOOL res1 = [NSThread isMainThread];
-        BOOL res2 = dispatch_get_specific("key") != NULL;
-        
-        NSLog(@"is main thread: %zd --- is main queue: %zd", res1, res2);
-    });
-    
-    dispatch_async(globalQueue, ^{
-        NSThread *globalThread = [NSThread currentThread];
-        NSLog(@"is main thread: %zd", [NSThread isMainThread]);
-        dispatch_sync(serialQueue, ^{
-            BOOL res = [NSThread currentThread] == globalThread;
-            NSLog(@"is same thread: %zd", res);
-        });
+//    dispatch_queue_t mainQueue = dispatch_get_main_queue();
+//    dispatch_queue_set_specific(mainQueue, "key", "main", NULL);
+//    dispatch_queue_t serialQueue = dispatch_queue_create("serial.queue", DISPATCH_QUEUE_SERIAL);
+//    dispatch_queue_t globalQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0);
+//
+//    dispatch_async(globalQueue, ^{
+//        BOOL res1 = [NSThread isMainThread];
+//        BOOL res2 = dispatch_get_specific("key") != NULL;
+//
+//        NSLog(@"is main thread: %zd --- is main queue: %zd", res1, res2);
+//    });
+//
+//    dispatch_async(globalQueue, ^{
+//        NSThread *globalThread = [NSThread currentThread];
+//        NSLog(@"is main thread: %zd", [NSThread isMainThread]);
+//        dispatch_sync(serialQueue, ^{
+//            BOOL res = [NSThread currentThread] == globalThread;
+//            NSLog(@"is same thread: %zd", res);
+//        });
 //        dispatch_async(dispatch_get_main_queue(), ^{
 //            BOOL res = [NSThread currentThread] == globalThread;
 //            NSLog(@"is same thread: %zd", res);
 //            NSLog(@"is main thread: %zd --- is main queue: %zd", [NSThread isMainThread], dispatch_get_specific("key") != NULL);
 //        });
-    });
-//    [self group];
+//    });
+    [self group];
     
 //    [self semaphore];
     
@@ -91,6 +100,12 @@
     
     [group rd_addCompleteAction:^{
         NSLog(@"等待结束");
+    }];
+    [group rd_addGroupAction:^{
+        for (int i = 0 ; i < 3; i ++) {
+            [NSThread sleepForTimeInterval:3];
+        }
+        NSLog(@"事件4执行完毕");
     }];
 }
 

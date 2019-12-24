@@ -27,6 +27,8 @@
 		5708FFE3219BB41400702D7F /* RdToolsProjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5708FFE2219BB41400702D7F /* RdToolsProjectTests.m */; };
 		5708FFEE219BB41400702D7F /* RdToolsProjectUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5708FFED219BB41400702D7F /* RdToolsProjectUITests.m */; };
 		570F243421DC5967004AAC1F /* MasonryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 570F243321DC5967004AAC1F /* MasonryViewController.m */; };
+		57163F642384E7B500716961 /* RuntimeTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57163F632384E7B500716961 /* RuntimeTestViewController.m */; };
+		57190F772383BBB000512FE6 /* UIViewController+Logging.m in Sources */ = {isa = PBXBuildFile; fileRef = 57190F762383BBB000512FE6 /* UIViewController+Logging.m */; };
 		572AEBDE21DC60D900F520AE /* TimerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 572AEBDD21DC60D900F520AE /* TimerViewController.m */; };
 		57456784219C047500862A09 /* RdVideoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 57456783219C047500862A09 /* RdVideoView.m */; };
 		57CDEF662238F84B00E1F95C /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57CDEF652238F84B00E1F95C /* TestViewController.m */; };
@@ -106,6 +108,10 @@
 		5708FFFF219BB45000702D7F /* NSMutableAttributedString+RdTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableAttributedString+RdTools.h"; sourceTree = "<group>"; };
 		570F243221DC5967004AAC1F /* MasonryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasonryViewController.h; sourceTree = "<group>"; };
 		570F243321DC5967004AAC1F /* MasonryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasonryViewController.m; sourceTree = "<group>"; };
+		57163F622384E7B500716961 /* RuntimeTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RuntimeTestViewController.h; sourceTree = "<group>"; };
+		57163F632384E7B500716961 /* RuntimeTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RuntimeTestViewController.m; sourceTree = "<group>"; };
+		57190F752383BBB000512FE6 /* UIViewController+Logging.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Logging.h"; sourceTree = "<group>"; };
+		57190F762383BBB000512FE6 /* UIViewController+Logging.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Logging.m"; sourceTree = "<group>"; };
 		572AEBDC21DC60D900F520AE /* TimerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TimerViewController.h; sourceTree = "<group>"; };
 		572AEBDD21DC60D900F520AE /* TimerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TimerViewController.m; sourceTree = "<group>"; };
 		57396A692251F3DB007F3B8B /* RdToolsProject.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RdToolsProject.entitlements; sourceTree = "<group>"; };
@@ -216,10 +222,14 @@
 				57CDEF652238F84B00E1F95C /* TestViewController.m */,
 				57E84C462251DCFC002BE10C /* Scroll2ViewController.h */,
 				57E84C472251DCFC002BE10C /* Scroll2ViewController.m */,
+				57163F622384E7B500716961 /* RuntimeTestViewController.h */,
+				57163F632384E7B500716961 /* RuntimeTestViewController.m */,
 				57EE81872239FA2900165A4E /* RdPageView.h */,
 				57EE81882239FA2900165A4E /* RdPageView.m */,
 				57FA3DD22251E43E00509194 /* RdWebView.h */,
 				57FA3DD32251E43E00509194 /* RdWebView.m */,
+				57190F752383BBB000512FE6 /* UIViewController+Logging.h */,
+				57190F762383BBB000512FE6 /* UIViewController+Logging.m */,
 				5708FFFB219BB45000702D7F /* RdTools */,
 				5708FFCF219BB41300702D7F /* Main.storyboard */,
 				5708FFD2219BB41400702D7F /* Assets.xcassets */,
@@ -481,6 +491,7 @@
 				57080024219BB45000702D7F /* UIView+RdTools.m in Sources */,
 				57E8B54221D5E9D1008BC1C2 /* UIControl+RdTools.m in Sources */,
 				57EDE0A321AB9991001652B8 /* RdOnceTimer.m in Sources */,
+				57190F772383BBB000512FE6 /* UIViewController+Logging.m in Sources */,
 				57CDEF662238F84B00E1F95C /* TestViewController.m in Sources */,
 				5708FFD9219BB41400702D7F /* main.m in Sources */,
 				5708001D219BB45000702D7F /* UITableView+RdTools.m in Sources */,
@@ -488,6 +499,7 @@
 				57EA986C21DC41C5009BB5B7 /* ScrollViewController.m in Sources */,
 				5708FFCB219BB41300702D7F /* AppDelegate.m in Sources */,
 				57EE81892239FA2900165A4E /* RdPageView.m in Sources */,
+				57163F642384E7B500716961 /* RuntimeTestViewController.m in Sources */,
 				5708001B219BB45000702D7F /* UIView+RdMasonry.m in Sources */,
 				5708001F219BB45000702D7F /* UINavigationController+RdTools.m in Sources */,
 				57E894C221F992D7000B8323 /* RdGCDTools.m in Sources */,
