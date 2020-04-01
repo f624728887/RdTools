@@ -45,14 +45,19 @@ typedef NS_ENUM(NSUInteger, RdBarButtonType) {
 
 - (UIButton *_Nonnull)rd_SetDefaultTitleBackBtn{
     [self rd_ClearBarLeftBtn];
+    
+    Rd_WeakSelf(self);
     return [self rd_SetBtnPos:RdBarButtonTypeLeft type:RdBarButtonTypeJustTitle content:@"返回" responder:^(UIButton *sender) {
+        Rd_StrongSelf(self);
         [self.navigationController popViewControllerAnimated:YES];
     }];
 }
 
 - (UIButton *_Nonnull)rd_SetDefaultImgBackBtn{
     [self rd_ClearBarLeftBtn];
+    Rd_WeakSelf(self);
     return [self rd_SetBtnPos:RdBarButtonTypeLeft type:RdBarButtonTypeJustImg content:[RdToolsManager getManager].defaultBackButtonImage responder:^(UIButton *sender) {
+        Rd_StrongSelf(self);
         [self.navigationController popViewControllerAnimated:YES];
     }];
 }

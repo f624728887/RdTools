@@ -1,22 +1,30 @@
 PODS:
+  - FBRetainCycleDetector (0.1.4)
   - Masonry (1.1.0)
+  - MLeaksFinder (1.0.0):
+    - FBRetainCycleDetector
   - SDWebImage (4.4.5):
     - SDWebImage/Core (= 4.4.5)
   - SDWebImage/Core (4.4.5)
 
 DEPENDENCIES:
   - Masonry
+  - MLeaksFinder
   - SDWebImage
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  trunk:
+    - FBRetainCycleDetector
     - Masonry
+    - MLeaksFinder
     - SDWebImage
 
 SPEC CHECKSUMS:
+  FBRetainCycleDetector: 46f8179bbb1c587deee3ea838a1a3ee02acf5015
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  MLeaksFinder: 8c435bd2f6d070af18cff082b503b21adc130fc0
   SDWebImage: ecc03494e973b93b80213649d32175f8d2d17d4d
 
-PODFILE CHECKSUM: 8db67762ee9d9a305d1d802e0195ad63b70517f6
+PODFILE CHECKSUM: 8978211affef4a86e286d2e18e4509a22f87ccc0
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.9.1
