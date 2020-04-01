@@ -32,6 +32,7 @@
 		572AEBDE21DC60D900F520AE /* TimerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 572AEBDD21DC60D900F520AE /* TimerViewController.m */; };
 		57456784219C047500862A09 /* RdVideoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 57456783219C047500862A09 /* RdVideoView.m */; };
 		57CDEF662238F84B00E1F95C /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57CDEF652238F84B00E1F95C /* TestViewController.m */; };
+		57DC6FA6243452D600C63BE3 /* RdToolsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 57DC6FA5243452D600C63BE3 /* RdToolsManager.m */; };
 		57E84C482251DCFC002BE10C /* Scroll2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E84C472251DCFC002BE10C /* Scroll2ViewController.m */; };
 		57E894C221F992D7000B8323 /* RdGCDTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E894C121F992D7000B8323 /* RdGCDTools.m */; };
 		57E894C521F99411000B8323 /* GCDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E894C421F99411000B8323 /* GCDViewController.m */; };
@@ -119,6 +120,8 @@
 		57456783219C047500862A09 /* RdVideoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RdVideoView.m; sourceTree = "<group>"; };
 		57CDEF642238F84B00E1F95C /* TestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
 		57CDEF652238F84B00E1F95C /* TestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
+		57DC6FA4243452D600C63BE3 /* RdToolsManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RdToolsManager.h; sourceTree = "<group>"; };
+		57DC6FA5243452D600C63BE3 /* RdToolsManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RdToolsManager.m; sourceTree = "<group>"; };
 		57E84C462251DCFC002BE10C /* Scroll2ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Scroll2ViewController.h; sourceTree = "<group>"; };
 		57E84C472251DCFC002BE10C /* Scroll2ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Scroll2ViewController.m; sourceTree = "<group>"; };
 		57E894C021F992D7000B8323 /* RdGCDTools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RdGCDTools.h; sourceTree = "<group>"; };
@@ -263,6 +266,8 @@
 			isa = PBXGroup;
 			children = (
 				5708000B219BB45000702D7F /* RdToolsHeader.h */,
+				57DC6FA4243452D600C63BE3 /* RdToolsManager.h */,
+				57DC6FA5243452D600C63BE3 /* RdToolsManager.m */,
 				5708000D219BB45000702D7F /* RdMacroFile.h */,
 				5708000F219BB45000702D7F /* UIView+RdMasonry.h */,
 				57080002219BB45000702D7F /* UIView+RdMasonry.m */,
@@ -488,6 +493,7 @@
 				57E894C521F99411000B8323 /* GCDViewController.m in Sources */,
 				57080021219BB45000702D7F /* RdKeyboardTools.m in Sources */,
 				5708FFCE219BB41300702D7F /* ViewController.m in Sources */,
+				57DC6FA6243452D600C63BE3 /* RdToolsManager.m in Sources */,
 				57080024219BB45000702D7F /* UIView+RdTools.m in Sources */,
 				57E8B54221D5E9D1008BC1C2 /* UIControl+RdTools.m in Sources */,
 				57EDE0A321AB9991001652B8 /* RdOnceTimer.m in Sources */,

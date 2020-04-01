@@ -9,6 +9,7 @@
 #import "UILabel+RdTools.h"
 #import "RdMacroFile.h"
 #import "Masonry.h"
+#import "RdToolsManager.h"
 #import <objc/runtime.h>
 
 static UILabel *onceLabel = nil;

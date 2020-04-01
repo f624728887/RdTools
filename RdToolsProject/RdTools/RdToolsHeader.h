@@ -23,6 +23,7 @@
 #import "UIControl+RdTools.h"
 #import "UIScrollView+RdTools.h"
 #import "RdGCDTools.h"
+#import "RdToolsManager.h"
 
 
 //#ifndef RdToolsHeader_h

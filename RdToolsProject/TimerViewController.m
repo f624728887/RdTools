@@ -27,6 +27,11 @@
     [self dataInit];
     [self makeView];
     
+//    [self rd_ClearBarLeftBtn];
+    [self rd_SetControllerTitle:@"啦" textColor:[UIColor redColor] textFont:nil textSize:15];
+    [self rd_SetLeftBtnTitle:@"heheh" img:@"btn_project" responder:nil];
+//    [self rd_SetLeftBtnJustTitle:@"hehe" responder:nil];
+    
     SEL aSel = @selector(makeView);
     NSLog(@"%p", aSel);
 }
@@ -38,7 +43,7 @@
 }
 
 - (void)dataInit{
-    self.title = @"timer";
+//    self.title = @"timer";
     self.view.backgroundColor = Rd_ColorWith(whiteColor);
 }
 

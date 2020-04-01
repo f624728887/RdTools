@@ -7,6 +7,7 @@
 //
 
 #import "NSMutableAttributedString+RdTools.h"
+#import "RdToolsManager.h"
 #import "RdMacroFile.h"
 
 @implementation NSMutableAttributedString (RdTools)

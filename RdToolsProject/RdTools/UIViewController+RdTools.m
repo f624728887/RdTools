@@ -7,9 +7,10 @@
 //
 
 #import "UIViewController+RdTools.h"
-#import "UIButton+RdTools.h"
-#import "UILabel+RdTools.h"
-#import "RdMacroFile.h"
+//#import "UIButton+RdTools.h"
+//#import "UILabel+RdTools.h"
+//#import "RdMacroFile.h"
+#import "RdToolsHeader.h"
 
 @implementation UIViewController (RdTools)
 
@@ -30,6 +31,19 @@ typedef NS_ENUM(NSUInteger, RdBarButtonType) {
     self.navigationItem.leftBarButtonItems = nil;
 }
 
+- (void)rd_SetControllerTitle:(NSString *)title textColor:(UIColor *)textColor textFont:(NSString *)textFont textSize:(float)textSize{
+    textFont = (textFont == nil) ? Rd_FontNameNormal : textFont;
+    float width = [UILabel rd_getLabelWidth:title fontName:textFont fontSize:textSize];
+    UILabel *titleView = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, width, 44)];
+    titleView.text = title;
+    titleView.textColor = textColor;
+    titleView.textAlignment = NSTextAlignmentCenter;
+    titleView.font = [UIFont fontWithName:textFont size:textSize];
+    self.navigationItem.titleView = titleView;
+    
+//    CGRectMake(50, 0, Rd_ScreenWidth - 100, 30)
+}
+
 - (UIButton *_Nonnull)rd_SetDefaultTitleBackBtn{
     [self rd_ClearBarLeftBtn];
     return [self rd_SetBtnPos:RdBarButtonTypeLeft type:RdBarButtonTypeJustTitle content:@"返回" responder:^(UIButton *sender) {
@@ -39,7 +53,7 @@ typedef NS_ENUM(NSUInteger, RdBarButtonType) {
 
 - (UIButton *_Nonnull)rd_SetDefaultImgBackBtn{
     [self rd_ClearBarLeftBtn];
-    return [self rd_SetBtnPos:RdBarButtonTypeLeft type:RdBarButtonTypeJustImg content:@"chargeBlack" responder:^(UIButton *sender) {
+    return [self rd_SetBtnPos:RdBarButtonTypeLeft type:RdBarButtonTypeJustImg content:[RdToolsManager getManager].defaultBackButtonImage responder:^(UIButton *sender) {
         [self.navigationController popViewControllerAnimated:YES];
     }];
 }
@@ -104,8 +118,9 @@ typedef NS_ENUM(NSUInteger, RdBarButtonType) {
     CGFloat width = [self rd_getBtnWidth:(btn.imageView.image.size.width + [btn.titleLabel rd_getLabelStringWidth])];
     btn.frame = CGRectMake(0, 0, width, 44);
     btn.rd_setButtonTitleFontSize(Rd_FontSizeM).rd_setButtonTitleColorNormal(Rd_ColorWith(blackColor));
-    if (pos == RdBarButtonTypeRight) {
-        [self rd_BarBtnItemsAddRightBtn:btn];
+    
+    if (pos == RdBarButtonTypeLeft) {
+        [self rd_BarBtnItemsAddLeftBtn:btn];
     }
     else {
         [self rd_BarBtnItemsAddRightBtn:btn];
