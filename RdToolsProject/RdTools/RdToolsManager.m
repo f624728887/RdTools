@@ -21,7 +21,7 @@ static RdToolsManager *manager = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         manager = [[RdToolsManager alloc] init];
-        manager.fontNameNormal = [UILabel rd_getLabelDefaulFontName];
+        manager.fontNameDefault = [UILabel rd_getLabelDefaulFontName];
         manager.defaultBackButtonImage = @"";
     });
     
