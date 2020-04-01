@@ -7,10 +7,9 @@
 //
 
 #import "UIViewController+RdTools.h"
-//#import "UIButton+RdTools.h"
-//#import "UILabel+RdTools.h"
-//#import "RdMacroFile.h"
-#import "RdToolsHeader.h"
+#import "UIButton+RdTools.h"
+#import "UILabel+RdTools.h"
+#import "RdMacroFile.h"
 
 @implementation UIViewController (RdTools)
 
