@@ -7,6 +7,7 @@
 //
 
 #import "UILabel+RdTools.h"
+#import "RdToolsManager.h"
 
 static inline BOOL isIPhoneXSeries() {
     BOOL iPhoneXSeries = NO;

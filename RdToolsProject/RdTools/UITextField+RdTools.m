@@ -7,7 +7,6 @@
 //
 
 #import "UITextField+RdTools.h"
-#import "RdToolsManager.h"
 #import "RdMacroFile.h"
 
 @implementation UITextField (RdTools)

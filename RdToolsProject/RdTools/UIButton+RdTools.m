@@ -8,7 +8,6 @@
 
 #import "UIButton+RdTools.h"
 #import "RdMacroFile.h"
-#import "RdToolsManager.h"
 #import <objc/runtime.h>
 
 static char rdButtonActionBlockKey;
