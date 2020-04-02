@@ -28,8 +28,13 @@
     [self makeView];
     
 //    [self rd_ClearBarLeftBtn];
-    [self rd_SetControllerTitle:@"啦" textColor:[UIColor redColor] textFont:nil textSize:15];
+    [self rd_SetTitle:@"啦" textColor:[UIColor redColor] fontName:nil fontSize:15];
     [self rd_SetDefaultTitleBackBtn];
+//    Rd_WeakSelf(self);
+//    [self rd_SetRightBtnJustTitle:@"hehe" responder:^(UIButton * _Nullable sender) {
+//        Rd_StrongSelf(self);
+//        [self dataInit];
+//    }];
 //    [self rd_SetLeftBtnJustTitle:@"hehe" responder:nil];
     
     SEL aSel = @selector(makeView);
@@ -48,7 +53,7 @@
 }
 
 - (void)makeView{
-    self.addfield = [UITextField rd_FieldBgColor:nil fontName:nil size:Rd_FontSizeM textColor:Rd_ColorWith(blueColor) placeholder:nil returnType:UIReturnKeyDone borderStyle:UITextBorderStyleRoundedRect keyboardType:UIKeyboardTypeNumberPad superView:self.view];
+    self.addfield = [UITextField rd_FieldBgColor:nil fontName:nil fontSize:Rd_FontSizeM textColor:Rd_ColorWith(blueColor) placeholder:nil returnType:UIReturnKeyDone borderStyle:UITextBorderStyleRoundedRect keyboardType:UIKeyboardTypeNumberPad superView:self.view];
     self.addfield.rd_topEqualTo(nil, Rd_NavibarH + Rd_MarginLarge).rd_heightValue(40).rd_leftEqualTo(nil, Rd_MarginDefault);
     
     self.logLabel = [UILabel rd_LabelString:nil fontName:nil fontSize:Rd_FontSizeM lineNumber:1 textColor:Rd_ColorWith(redColor) superView:self.view];

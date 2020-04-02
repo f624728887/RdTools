@@ -17,7 +17,7 @@
 - (UIButton *_Nonnull)rd_SetDefaultTitleBackBtn;
 - (UIButton *_Nonnull)rd_SetDefaultImgBackBtn;
 
-- (void)rd_SetTitle:(NSString *_Nonnull)title textColor:(UIColor *_Nonnull)textColor textFont:(NSString *_Nullable)textFont textSize:(float)textSize;
+- (void)rd_SetTitle:(NSString *_Nullable)title textColor:(UIColor *_Nullable)textColor fontName:(NSString *_Nullable)fontName fontSize:(float)fontSize;
 
 // 左
 - (UIButton *_Nonnull)rd_SetLeftBtnJustTitle:(NSString *_Nonnull)title responder:(void (^_Nullable)(UIButton * _Nullable sender))block;

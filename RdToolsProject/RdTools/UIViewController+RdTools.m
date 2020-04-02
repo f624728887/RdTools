@@ -31,6 +31,8 @@ typedef NS_ENUM(NSUInteger, RdBarButtonType) {
 }
 
 - (void)rd_SetTitle:(NSString *)title textColor:(UIColor *)textColor fontName:(NSString *)fontName fontSize:(float)fontSize{
+    title = title == nil ? @"" : title;
+    textColor = textColor == nil ? [UIColor clearColor] : textColor;
     fontName = (fontName == nil) ? Rd_FontNameNormal : fontName;
     float width = [UILabel rd_getLabelWidth:title fontName:fontName fontSize:fontSize];
     UILabel *titleView = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, width, 44)];
