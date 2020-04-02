@@ -30,7 +30,7 @@ typedef NS_ENUM(NSUInteger, RdBarButtonType) {
     self.navigationItem.leftBarButtonItems = nil;
 }
 
-- (void)rd_SetControllerTitle:(NSString *)title textColor:(UIColor *)textColor textFont:(NSString *)textFont textSize:(float)textSize{
+- (void)rd_SetTitle:(NSString *)title textColor:(UIColor *)textColor textFont:(NSString *)textFont textSize:(float)textSize{
     textFont = (textFont == nil) ? Rd_FontNameNormal : textFont;
     float width = [UILabel rd_getLabelWidth:title fontName:textFont fontSize:textSize];
     UILabel *titleView = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, width, 44)];
@@ -39,8 +39,6 @@ typedef NS_ENUM(NSUInteger, RdBarButtonType) {
     titleView.textAlignment = NSTextAlignmentCenter;
     titleView.font = [UIFont fontWithName:textFont size:textSize];
     self.navigationItem.titleView = titleView;
-    
-//    CGRectMake(50, 0, Rd_ScreenWidth - 100, 30)
 }
 
 - (UIButton *_Nonnull)rd_SetDefaultTitleBackBtn{
