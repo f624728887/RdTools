@@ -30,14 +30,14 @@ typedef NS_ENUM(NSUInteger, RdBarButtonType) {
     self.navigationItem.leftBarButtonItems = nil;
 }
 
-- (void)rd_SetTitle:(NSString *)title textColor:(UIColor *)textColor textFont:(NSString *)textFont textSize:(float)textSize{
-    textFont = (textFont == nil) ? Rd_FontNameNormal : textFont;
-    float width = [UILabel rd_getLabelWidth:title fontName:textFont fontSize:textSize];
+- (void)rd_SetTitle:(NSString *)title textColor:(UIColor *)textColor fontName:(NSString *)fontName fontSize:(float)fontSize{
+    fontName = (fontName == nil) ? Rd_FontNameNormal : fontName;
+    float width = [UILabel rd_getLabelWidth:title fontName:fontName fontSize:fontSize];
     UILabel *titleView = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, width, 44)];
     titleView.text = title;
     titleView.textColor = textColor;
     titleView.textAlignment = NSTextAlignmentCenter;
-    titleView.font = [UIFont fontWithName:textFont size:textSize];
+    titleView.font = [UIFont fontWithName:fontName size:fontSize];
     self.navigationItem.titleView = titleView;
 }
 
