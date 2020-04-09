@@ -52,6 +52,19 @@ static char rdViewActionBlockKey;
     return CGRectGetHeight([self rd_getFrame]);
 }
 
+- (CGRect)rd_Frame{
+    [self.superview layoutIfNeeded];
+    return self.frame;
+}
+
++ (instancetype _Nonnull)rd_ViewBGColor:(UIColor *_Nullable)bgColor{
+    UIView *view = [[UIView alloc] init];
+    view.backgroundColor = (bgColor == nil ? [UIColor clearColor] : bgColor);
+    view.clipsToBounds = YES;
+    
+    return view;
+}
+
 + (instancetype _Nonnull)rd_ViewBGColor:(UIColor *_Nullable)bgColor for:(UIView *_Nonnull)superView{
     UIView *view = [[UIView alloc] init];
     view.backgroundColor = (bgColor == nil ? [UIColor clearColor] : bgColor);

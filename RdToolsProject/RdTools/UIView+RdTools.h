@@ -21,6 +21,10 @@
 @property (nonatomic, assign, readonly) CGFloat rd_Width;
 @property (nonatomic, assign, readonly) CGFloat rd_Height;
 
+@property (nonatomic, assign, readonly) CGRect rd_Frame;
+
++ (instancetype _Nonnull)rd_ViewBGColor:(UIColor *_Nullable)bgColor;
+
 + (instancetype _Nonnull)rd_ViewBGColor:(UIColor *_Nullable)bgColor for:(UIView *_Nonnull)superView;
 
 
@@ -45,7 +49,7 @@
 
 - (void)rd_animation;
 
-- (void)rd_setSingleTap:(void (^)(UITapGestureRecognizer *sender))block;
+- (void)rd_setSingleTap:(void (^_Nullable)(UITapGestureRecognizer * _Nonnull sender))block;
 
 - (CGRect)rd_getFrame;
 

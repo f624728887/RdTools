@@ -14,16 +14,16 @@
 
 #pragma mark - group
 
-@interface RdGCDGroup ()
+@interface RdGCDGroupManager ()
 
 @property (nonatomic, strong) NSMutableArray *actionList;
 
 @end
 
-@implementation RdGCDGroup
+@implementation RdGCDGroupManager
 
-+ (instancetype)rd_Group{
-    RdGCDGroup *groupManager = [[RdGCDGroup alloc] init];
++ (instancetype)rd_GroupManager{
+    RdGCDGroupManager *groupManager = [[RdGCDGroupManager alloc] init];
     groupManager.actionList = [NSMutableArray arrayWithCapacity:0];
     return groupManager;
 }
@@ -53,16 +53,16 @@
 
 #pragma mark - semaphore
 
-@interface RdGCDSemaphore () {
+@interface RdGCDSemaphoreManager () {
     dispatch_semaphore_t semaphore;
 }
 
 @end
 
-@implementation RdGCDSemaphore
+@implementation RdGCDSemaphoreManager
 
-+ (instancetype)rd_SemaphoreValue:(NSInteger)value{
-    RdGCDSemaphore *manager = [[RdGCDSemaphore alloc] init];
++ (instancetype)rd_SemaphoreManagerValue:(NSInteger)value{
+    RdGCDSemaphoreManager *manager = [[RdGCDSemaphoreManager alloc] init];
     manager->semaphore = dispatch_semaphore_create(value);
     return manager;
 }
@@ -73,6 +73,42 @@
     dispatch_semaphore_signal(self->semaphore);
 }
 
+@end
 
+@interface RdAsyncSemaphoreManager ()
+
+@property (nonatomic, assign) NSInteger semaphore;
+@property (nonatomic, strong) NSMutableArray *actionArray;
+
+@end
+
+
+@implementation RdAsyncSemaphoreManager
+
++ (RdAsyncSemaphoreManager *)getAsyncSemaphoreManager{
+    RdAsyncSemaphoreManager *manager = [[RdAsyncSemaphoreManager alloc] init];
+    manager.semaphore = 0;
+    manager.actionArray = [NSMutableArray arrayWithCapacity:0];
+    return manager;
+}
+
+- (void)rd_addAction:(void (^)(void (^complete)(void)))block{
+    self.semaphore ++;
+    [self.actionArray addObject:block];
+}
+
+- (void)rd_complete:(void (^)(void))block{
+    __block NSInteger tSemaphore = self.semaphore;
+    void (^completeBlock)(void) = ^{
+        tSemaphore --;
+        if (tSemaphore == 0) {
+            block();
+        }
+    };
+    
+    for (void (^actionBlock)(void (^complete)(void)) in self.actionArray) {
+        actionBlock(completeBlock);
+    }
+}
 
 @end

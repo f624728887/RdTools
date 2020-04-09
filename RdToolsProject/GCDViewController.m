@@ -13,7 +13,7 @@
 
 @property (nonatomic, assign) NSInteger ticketSurplusCount;
 
-@property (nonatomic, strong) RdGCDSemaphore *tickSemaphore;
+@property (nonatomic, strong) RdGCDSemaphoreManager *tickSemaphore;
 
 @end
 
@@ -76,7 +76,7 @@
 
 - (void)group{
     NSLog(@"开始group任务");
-    RdGCDGroup *group = [RdGCDGroup rd_Group];
+    RdGCDGroupManager *group = [RdGCDGroupManager rd_GroupManager];
     [group rd_addGroupAction:^{
         for (int i = 0 ; i < 3; i ++) {
             [NSThread sleepForTimeInterval:2];
@@ -112,7 +112,7 @@
 - (void)semaphore{
     self.ticketSurplusCount = 50;
     
-    RdGCDSemaphore *tickSemaphore = [RdGCDSemaphore rd_SemaphoreValue:1];
+    RdGCDSemaphoreManager *tickSemaphore = [RdGCDSemaphoreManager rd_SemaphoreManagerValue:1];
     
     // queue1 代表北京火车票售卖窗口
     dispatch_queue_t queue1 = dispatch_queue_create("net.bujige.testQueue1", DISPATCH_QUEUE_SERIAL);
@@ -140,7 +140,7 @@
 - (void)semaphore2{
     self.ticketSurplusCount = 50;
     
-    self.tickSemaphore = [RdGCDSemaphore rd_SemaphoreValue:1];
+    self.tickSemaphore = [RdGCDSemaphoreManager rd_SemaphoreManagerValue:1];
     
     // queue1 代表北京火车票售卖窗口
     dispatch_queue_t queue1 = dispatch_queue_create("net.bujige.testQueue1", DISPATCH_QUEUE_SERIAL);

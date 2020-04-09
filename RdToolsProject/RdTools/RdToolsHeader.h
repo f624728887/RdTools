@@ -24,6 +24,7 @@
 #import "UIScrollView+RdTools.h"
 #import "RdGCDTools.h"
 #import "RdToolsManager.h"
+#import "RdCollectionView.h"
 
 
 //#ifndef RdToolsHeader_h

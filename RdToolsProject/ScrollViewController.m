@@ -49,6 +49,16 @@
         view.rd_widthValue(cellWid).rd_topEqualTo(nil, 0).rd_bottomEqualTo(nil, 0);
         hScrollView.contentView.rd_addHorizontalSubview(view, 0);
     }
+    
+    RdCollectionViewLayout *layout = [[RdCollectionViewLayout alloc] initWithSize:CGSizeMake(20, 20) edgeInset:UIEdgeInsetsMake(5, 5, 10, 10)];
+    
+    RdCollectionView *coll = [[RdCollectionView alloc] initColor:[UIColor lightGrayColor] withLayout:layout forView:self.view];
+    coll.rd_topEqualTo(nil, Rd_NavibarH + 10).rd_widthValue(70).rd_rightEqualTo(nil, -20).rd_heightValue(200);
+    
+    for (NSInteger i = 0; i <= 20; i ++) {
+        UIView *view = [UIView rd_ViewBGColor:Rd_ColorWith(yellowColor)];
+        [coll addItemView:view];
+    }
 }
 
 /*

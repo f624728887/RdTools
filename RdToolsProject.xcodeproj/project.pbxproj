@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		57038B2C243DC3BB008D29F5 /* RdCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 57038B2B243DC3BB008D29F5 /* RdCollectionView.m */; };
 		57080018219BB45000702D7F /* UILabel+RdTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 5708FFFC219BB45000702D7F /* UILabel+RdTools.m */; };
 		57080019219BB45000702D7F /* UIImageView+RdTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 5708FFFE219BB45000702D7F /* UIImageView+RdTools.m */; };
 		5708001B219BB45000702D7F /* UIView+RdMasonry.m in Sources */ = {isa = PBXBuildFile; fileRef = 57080002219BB45000702D7F /* UIView+RdMasonry.m */; };
@@ -67,6 +68,8 @@
 
 /* Begin PBXFileReference section */
 		08E0028E7124B1786659EAA3 /* libPods-RdToolsProject.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RdToolsProject.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		57038B2A243DC3BB008D29F5 /* RdCollectionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RdCollectionView.h; sourceTree = "<group>"; };
+		57038B2B243DC3BB008D29F5 /* RdCollectionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RdCollectionView.m; sourceTree = "<group>"; };
 		57080001219BB45000702D7F /* RdKeyboardTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RdKeyboardTools.h; sourceTree = "<group>"; };
 		57080002219BB45000702D7F /* UIView+RdMasonry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+RdMasonry.m"; sourceTree = "<group>"; };
 		57080003219BB45000702D7F /* UIImage+RdTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+RdTools.m"; sourceTree = "<group>"; };
@@ -289,6 +292,8 @@
 				57ECEE7921D4653E0079F5CE /* UITextField+RdTools.m */,
 				57ED8B3221D7115B00F822F9 /* UIScrollView+RdTools.h */,
 				57ED8B3321D7115B00F822F9 /* UIScrollView+RdTools.m */,
+				57038B2A243DC3BB008D29F5 /* RdCollectionView.h */,
+				57038B2B243DC3BB008D29F5 /* RdCollectionView.m */,
 				57080005219BB45000702D7F /* UIViewController+RdTools.h */,
 				57080015219BB45000702D7F /* UIViewController+RdTools.m */,
 				5708FFFF219BB45000702D7F /* NSMutableAttributedString+RdTools.h */,
@@ -480,6 +485,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57038B2C243DC3BB008D29F5 /* RdCollectionView.m in Sources */,
 				572AEBDE21DC60D900F520AE /* TimerViewController.m in Sources */,
 				57FA3DD42251E43E00509194 /* RdWebView.m in Sources */,
 				570F243421DC5967004AAC1F /* MasonryViewController.m in Sources */,

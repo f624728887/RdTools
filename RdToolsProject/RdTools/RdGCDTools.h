@@ -16,10 +16,9 @@ typedef void (^RdActionBlock)(void);
 
 @end
 
-@interface RdGCDGroup : RdGCDTools
+@interface RdGCDGroupManager : RdGCDTools
 
-/// 不是单例
-+ (instancetype)rd_Group;
++ (instancetype)rd_GroupManager;
 
 - (void)rd_addGroupAction:(RdActionBlock)block;
 
@@ -27,12 +26,22 @@ typedef void (^RdActionBlock)(void);
 
 @end
 
-@interface RdGCDSemaphore : RdGCDTools
+@interface RdGCDSemaphoreManager : RdGCDTools
 
-/// 不是单例！！！ value 是任务的并发数量，最小值为 1；
-+ (instancetype)rd_SemaphoreValue:(NSInteger)value;
+/// 最小值为1
++ (instancetype)rd_SemaphoreManagerValue:(NSInteger)value;
 
 - (void)rd_action:(void (^)(void))block;
+
+@end
+
+@interface RdAsyncSemaphoreManager : RdGCDTools
+
++ (instancetype)getAsyncSemaphoreManager;
+
+- (void)rd_addAction:(void (^)(void (^complete)(void)))block;
+
+- (void)rd_complete:(void (^)(void))block;
 
 @end
 
