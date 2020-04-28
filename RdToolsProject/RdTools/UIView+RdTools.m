@@ -168,8 +168,8 @@ static char rdViewActionBlockKey;
     tapRecognize.numberOfTapsRequired = 1;
 //    tapRecognize.delegate = self;
     [tapRecognize setEnabled :YES];
-    [tapRecognize delaysTouchesBegan];
-    [tapRecognize cancelsTouchesInView];
+//    [tapRecognize delaysTouchesBegan];
+//    [tapRecognize cancelsTouchesInView];
     
     [self addGestureRecognizer:tapRecognize];
     

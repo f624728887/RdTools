@@ -71,6 +71,9 @@ static inline float safeAreaBottom() {
 #define Rd_StatusbarH           (Rd_SafeAreaTop)
 
 
+#define Rd_NumberOfSingleLine(min, max) (Rd_ScreenWidth <= 750 ? min : max)
+
+
 #define Rd_IMG_HEI_16_9         (Rd_ScreenWidth / 16.0 * 9.0)
 #define Rd_IMG_HEI_4_3          (Rd_ScreenWidth / 4.0 * 3.0)
 
@@ -97,6 +100,22 @@ static inline float safeAreaBottom() {
 #define Rd_ColorWith(color) [UIColor color]
 
 #define Rd_ImageWith(name) [UIImage imageNamed:name]
+
+
+#define Rd_TapticEngine_Light           UIImpactFeedbackGenerator *generator = [[UIImpactFeedbackGenerator alloc] initWithStyle: UIImpactFeedbackStyleLight];\
+[generator prepare];\
+[generator impactOccurred];
+
+
+#define Rd_TapticEngine_Medium           UIImpactFeedbackGenerator *generator = [[UIImpactFeedbackGenerator alloc] initWithStyle: UIImpactFeedbackStyleMedium];\
+[generator prepare];\
+[generator impactOccurred];
+
+
+#define Rd_TapticEngine_Heavy           UIImpactFeedbackGenerator *generator = [[UIImpactFeedbackGenerator alloc] initWithStyle: UIImpactFeedbackStyleHeavy];\
+[generator prepare];\
+[generator impactOccurred];
+
 
 static inline NSString * getJsonWithDic(NSDictionary *dic) {
     NSData *jsonData =[NSJSONSerialization dataWithJSONObject:dic options:NSJSONWritingPrettyPrinted error:nil];
