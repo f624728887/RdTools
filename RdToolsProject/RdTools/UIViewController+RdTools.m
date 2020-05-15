@@ -3,7 +3,7 @@
 //  iBeauty
 //
 //  Created by Rondo_dada on 2018/7/19.
-//  Copyright © 2018年 王佳兴. All rights reserved.
+//  Copyright © 2018年 Rondo. All rights reserved.
 //
 
 #import "UIViewController+RdTools.h"
@@ -93,7 +93,7 @@ typedef NS_ENUM(NSUInteger, RdBarButtonType) {
     CGFloat width = 0.0;
     if (type == RdBarButtonTypeJustTitle) {
         btn = [UIButton rd_BtnTitle:content responder:block];
-        btn.rd_setButtonTitleFontSize(Rd_FontSizeM).rd_setButtonTitleColorNormal(Rd_ColorWith(blackColor));
+        btn.rd_setButtonTitleFontSize(Rd_FontSizeL).rd_setButtonTitleColorNormal(Rd_ColorWith(blackColor));
         width = [self rd_getBtnWidth:[btn.titleLabel rd_getLabelStringWidth]];
     }
     else if (type == RdBarButtonTypeJustImg) {
@@ -121,7 +121,7 @@ typedef NS_ENUM(NSUInteger, RdBarButtonType) {
     UIButton *btn = [UIButton rd_BtnTitle:title image:imageName responder:block];
     CGFloat width = [self rd_getBtnWidth:(btn.imageView.image.size.width + [btn.titleLabel rd_getLabelStringWidth])];
     btn.frame = CGRectMake(0, 0, width, 44);
-    btn.rd_setButtonTitleFontSize(Rd_FontSizeM).rd_setButtonTitleColorNormal(Rd_ColorWith(blackColor));
+    btn.rd_setButtonTitleFontSize(Rd_FontSizeL).rd_setButtonTitleColorNormal(Rd_ColorWith(blackColor));
     
     if (pos == RdBarButtonTypeLeft) {
         [self rd_BarBtnItemsAddLeftBtn:btn];

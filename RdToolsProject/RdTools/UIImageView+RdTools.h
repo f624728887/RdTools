@@ -3,7 +3,7 @@
 //  Library
 //
 //  Created by Rondo_dada on 2018/4/11.
-//  Copyright © 2018年 Chen Qi. All rights reserved.
+//  Copyright © 2018年 Rondo. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

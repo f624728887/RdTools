@@ -3,7 +3,7 @@
 //  iBeauty
 //
 //  Created by Rondo_dada on 2018/7/26.
-//  Copyright © 2018年 王佳兴. All rights reserved.
+//  Copyright © 2018年 Rondo. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
