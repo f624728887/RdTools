@@ -5,7 +5,7 @@
 //  Created by Rondo_dada on 2018/3/19.
 //  Copyright © 2018年 Rondo. All rights reserved.
 //
-// 0.4.3 fix bug
+// 0.4.3 fix bug, add function 20200517
 
 #import "UILabel+RdTools.h"
 #import "RdToolsManager.h"
