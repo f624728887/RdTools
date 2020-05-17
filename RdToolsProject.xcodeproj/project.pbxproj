@@ -32,6 +32,7 @@
 		57190F772383BBB000512FE6 /* UIViewController+Logging.m in Sources */ = {isa = PBXBuildFile; fileRef = 57190F762383BBB000512FE6 /* UIViewController+Logging.m */; };
 		572AEBDE21DC60D900F520AE /* TimerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 572AEBDD21DC60D900F520AE /* TimerViewController.m */; };
 		57456784219C047500862A09 /* RdVideoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 57456783219C047500862A09 /* RdVideoView.m */; };
+		57994D712470F9A700389A87 /* CollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57994D702470F9A700389A87 /* CollectionViewController.m */; };
 		57CDEF662238F84B00E1F95C /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57CDEF652238F84B00E1F95C /* TestViewController.m */; };
 		57DC6FA6243452D600C63BE3 /* RdToolsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 57DC6FA5243452D600C63BE3 /* RdToolsManager.m */; };
 		57E84C482251DCFC002BE10C /* Scroll2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E84C472251DCFC002BE10C /* Scroll2ViewController.m */; };
@@ -121,6 +122,8 @@
 		57396A692251F3DB007F3B8B /* RdToolsProject.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RdToolsProject.entitlements; sourceTree = "<group>"; };
 		57456782219C047500862A09 /* RdVideoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RdVideoView.h; sourceTree = "<group>"; };
 		57456783219C047500862A09 /* RdVideoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RdVideoView.m; sourceTree = "<group>"; };
+		57994D6F2470F9A700389A87 /* CollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectionViewController.h; sourceTree = "<group>"; };
+		57994D702470F9A700389A87 /* CollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectionViewController.m; sourceTree = "<group>"; };
 		57CDEF642238F84B00E1F95C /* TestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
 		57CDEF652238F84B00E1F95C /* TestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
 		57DC6FA4243452D600C63BE3 /* RdToolsManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RdToolsManager.h; sourceTree = "<group>"; };
@@ -230,6 +233,8 @@
 				57E84C472251DCFC002BE10C /* Scroll2ViewController.m */,
 				57163F622384E7B500716961 /* RuntimeTestViewController.h */,
 				57163F632384E7B500716961 /* RuntimeTestViewController.m */,
+				57994D6F2470F9A700389A87 /* CollectionViewController.h */,
+				57994D702470F9A700389A87 /* CollectionViewController.m */,
 				57EE81872239FA2900165A4E /* RdPageView.h */,
 				57EE81882239FA2900165A4E /* RdPageView.m */,
 				57FA3DD22251E43E00509194 /* RdWebView.h */,
@@ -497,6 +502,7 @@
 				57080023219BB45000702D7F /* UIViewController+RdTools.m in Sources */,
 				57080018219BB45000702D7F /* UILabel+RdTools.m in Sources */,
 				57E894C521F99411000B8323 /* GCDViewController.m in Sources */,
+				57994D712470F9A700389A87 /* CollectionViewController.m in Sources */,
 				57080021219BB45000702D7F /* RdKeyboardTools.m in Sources */,
 				5708FFCE219BB41300702D7F /* ViewController.m in Sources */,
 				57DC6FA6243452D600C63BE3 /* RdToolsManager.m in Sources */,

@@ -8,6 +8,7 @@
 
 #import "UIView+RdMasonry.h"
 #import "Masonry.h"
+#import "UIView+RdTools.h"
 
 @implementation UIView (RdMasonry)
 
@@ -880,6 +881,10 @@
     };
 }
 
+- (void)rdAddHorizontalView:(UIView * _Nonnull)chileView interval:(CGFloat)interval{
+    self.rd_addHorizontalSubview(chileView, interval);
+}
+
 - (UIView *_Nonnull(^_Nonnull)(UIView *_Nonnull chileView, CGFloat interval))rd_addVerticalSubview{
     return ^(UIView *chileView, CGFloat interval) {
         if (self.subviews.count == 0) {
@@ -916,6 +921,62 @@
         }
         return self;
     };
+}
+
+- (void)rdAddVerticalView:(UIView * _Nonnull)chileView interval:(CGFloat)interval{
+    self.rd_addVerticalSubview(chileView, interval);
+}
+
+- (UIView *_Nonnull(^_Nonnull)(UIView *_Nonnull chileView, CGFloat chileWidth))rd_addCollectionView{
+    return ^(UIView *chileView, CGFloat chileWidth) {
+        // 向下取0.5
+        chileWidth = (int)(chileWidth/0.5)*0.5;
+        chileView.rd_widthValue(chileWidth);
+        [chileView layoutIfNeeded];
+        
+        if (self.subviews.count == 0) {
+            [self addSubview:chileView];
+            chileView.rd_leftEqualTo(nil, 0).rd_topEqualTo(nil, 0);
+        }
+        else{
+            if (self.subviews.lastObject != chileView) {
+                UIView *before = self.subviews.lastObject;
+                [self addSubview:chileView];
+                if (before.rd_MaxX + chileView.rd_Width <= self.rd_Width) {
+                    // 不换行
+                    chileView.rd_leftEqualTo(nil, before.rd_MaxX).rd_topEqualTo(nil, before.rd_MinY);
+                }
+                else {
+                    // 换行
+                    chileView.rd_leftEqualTo(nil, 0).rd_topEqualTo(nil, before.rd_MaxY);
+                }
+            }
+            else {
+                if (self.subviews.count == 1) {
+                    chileView.rd_leftEqualTo(nil, 0).rd_topEqualTo(nil, 0);
+                }
+                else {
+                    UIView *before = [self.subviews objectAtIndex:(self.subviews.count - 2)];
+                    [self addSubview:chileView];
+                    if (before.rd_MaxX + chileView.rd_Width <= self.rd_Width) {
+                        // 不换行
+                        chileView.rd_leftEqualTo(nil, before.rd_MaxX).rd_topEqualTo(nil, before.rd_MinY);
+                    }
+                    else {
+                        // 换行
+                        chileView.rd_leftEqualTo(nil, 0).rd_topEqualTo(nil, before.rd_MaxY);
+                    }
+                }
+            }
+        }
+        chileView.rd_bottomLessOrEqualTo(nil, 0);
+        [chileView layoutIfNeeded];
+        return self;
+    };
+}
+
+- (void)rdAddCollectionView:(UIView *_Nonnull)chileView width:(CGFloat)chileWidth{
+    self.rd_addCollectionView(chileView, chileWidth);
 }
 
 - (void)rd_removeConstraint{

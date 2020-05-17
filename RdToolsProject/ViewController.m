@@ -15,6 +15,7 @@
 #import "TestViewController.h"
 #import "Scroll2ViewController.h"
 #import "RuntimeTestViewController.h"
+#import "CollectionViewController.h"
 
 @interface ViewController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -37,7 +38,7 @@
 
 - (void)dataInit{
     self.view.backgroundColor = Rd_ColorWith(whiteColor);
-    self.dataArr = [NSMutableArray arrayWithArray:@[@"scrollVIew", @"view", @"timer", @"gcd", @"test", @"scrollView2", @"runtimeTest"]];
+    self.dataArr = [NSMutableArray arrayWithArray:@[@"scrollVIew", @"view", @"timer", @"gcd", @"test", @"scrollView2", @"runtimeTest", @"collectionView"]];
 }
 
 - (void)makeView{
@@ -139,6 +140,10 @@
     }
     else if (indexPath.row == 6) {
         RuntimeTestViewController *vc = [[RuntimeTestViewController alloc] init];
+        [self.navigationController pushViewController:vc animated:YES];
+    }
+    else if (indexPath.row == 7) {
+        CollectionViewController *vc = [[CollectionViewController alloc] init];
         [self.navigationController pushViewController:vc animated:YES];
     }
 }

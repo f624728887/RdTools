@@ -9,9 +9,9 @@ PODS:
   - YYText (1.0.7)
 
 DEPENDENCIES:
-  - Masonry
+  - Masonry (= 1.1.0)
   - MLeaksFinder
-  - SDWebImage
+  - SDWebImage (< 5.7.0)
   - YYText
 
 SPEC REPOS:
@@ -29,6 +29,6 @@ SPEC CHECKSUMS:
   SDWebImage: 7edb9c3ea661e77a66661f7f044de8c1b55d1120
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: cd6c242cecd80d86fa61a1bfde60964d7682457a
+PODFILE CHECKSUM: e666f582aff5fec70e27d38539fc717df24864c5
 
 COCOAPODS: 1.9.1
