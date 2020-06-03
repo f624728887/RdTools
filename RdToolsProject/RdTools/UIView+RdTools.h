@@ -51,6 +51,8 @@
 
 - (void)rd_setSingleTap:(void (^_Nullable)(UITapGestureRecognizer * _Nonnull sender))block;
 
+- (void)rd_setLongPressBegan:(void (^_Nullable)(UILongPressGestureRecognizer * _Nonnull sender))beganPressBlock end:(void (^_Nullable)(UILongPressGestureRecognizer * _Nonnull sender))endPressBlock;
+
 - (CGRect)rd_getFrame;
 
 @end

@@ -14,7 +14,7 @@ static char rdButtonActionBlockKey;
 
 @interface UIButton ()
 
-@property (nonatomic, strong) void (^rdActionBlock)(UIButton *sender);
+@property (nonatomic, copy) void (^rdActionBlock)(UIButton *sender);
 
 @end
 

@@ -11,8 +11,8 @@
 
 @interface RdKeyboardTools ()
 
-@property (nonatomic, strong)void (^keyboardShow)(CGFloat time, CGFloat keyboardHei);
-@property (nonatomic, strong)void (^keyboardHidden)(CGFloat time, CGFloat keyboardHei);
+@property (nonatomic, copy)void (^keyboardShow)(CGFloat time, CGFloat keyboardHei);
+@property (nonatomic, copy)void (^keyboardHidden)(CGFloat time, CGFloat keyboardHei);
 
 @end
 

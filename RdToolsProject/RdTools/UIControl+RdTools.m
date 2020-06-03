@@ -13,7 +13,7 @@ static char rdControlActionKey;
 
 @interface UIControl ()
 
-@property (nonatomic, strong, readonly) void (^rd_ActionBlock)(UIControl *sender);
+@property (nonatomic, copy, readonly) void (^rd_ActionBlock)(UIControl *sender);
 
 @end
 

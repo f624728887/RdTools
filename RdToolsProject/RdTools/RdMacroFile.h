@@ -7,6 +7,7 @@
 //
 // 0.4.3 fix bug, add function 20200517
 // 0.4.4 fix bug, add function 20200517
+// 0.4.5 block声明引用修改为Copy， 添加longpress方法， 添加线性震动反馈等
 
 #import "UILabel+RdTools.h"
 #import "RdToolsManager.h"
@@ -54,8 +55,8 @@ static inline float safeAreaBottom() {
 #define Rd_FontNameNormal       [RdToolsManager getManager].fontNameDefault
 #define Rd_AnimationDuration    0.26f
 
-#define Rd_WeakSelf(type)        __weak typeof(type) weak##type = type
-#define Rd_StrongSelf(type)      __strong typeof(type) type = weak##type
+#define Rd_WeakSelf(type)        __weak typeof(type) weak##type = type;
+#define Rd_StrongSelf(type)      __strong typeof(type) type = weak##type;
 
 #define Rd_ScreenWidth          [[UIScreen mainScreen] bounds].size.width
 #define Rd_ScreenHeight         [[UIScreen mainScreen] bounds].size.height
@@ -118,6 +119,12 @@ static inline float safeAreaBottom() {
 [generator prepare];\
 [generator impactOccurred];
 
+
+#define Rd_Tapic        if (@available(iOS 10.0, *)) {\
+    UIImpactFeedbackGenerator *generator = [[UIImpactFeedbackGenerator alloc] initWithStyle: UIImpactFeedbackStyleMedium];\
+    [generator prepare];\
+    [generator impactOccurred];\
+}
 
 static inline NSString * getJsonWithDic(NSDictionary *dic) {
     NSData *jsonData =[NSJSONSerialization dataWithJSONObject:dic options:NSJSONWritingPrettyPrinted error:nil];

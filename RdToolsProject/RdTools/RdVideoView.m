@@ -29,9 +29,9 @@ typedef NS_ENUM(NSUInteger, RdVideoHudType) {
 @property (nonatomic, assign)CGPoint secondPoint;
 @property (nonatomic, assign)NSInteger timeManager;
 @property (nonatomic, assign)UIInterfaceOrientation orientation;
-@property (nonatomic, strong)void (^myLeft)(void);
-@property (nonatomic, strong)void (^myright)(void);
-@property (nonatomic, strong)void (^myUp)(void);
+@property (nonatomic, copy)void (^myLeft)(void);
+@property (nonatomic, copy)void (^myright)(void);
+@property (nonatomic, copy)void (^myUp)(void);
 
 // videoView
 @property (nonatomic, strong)AVPlayer *videoPlayer;

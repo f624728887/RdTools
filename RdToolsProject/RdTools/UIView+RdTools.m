@@ -8,13 +8,18 @@
 
 #import "UIView+RdTools.h"
 #import "Masonry.h"
+#import "RdMacroFile.h"
 #import <objc/runtime.h>
 
 static char rdViewActionBlockKey;
+static char rdViewLongPressBeganKey;
+static char rdViewLongPressEndKey;
 
 @interface UIView ()
 
-@property (nonatomic, strong) void (^rdActionBlock)(UITapGestureRecognizer *sender);
+@property (nonatomic, copy) void (^rdActionBlock)(UITapGestureRecognizer *sender);
+@property (nonatomic, copy) void (^rdBeganLongPressBlock)(UILongPressGestureRecognizer *sender);
+@property (nonatomic, copy) void (^rdEndLongPressBlock)(UILongPressGestureRecognizer *sender);
 
 @end
 
@@ -190,8 +195,54 @@ static char rdViewActionBlockKey;
     objc_setAssociatedObject(self, &rdViewActionBlockKey, rdActionBlock, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
-- (void (^)(UIResponder *))rdActionBlock{
+- (void (^)(UITapGestureRecognizer *))rdActionBlock{
     return objc_getAssociatedObject(self, &rdViewActionBlockKey);
+}
+
+- (void)rd_setLongPressBegan:(void (^_Nullable)(UILongPressGestureRecognizer * _Nonnull sender))beganPressBlock end:(void (^_Nullable)(UILongPressGestureRecognizer * _Nonnull sender))endPressBlock{
+    
+    UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(handleLongPressGestures:)];
+    longPress.allowableMovement = 20;
+    longPress.cancelsTouchesInView = NO;
+    [self addGestureRecognizer:longPress];
+    
+    if (beganPressBlock) {
+        [self setRdBeganLongPressBlock:beganPressBlock];
+    }
+    if (endPressBlock) {
+        [self setRdEndLongPressBlock:endPressBlock];
+    }
+}
+
+- (void)handleLongPressGestures:(UILongPressGestureRecognizer *)sender{
+    if (sender.state == UIGestureRecognizerStateBegan) {
+        if (self.rdBeganLongPressBlock) {
+            Rd_Tapic
+            self.rdBeganLongPressBlock(sender);
+        }
+    }
+    else if (sender.state == UIGestureRecognizerStateEnded) {
+        if (self.rdEndLongPressBlock) {
+            Rd_Tapic
+            self.rdEndLongPressBlock(sender);
+        }
+    }
+}
+
+- (void)setRdBeganLongPressBlock:(void (^)(UILongPressGestureRecognizer *))rdBeganLongPressBlock{
+    objc_setAssociatedObject(self, &rdViewLongPressBeganKey, rdBeganLongPressBlock, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (void (^)(UILongPressGestureRecognizer *))rdBeganLongPressBlock{
+    return objc_getAssociatedObject(self, &rdViewLongPressBeganKey);
+}
+
+- (void)setRdEndLongPressBlock:(void (^)(UILongPressGestureRecognizer *))rdEndLongPressBlock{
+    objc_setAssociatedObject(self, &rdViewLongPressEndKey, rdEndLongPressBlock, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (void (^)(UILongPressGestureRecognizer *))rdEndLongPressBlock{
+    return objc_getAssociatedObject(self, &rdViewLongPressEndKey);
 }
 
 @end

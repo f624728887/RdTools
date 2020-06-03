@@ -34,12 +34,23 @@
     
     UIView *blueView = [UIView rd_ViewBGColor:Rd_ColorWith(blueColor) for:baseView];
     blueView.rd_edgeEqualTo(0, 0, Rd_IGNORE, Rd_IGNORE).rd_widthMultipliedBy(nil, 0.5).rd_heightMultipliedBy(nil, 0.5);
+    [blueView rd_setLongPressBegan:^(UILongPressGestureRecognizer * _Nonnull sender) {
+        NSLog(@"长按触发");
+    } end:nil];
     
     UIView *yellowView = [UIView rd_ViewBGColor:Rd_ColorWith(yellowColor) for:baseView];
     yellowView.rd_centerEqualTo(nil).rd_squareLengthValue(40);
+    [yellowView rd_setLongPressBegan:nil end:^(UILongPressGestureRecognizer * _Nonnull sender) {
+        NSLog(@"长按结束触发");
+    }];
     
     UIView *orangeView = [UIView rd_ViewBGColor:Rd_ColorWith(orangeColor) for:baseView];
     orangeView.rd_leftToRightOf(yellowView, 20).rd_centerYEqualTo(yellowView, 0).rd_sizeValue(40, 20);
+    [orangeView rd_setLongPressBegan:^(UILongPressGestureRecognizer * _Nonnull sender) {
+        NSLog(@"长按触发");
+    } end:^(UILongPressGestureRecognizer * _Nonnull sender) {
+        NSLog(@"长按结束触发");
+    }];
     
     UIView *tapView = [UIView rd_ViewBGColor:Rd_ColorWith(greenColor) for:self.view];
     tapView.rd_centerXEqualTo(nil, 0).rd_topToBottmOf(baseView, Rd_MarginDefault * 2).rd_sizeValue(40, 25);
