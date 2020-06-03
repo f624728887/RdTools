@@ -16,22 +16,51 @@ typedef NS_ENUM(NSUInteger, RdButtonImageType) {
     RdButtonImageBottom,
 };
 
+
++ (instancetype)rd_BtnImage:(NSString *)imgName forView:(UIView *)superView;
+
 + (instancetype)rd_BtnImage:(NSString *)imgName forView:(UIView *)superView responder:(void (^)(UIButton *sender))block;
+
+
+
++ (instancetype)rd_BtnTitle:(NSString *)title forView:(UIView *)superView;
 
 + (instancetype)rd_BtnTitle:(NSString *)title forView:(UIView *)superView responder:(void (^)(UIButton *sender))block;
 
+
+
++ (instancetype)rd_BtnTitle:(NSString *)title image:(NSString *)imgName forView:(UIView *)superView;
+
 + (instancetype)rd_BtnTitle:(NSString *)title image:(NSString *)imgName forView:(UIView *)superView responder:(void (^)(UIButton *sender))block;
+
+
+
++ (instancetype)rd_BtnImage:(NSString *)imgName;
 
 + (instancetype)rd_BtnImage:(NSString *)imgName responder:(void (^)(UIButton *sender))block;
 
+
+
++ (instancetype)rd_BtnTitle:(NSString *)title;
+
 + (instancetype)rd_BtnTitle:(NSString *)title responder:(void (^)(UIButton *sender))block;
 
+
+
++ (instancetype)rd_BtnTitle:(NSString *)title image:(NSString *)imgName;
+
 + (instancetype)rd_BtnTitle:(NSString *)title image:(NSString *)imgName responder:(void (^)(UIButton *sender))block;
+
+
 
 /// color为 nil 时背景色为clearColor
 + (instancetype)rd_BtnBGColor:(UIColor *_Nullable)bgColor superView:(UIView *_Nonnull)superView;
 
 + (instancetype)rd_BtnBGColor:(UIColor *_Nullable)bgColor superView:(UIView *_Nonnull)superView responder:(void (^)(UIButton *sender))block;
+
+
+
+- (void)rd_setButtonAction:(void (^_Nullable)(UIButton * _Nullable sender))block;
 
 /// 设置button title （ rd_setXXX(title) ）
 - (UIButton *_Nonnull(^_Nonnull)(NSString * _Nonnull title))rd_setButtonTitle;

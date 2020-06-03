@@ -25,6 +25,7 @@
 #import "RdGCDTools.h"
 #import "RdToolsManager.h"
 #import "RdCollectionView.h"
+#import "RdWeakProxy.h"
 
 
 //#ifndef RdToolsHeader_h

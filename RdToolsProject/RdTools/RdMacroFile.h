@@ -7,7 +7,7 @@
 //
 // 0.4.3 fix bug, add function 20200517
 // 0.4.4 fix bug, add function 20200517
-// 0.4.5 block声明引用修改为Copy， 添加longpress方法， 添加线性震动反馈等
+// 0.4.5 block声明引用修改为Copy， 添加longpress方法， 添加线性震动反馈， 修改button分类方法， 添加RdWeakProxy类 等等
 
 #import "UILabel+RdTools.h"
 #import "RdToolsManager.h"

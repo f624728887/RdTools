@@ -33,6 +33,7 @@
 		572AEBDE21DC60D900F520AE /* TimerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 572AEBDD21DC60D900F520AE /* TimerViewController.m */; };
 		57456784219C047500862A09 /* RdVideoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 57456783219C047500862A09 /* RdVideoView.m */; };
 		57994D712470F9A700389A87 /* CollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57994D702470F9A700389A87 /* CollectionViewController.m */; };
+		57A0FAF5248797F500C6582D /* RdWeakProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A0FAF4248797F500C6582D /* RdWeakProxy.m */; };
 		57CDEF662238F84B00E1F95C /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57CDEF652238F84B00E1F95C /* TestViewController.m */; };
 		57DC6FA6243452D600C63BE3 /* RdToolsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 57DC6FA5243452D600C63BE3 /* RdToolsManager.m */; };
 		57E84C482251DCFC002BE10C /* Scroll2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E84C472251DCFC002BE10C /* Scroll2ViewController.m */; };
@@ -124,6 +125,8 @@
 		57456783219C047500862A09 /* RdVideoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RdVideoView.m; sourceTree = "<group>"; };
 		57994D6F2470F9A700389A87 /* CollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectionViewController.h; sourceTree = "<group>"; };
 		57994D702470F9A700389A87 /* CollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectionViewController.m; sourceTree = "<group>"; };
+		57A0FAF3248797F500C6582D /* RdWeakProxy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RdWeakProxy.h; sourceTree = "<group>"; };
+		57A0FAF4248797F500C6582D /* RdWeakProxy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RdWeakProxy.m; sourceTree = "<group>"; };
 		57CDEF642238F84B00E1F95C /* TestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
 		57CDEF652238F84B00E1F95C /* TestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
 		57DC6FA4243452D600C63BE3 /* RdToolsManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RdToolsManager.h; sourceTree = "<group>"; };
@@ -315,6 +318,8 @@
 				57EDE0A221AB9991001652B8 /* RdOnceTimer.m */,
 				57E894C021F992D7000B8323 /* RdGCDTools.h */,
 				57E894C121F992D7000B8323 /* RdGCDTools.m */,
+				57A0FAF3248797F500C6582D /* RdWeakProxy.h */,
+				57A0FAF4248797F500C6582D /* RdWeakProxy.m */,
 			);
 			path = RdTools;
 			sourceTree = "<group>";
@@ -507,6 +512,7 @@
 				5708FFCE219BB41300702D7F /* ViewController.m in Sources */,
 				57DC6FA6243452D600C63BE3 /* RdToolsManager.m in Sources */,
 				57080024219BB45000702D7F /* UIView+RdTools.m in Sources */,
+				57A0FAF5248797F500C6582D /* RdWeakProxy.m in Sources */,
 				57E8B54221D5E9D1008BC1C2 /* UIControl+RdTools.m in Sources */,
 				57EDE0A321AB9991001652B8 /* RdOnceTimer.m in Sources */,
 				57190F772383BBB000512FE6 /* UIViewController+Logging.m in Sources */,

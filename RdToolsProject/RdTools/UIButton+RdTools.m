@@ -20,47 +20,65 @@ static char rdButtonActionBlockKey;
 
 @implementation UIButton (RdTools)
 
++ (instancetype)rd_BtnImage:(NSString *)imgName forView:(UIView *)superView{
+    return [UIButton rd_BtnImage:imgName forView:superView responder:nil];
+}
+
 + (instancetype)rd_BtnImage:(NSString *)imgName forView:(UIView *)superView responder:(void (^)(UIButton *sender))block{
     UIButton *button = [UIButton ButtonImg:imgName forView:superView];
-    [button addTarget:button action:@selector(rdbuttonClick:) forControlEvents:UIControlEventTouchUpInside];
-    [button setRdActionBlock:block];
+    [button rd_setButtonAction:block];
     
     return button;
+}
+
++ (instancetype)rd_BtnTitle:(NSString *)title forView:(UIView *)superView{
+    return [UIButton rd_BtnTitle:title forView:superView responder:nil];
 }
 
 + (instancetype)rd_BtnTitle:(NSString *)title forView:(UIView *)superView responder:(void (^)(UIButton *sender))block{
     UIButton *button = [UIButton ButtonTitle:title forView:superView];
-    [button addTarget:button action:@selector(rdbuttonClick:) forControlEvents:UIControlEventTouchUpInside];
-    [button setRdActionBlock:block];
+    [button rd_setButtonAction:block];
     return button;
+}
+
++ (instancetype)rd_BtnTitle:(NSString *)title image:(NSString *)imgName forView:(UIView *)superView{
+    return [UIButton rd_BtnTitle:title image:imgName forView:superView responder:nil];
 }
 
 + (instancetype)rd_BtnTitle:(NSString *)title image:(NSString *)imgName forView:(UIView *)superView responder:(void (^)(UIButton *sender))block{
     UIButton *button = [UIButton ButtonTitle:title img:imgName forView:superView];
-    [button addTarget:button action:@selector(rdbuttonClick:) forControlEvents:UIControlEventTouchUpInside];
-    [button setRdActionBlock:block];
+    [button rd_setButtonAction:block];
     return button;
+}
+
++ (instancetype)rd_BtnImage:(NSString *)imgName{
+    return [UIButton rd_BtnImage:imgName responder:nil];
 }
 
 + (instancetype)rd_BtnImage:(NSString *)imgName responder:(void (^)(UIButton *sender))block{
     UIButton *button = [UIButton ButtonImg:imgName forView:nil];
-    [button addTarget:button action:@selector(rdbuttonClick:) forControlEvents:UIControlEventTouchUpInside];
-    [button setRdActionBlock:block];
+    [button rd_setButtonAction:block];
     
     return button;
 }
 
++ (instancetype)rd_BtnTitle:(NSString *)title{
+    return [UIButton rd_BtnTitle:title responder:nil];
+}
+
 + (instancetype)rd_BtnTitle:(NSString *)title responder:(void (^)(UIButton *sender))block{
     UIButton *button = [UIButton ButtonTitle:title forView:nil];
-    [button addTarget:button action:@selector(rdbuttonClick:) forControlEvents:UIControlEventTouchUpInside];
-    [button setRdActionBlock:block];
+    [button rd_setButtonAction:block];
     return button;
+}
+
++ (instancetype)rd_BtnTitle:(NSString *)title image:(NSString *)imgName{
+    return [UIButton rd_BtnTitle:title image:imgName responder:nil];
 }
 
 + (instancetype)rd_BtnTitle:(NSString *)title image:(NSString *)imgName responder:(void (^)(UIButton *sender))block{
     UIButton *button = [UIButton ButtonTitle:title img:imgName forView:nil];
-    [button addTarget:button action:@selector(rdbuttonClick:) forControlEvents:UIControlEventTouchUpInside];
-    [button setRdActionBlock:block];
+    [button rd_setButtonAction:block];
     return button;
 }
 
@@ -86,9 +104,7 @@ static char rdButtonActionBlockKey;
     button.clipsToBounds = YES;
     [superView addSubview:button];
     
-    [button addTarget:button action:@selector(rdbuttonClick:) forControlEvents:UIControlEventTouchUpInside];
-    
-    [button setRdActionBlock:block];
+    [button rd_setButtonAction:block];
     return button;
 }
 
@@ -130,6 +146,14 @@ static char rdButtonActionBlockKey;
     }
     button.clipsToBounds = YES;
     return button;
+}
+
+- (void)rd_setButtonAction:(void (^)(UIButton *sender))block{
+    if (block) {
+        [self addTarget:self action:@selector(rdbuttonClick:) forControlEvents:UIControlEventTouchUpInside];
+        
+        [self setRdActionBlock:block];
+    }
 }
 
 - (UIButton *_Nonnull(^_Nonnull)(NSString * _Nonnull title))rd_setButtonTitle{
