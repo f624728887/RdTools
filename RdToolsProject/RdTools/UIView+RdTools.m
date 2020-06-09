@@ -203,7 +203,7 @@ static char rdViewLongPressEndKey;
     
     UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(handleLongPressGestures:)];
     longPress.allowableMovement = 20;
-    longPress.cancelsTouchesInView = NO;
+//    longPress.cancelsTouchesInView = NO;
     [self addGestureRecognizer:longPress];
     
     if (beganPressBlock) {

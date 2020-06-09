@@ -39,8 +39,8 @@ static char rdScrollViewContentViewKey;
 + (instancetype)rd_ScrollView:(UIColor *_Nullable)bgColor forView:(UIView *)superView{
     UIScrollView *scrollView = [[UIScrollView alloc] init];
     scrollView.backgroundColor = bgColor? bgColor : [UIColor clearColor];
-//    scrollView.showsVerticalScrollIndicator = NO;
-//    scrollView.showsHorizontalScrollIndicator = NO;
+    scrollView.showsVerticalScrollIndicator = NO;
+    scrollView.showsHorizontalScrollIndicator = NO;
     if (@available(iOS 11.0, *)) {
         scrollView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentAutomatic;
     }
