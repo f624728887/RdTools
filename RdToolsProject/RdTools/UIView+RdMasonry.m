@@ -930,7 +930,8 @@
 - (UIView *_Nonnull(^_Nonnull)(UIView *_Nonnull chileView, CGFloat chileWidth))rd_addCollectionView{
     return ^(UIView *chileView, CGFloat chileWidth) {
         // 向下取0.5
-        chileWidth = (int)(chileWidth/0.5)*0.5;
+//        chileWidth = (int)(chileWidth/0.5)*0.5;
+        chileWidth = chileWidth - 0.2;
         chileView.rd_widthValue(chileWidth);
         [chileView layoutIfNeeded];
         

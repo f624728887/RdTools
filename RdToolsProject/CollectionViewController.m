@@ -8,6 +8,7 @@
 
 #import "CollectionViewController.h"
 #import "RdToolsHeader.h"
+#import <Masonry.h>
 
 @interface CollectionViewController ()
 
@@ -33,10 +34,10 @@
     [self.view addSubview:view];
     
     UIView *bgView = [UIView rd_ViewBGColor:Rd_ColorWith(greenColor) for:self.view];
-    bgView.rd_sizeValue(Rd_ScreenWidth - 20, Rd_ScreenWidth - 20).rd_centerEqualTo(nil);
+    bgView.rd_sizeValue(Rd_ScreenWidth, Rd_ScreenWidth - 20).rd_centerEqualTo(nil);
     
-    CGFloat cellWidth = (Rd_ScreenWidth-20)/7.0;
-    for (int i = 0; i < 15; i ++) {
+    CGFloat cellWidth = (Rd_ScreenWidth)/7.0;
+    for (int i = 0; i < 16; i ++) {
         UILabel *label = [UILabel rd_LabelString:[NSString stringWithFormat:@"%d", i] fontName:nil fontSize:Rd_FontSizeL lineNumber:1 textColor:Rd_ColorWith(blackColor) superView:bgView];
         label.rd_sizeValue(cellWidth, cellWidth);
         label.backgroundColor = Rd_ColorWith(redColor);
