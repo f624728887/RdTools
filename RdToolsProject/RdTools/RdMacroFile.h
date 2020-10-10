@@ -60,6 +60,7 @@ static inline float safeAreaBottom() {
 
 #define Rd_ScreenWidth          [[UIScreen mainScreen] bounds].size.width
 #define Rd_ScreenHeight         [[UIScreen mainScreen] bounds].size.height
+#define Rd_ScreenScale          [UIScreen mainScreen].scale
 
 #define Rd_SafeAreaTop          safeAreaTop()
 #define Rd_SafeAreaSides        safeAreaSide()

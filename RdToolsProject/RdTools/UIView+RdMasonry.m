@@ -929,9 +929,25 @@
 
 - (UIView *_Nonnull(^_Nonnull)(UIView *_Nonnull chileView, CGFloat chileWidth))rd_addCollectionView{
     return ^(UIView *chileView, CGFloat chileWidth) {
-        // 向下取0.5
-//        chileWidth = (int)(chileWidth/0.5)*0.5;
-        chileWidth = chileWidth - 0.2;
+        // 当缩放因子为2倍时，布局值最小值为0.5，布局取值会取最接近整数或0.5，（eg. 12.4 会变成 12.5）;所以小于0.5的直接取整，大于0.5的直接取0.5，防止值变大。
+        if ([UIScreen mainScreen].scale == 2) {
+            chileWidth = (int)(chileWidth/0.5)*0.5;
+        }
+        // 当缩放因子为3倍时，布局之最小值为0.33333，布局值会去最接近0.333、0.6667、整数。（eg. 12.30 会变成12.3333）；所以为了防止值变大，小数小于0.4取整。大于等于0.4且小于0.7取0.3，大于等于0.7取0.6。
+        else {
+            int integerNumber = (int)(chileWidth/1);
+            CGFloat remainderNumber = chileWidth - integerNumber;
+
+            if (remainderNumber < 0.4) {
+                chileWidth = integerNumber;
+            }
+            else if (remainderNumber >= 0.4 && remainderNumber < 0.7) {
+                chileWidth = integerNumber + 0.3;
+            }
+            else {
+                chileWidth = integerNumber + 0.6;
+            }
+        }
         chileView.rd_widthValue(chileWidth);
         [chileView layoutIfNeeded];
         

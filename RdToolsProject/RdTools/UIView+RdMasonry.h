@@ -288,7 +288,6 @@
 
 - (void)rdAddVerticalView:(UIView * _Nonnull)chileView interval:(CGFloat)interval;
 
-/// 自动换行添加view，chileWidth是浮点数，但是布局最小只支持0.5，masonry会自动向上取0.5，不满0.5的自动取0.5。超过0.5的自动取整，所以这里要对chileView重新设定width，向下取0.5。
 - (UIView *_Nonnull(^_Nonnull)(UIView *_Nonnull chileView, CGFloat chileWidth))rd_addCollectionView;
 
 - (void)rdAddCollectionView:(UIView *_Nonnull)chileView width:(CGFloat)chileWidth;
