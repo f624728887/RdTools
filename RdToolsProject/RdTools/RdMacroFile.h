@@ -130,12 +130,14 @@ static inline float safeAreaBottom() {
 static inline NSString * getJsonWithDic(NSDictionary *dic) {
     NSData *jsonData =[NSJSONSerialization dataWithJSONObject:dic options:NSJSONWritingPrettyPrinted error:nil];
     NSString *text =[[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+    text = [text stringByReplacingOccurrencesOfString:@"\n" withString:@""];
     return text;
 }
 
 static inline NSString * getJsonWithArr(NSArray *arr) {
     NSData *jsonData =[NSJSONSerialization dataWithJSONObject:arr options:NSJSONWritingPrettyPrinted error:nil];
     NSString *text =[[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+    text = [text stringByReplacingOccurrencesOfString:@"\n" withString:@""];
     return text;
 }
 
