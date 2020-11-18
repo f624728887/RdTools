@@ -128,19 +128,24 @@ static inline float safeAreaBottom() {
 }
 
 static inline NSString * getJsonWithDic(NSDictionary *dic) {
+    if (dic.count == 0) {
+        return @"{}";
+    }
     NSData *jsonData =[NSJSONSerialization dataWithJSONObject:dic options:NSJSONWritingPrettyPrinted error:nil];
     NSString *text =[[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
-    text = [text stringByReplacingOccurrencesOfString:@"\n" withString:@""];
     return text;
 }
 
 static inline NSString * getJsonWithArr(NSArray *arr) {
+    if (arr.count == 0) {
+        return @"[]";
+    }
     NSData *jsonData =[NSJSONSerialization dataWithJSONObject:arr options:NSJSONWritingPrettyPrinted error:nil];
     NSString *text =[[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
-    text = [text stringByReplacingOccurrencesOfString:@"\n" withString:@""];
     return text;
 }
 
+/// 该方法不推荐使用，如有使用请自行寻求替换方法
 static inline NSArray * getArrWithJson(NSString *string) {
     NSData *jsonData = [string dataUsingEncoding:NSASCIIStringEncoding];
     
@@ -149,6 +154,7 @@ static inline NSArray * getArrWithJson(NSString *string) {
     return arr;
 }
 
+/// 该方法不推荐使用，如有使用请自行寻求替换方法
 static inline NSDictionary * getDicWithJson(NSString *string) {
     NSData *jsonData = [string dataUsingEncoding:NSASCIIStringEncoding];
     
