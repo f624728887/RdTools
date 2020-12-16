@@ -27,13 +27,13 @@
     [self makeView];
     
     SEL aSel = @selector(makeView);
-    NSLog(@"%p", aSel);
+//    NSLog(@"%p", aSel);
 }
 
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     
-    NSLog(@"123456");
+//    NSLog(@"123456");
 }
 
 - (void)dataInit{
@@ -67,11 +67,13 @@
 //            NSLog(@"is main thread: %zd --- is main queue: %zd", [NSThread isMainThread], dispatch_get_specific("key") != NULL);
 //        });
 //    });
-    [self group];
+//    [self group];
     
 //    [self semaphore];
     
 //    [self semaphore2];
+    
+    [self asyncSemaphoreTest];
 }
 
 - (void)group{
@@ -204,6 +206,46 @@
     return count;
 }
 
+- (void)asyncSemaphoreTest{
+    RdAsyncSemaphoreManager *manager = [RdAsyncSemaphoreManager getAsyncSemaphoreManager];
+    
+    [manager rd_addAction:^(void (^ _Nonnull complete)(void)) {
+        // 任务一
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            NSLog(@"任务一开始");
+            [NSThread sleepForTimeInterval:2];
+            NSLog(@"任务一结束");
+            complete();
+        });
+    }];
+    
+    [manager rd_addAction:^(void (^ _Nonnull complete)(void)) {
+        // 任务二开始
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            NSLog(@"任务二开始");
+            [NSThread sleepForTimeInterval:6];
+            NSLog(@"任务二结束");
+            complete();
+        });
+    }];
+    
+    [manager rd_addAction:^(void (^ _Nonnull complete)(void)) {
+        // 任务三开始
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            NSLog(@"任务三开始");
+            [NSThread sleepForTimeInterval:4];
+            NSLog(@"任务三结束");
+            complete();
+        });
+    }];
+    
+    NSLog(@"任务全部开始");
+    [manager rd_complete:^{
+        //全部结束
+        NSLog(@"任务全部结束");
+    }];
+}
+
 /*
 #pragma mark - Navigation
 
@@ -212,6 +254,16 @@
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }
+ 
+ 
+ 信号量：semaphore = 0
+ 任务池：actionArray
+
+ 每添加一次任务，信号量加一；
+ 开始执行所有任务，每个异步任务执行完回调后，调用一个代码块执行信号量减一的操作，
+ 当信号量为0时，则证明所有任务执行完毕。
+ 
+ 
 */
 
 @end

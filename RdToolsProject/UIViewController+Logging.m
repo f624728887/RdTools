@@ -19,7 +19,7 @@
 - (void)swizzled_viewDidAppear:(BOOL)animated {
     [self swizzled_viewDidAppear:animated];
     
-    NSLog(@"%@", NSStringFromClass([self class]));
+//    NSLog(@"%@", NSStringFromClass([self class]));
 }
 
 void swizzleMethod(Class class, SEL originalSelector, SEL swizzledSelector) {
@@ -30,11 +30,11 @@ void swizzleMethod(Class class, SEL originalSelector, SEL swizzledSelector) {
     
     if (didAddMethod) {
         class_replaceMethod(class, swizzledSelector, method_getImplementation(originalMethod), method_getTypeEncoding(originalMethod));
-        NSLog(@"add success");
+//        NSLog(@"add success");
     }
     else {
         method_exchangeImplementations(originalMethod, swizzledMethod);
-        NSLog(@"exchange");
+//        NSLog(@"exchange");
     }
 }
 

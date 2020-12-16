@@ -31,7 +31,7 @@ static inline float safeAreaTop() {
         UIWindow *mainWindow = [[[UIApplication sharedApplication] delegate] window];
         return mainWindow.safeAreaInsets.top;
     }
-    return 20;
+    return 0;
 }
 
 static inline float safeAreaSide() {
@@ -70,7 +70,7 @@ static inline float safeAreaBottom() {
 
 #define Rd_isLandscape          ((Rd_ScreenWidth > Rd_ScreenHeight) ? true : false)
 
-#define Rd_NavibarH             ((float)44 + Rd_SafeAreaTop)
+#define Rd_NavibarH             (Rd_isiPhoneX ? ((float)44 + Rd_SafeAreaTop) : ((float)64))
 #define Rd_TabbarH              ((float)49 + Rd_SafeAreaBottom)
 #define Rd_StatusbarH           (Rd_SafeAreaTop)
 
