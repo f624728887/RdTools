@@ -62,6 +62,9 @@
 @implementation RdGCDSemaphoreManager
 
 + (instancetype)rd_SemaphoreManagerValue:(NSInteger)value{
+    if (value < 1) {
+        value = 1;
+    }
     RdGCDSemaphoreManager *manager = [[RdGCDSemaphoreManager alloc] init];
     manager->semaphore = dispatch_semaphore_create(value);
     return manager;
@@ -107,6 +110,50 @@
     };
     
     for (void (^actionBlock)(void (^complete)(void)) in self.actionArray) {
+        actionBlock(completeBlock);
+    }
+}
+
+@end
+
+@interface RdAsyncConcurrentSignalManager ()
+
+@property (nonatomic, assign) NSInteger semaphore;
+@property (nonatomic, assign) BOOL tasksResult;
+@property (nonatomic, strong) NSMutableArray *actionArray;
+
+@end
+
+
+@implementation RdAsyncConcurrentSignalManager
+
++ (RdAsyncConcurrentSignalManager *)getAsyncConcurrentSignalManager{
+    RdAsyncConcurrentSignalManager *manager = [[RdAsyncConcurrentSignalManager alloc] init];
+    manager.semaphore = 0;
+    manager.tasksResult = true;
+    manager.actionArray = [NSMutableArray arrayWithCapacity:0];
+    return manager;
+}
+
+- (void)rd_addAction:(void (^)(void (^complete)(BOOL success)))block{
+    self.semaphore ++;
+    [self.actionArray addObject:block];
+}
+
+- (void)rd_complete:(void (^)(BOOL success))block{
+    __block NSInteger tSemaphore = self.semaphore;
+    __block BOOL result = self.tasksResult;
+    void (^completeBlock)(BOOL success) = ^(BOOL success) {
+        tSemaphore --;
+        if (!success) {
+            result = false;
+        }
+        if (tSemaphore == 0) {
+            block(result);
+        }
+    };
+    
+    for (void (^actionBlock)(void (^complete)(BOOL success)) in self.actionArray) {
         actionBlock(completeBlock);
     }
 }

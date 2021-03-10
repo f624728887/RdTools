@@ -73,7 +73,10 @@
     
 //    [self semaphore2];
     
-    [self asyncSemaphoreTest];
+//    [self asyncSemaphoreTest];
+    
+    [self asyncConcurrentSignalTask];
+    
 }
 
 - (void)group{
@@ -100,14 +103,15 @@
         NSLog(@"事件3执行完毕");
     }];
     
-    [group rd_addCompleteAction:^{
-        NSLog(@"等待结束");
-    }];
     [group rd_addGroupAction:^{
         for (int i = 0 ; i < 3; i ++) {
             [NSThread sleepForTimeInterval:3];
         }
         NSLog(@"事件4执行完毕");
+    }];
+    
+    [group rd_addCompleteAction:^{
+        NSLog(@"等待结束");
     }];
 }
 
@@ -243,6 +247,50 @@
     [manager rd_complete:^{
         //全部结束
         NSLog(@"任务全部结束");
+    }];
+}
+
+- (void)asyncConcurrentSignalTask{
+    RdAsyncConcurrentSignalManager *manager = [RdAsyncConcurrentSignalManager getAsyncConcurrentSignalManager];
+    
+    [manager rd_addAction:^(void (^ _Nonnull complete)(BOOL)) {
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            NSLog(@"任务1开始");
+            [NSThread sleepForTimeInterval:4];
+            NSLog(@"任务1结束");
+            complete(true);
+        });
+    }];
+    
+    [manager rd_addAction:^(void (^ _Nonnull complete)(BOOL)) {
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            NSLog(@"任务2开始");
+            [NSThread sleepForTimeInterval:2];
+            NSLog(@"任务2结束");
+            complete(true);
+        });
+    }];
+    
+    [manager rd_addAction:^(void (^ _Nonnull complete)(BOOL)) {
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            NSLog(@"任务3开始");
+            [NSThread sleepForTimeInterval:5];
+            NSLog(@"任务3结束");
+            complete(true);
+        });
+    }];
+    
+    [manager rd_addAction:^(void (^ _Nonnull complete)(BOOL)) {
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            NSLog(@"任务4开始");
+            [NSThread sleepForTimeInterval:7];
+            NSLog(@"任务4结束");
+            complete(false);
+        });
+    }];
+    
+    [manager rd_complete:^(BOOL success) {
+        NSLog(@"任务执行“%@”", (success ? @"成功！" : @"失败！"));
     }];
 }
 
