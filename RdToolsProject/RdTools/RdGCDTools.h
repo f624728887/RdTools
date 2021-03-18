@@ -19,7 +19,7 @@ typedef void (^RdActionBlock)(void);
 /// 并发多个同步任务管理器
 @interface RdGCDGroupManager : RdGCDTools
 
-+ (instancetype)rd_GroupManager;
++ (instancetype _Nonnull)rd_GroupManager;
 
 - (void)rd_addGroupAction:(RdActionBlock)block;
 
@@ -35,7 +35,7 @@ typedef void (^RdActionBlock)(void);
 @interface RdGCDSemaphoreManager : RdGCDTools
 
 /// 初始化一个旗帜，允许同时操作最小值为1
-+ (instancetype)rd_SemaphoreManagerValue:(NSInteger)value;
++ (instancetype _Nonnull)rd_SemaphoreManagerValue:(NSInteger)value;
 
 /// 将要执行的操作放到block中，方法内部会自动处理
 - (void)rd_action:(void (^)(void))block;
@@ -45,7 +45,7 @@ typedef void (^RdActionBlock)(void);
 /// 并发多个异步任务管理器（不包含任务执行是否成功标识）
 @interface RdAsyncSemaphoreManager : RdGCDTools
 
-+ (instancetype)getAsyncSemaphoreManager;
++ (instancetype _Nonnull)getAsyncSemaphoreManager;
 
 /// 向管理器中添加任务。
 - (void)rd_addAction:(void (^)(void (^complete)(void)))block;
@@ -58,7 +58,7 @@ typedef void (^RdActionBlock)(void);
 /// 并发多个异步任务管理器（含任务执行是否成功标识）
 @interface RdAsyncConcurrentSignalManager : RdGCDTools
 
-+ (instancetype)getAsyncConcurrentSignalManager;
++ (instancetype _Nonnull)getAsyncConcurrentSignalManager;
 
 /// 向管理器中添加任务。
 /// @param block 异步任务执行完成后调用complete，success：任务执行状态。

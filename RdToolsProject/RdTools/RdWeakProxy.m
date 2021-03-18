@@ -16,12 +16,12 @@
 
 @implementation RdWeakProxy
 
-- (instancetype)initWithTarget:(id)target{
+- (instancetype _Nonnull)initWithTarget:(id)target{
     _target = target;
     return self;
 }
 
-+ (instancetype)proxyWithTarget:(id)target{
++ (instancetype _Nonnull)proxyWithTarget:(id)target{
     return [[self alloc] initWithTarget:target];
 }
 

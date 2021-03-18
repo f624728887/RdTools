@@ -62,7 +62,7 @@ typedef NS_ENUM(NSUInteger, RdVideoHudType) {
 
 @implementation RdVideoView
 
-- (instancetype)initForView:(UIView *)superView{
+- (instancetype _Nonnull)initForView:(UIView *)superView{
     self = [super init];
     if (self) {
         self.backgroundColor = [UIColor blackColor];

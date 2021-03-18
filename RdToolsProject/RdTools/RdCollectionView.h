@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface RdCollectionViewLayout : NSObject
 
-- (instancetype)initWithSize:(CGSize)size edgeInset:(UIEdgeInsets)edgeInset;
+- (instancetype _Nonnull)initWithSize:(CGSize)size edgeInset:(UIEdgeInsets)edgeInset;
 
 @property (nonatomic) CGSize itemSize;
 
@@ -24,9 +24,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong, readonly) UIView *contentView;
 
-- (instancetype)initColor:(UIColor *)bgColor withLayout:(RdCollectionViewLayout *)layout forView:(UIView *)superView;
+- (instancetype _Nonnull)initColor:(UIColor *_Nullable)bgColor withLayout:(RdCollectionViewLayout *_Nonnull)layout forView:(UIView *_Nonnull)superView;
 
-- (void)addItemView:(UIView *)view;
+- (void)addItemView:(UIView *_Nonnull)view;
 
 @end
 

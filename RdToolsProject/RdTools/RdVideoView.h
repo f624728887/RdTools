@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
+DEPRECATED_MSG_ATTRIBUTE("废弃类")
 @interface RdVideoView : UIView
 
 - (instancetype _Nonnull )initForView:(UIView *_Nonnull)superView;

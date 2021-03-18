@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface RdWebView : UIScrollView
 
-- (instancetype)initWithUrl:(NSString *)url;
+- (instancetype _Nonnull)initWithUrl:(NSString *)url;
 
 @end
 

@@ -22,7 +22,7 @@
 
 @implementation RdGCDGroupManager
 
-+ (instancetype)rd_GroupManager{
++ (instancetype _Nonnull)rd_GroupManager{
     RdGCDGroupManager *groupManager = [[RdGCDGroupManager alloc] init];
     groupManager.actionList = [NSMutableArray arrayWithCapacity:0];
     return groupManager;
@@ -61,7 +61,7 @@
 
 @implementation RdGCDSemaphoreManager
 
-+ (instancetype)rd_SemaphoreManagerValue:(NSInteger)value{
++ (instancetype _Nonnull)rd_SemaphoreManagerValue:(NSInteger)value{
     if (value < 1) {
         value = 1;
     }

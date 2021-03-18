@@ -1,8 +1,5 @@
 PODS:
-  - FBRetainCycleDetector (0.1.4)
   - Masonry (1.1.0)
-  - MLeaksFinder (1.0.0):
-    - FBRetainCycleDetector
   - SDWebImage (5.8.0):
     - SDWebImage/Core (= 5.8.0)
   - SDWebImage/Core (5.8.0)
@@ -10,25 +7,20 @@ PODS:
 
 DEPENDENCIES:
   - Masonry (= 1.1.0)
-  - MLeaksFinder
   - SDWebImage (= 5.8.0)
   - YYText
 
 SPEC REPOS:
   https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git:
-    - FBRetainCycleDetector
     - Masonry
-    - MLeaksFinder
     - SDWebImage
     - YYText
 
 SPEC CHECKSUMS:
-  FBRetainCycleDetector: 46f8179bbb1c587deee3ea838a1a3ee02acf5015
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
-  MLeaksFinder: 8c435bd2f6d070af18cff082b503b21adc130fc0
   SDWebImage: 84000f962cbfa70c07f19d2234cbfcf5d779b5dc
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: 5e7ed81716d3d0133cccfb586841230bd77fc893
+PODFILE CHECKSUM: 856b6d0fa6880a07596d68524125ad115ef49322
 
 COCOAPODS: 1.9.1

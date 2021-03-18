@@ -12,9 +12,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface RdWeakProxy : NSProxy
 
-+ (instancetype)proxyWithTarget:(id)target;
++ (instancetype _Nonnull)proxyWithTarget:(id)target;
 
-- (instancetype)initWithTarget:(id)target;
+- (instancetype _Nonnull)initWithTarget:(id)target;
 
 @end
 

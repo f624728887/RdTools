@@ -19,14 +19,14 @@ static char rdControlActionKey;
 
 @implementation UIControl (RdTools)
 
-+ (instancetype)rd_ControlBgColor:(UIColor *_Nullable)bgColor forView:(UIView *)superView setTapResponder:(void (^)(UIControl *sender))block{
++ (instancetype _Nonnull)rd_ControlBgColor:(UIColor *_Nullable)bgColor forView:(UIView *)superView setTapResponder:(void (^)(UIControl *sender))block{
     UIControl *control = [UIControl rd_ControlBgColor:bgColor forView:superView];
     [control addTarget:control action:@selector(rd_ControlClick:) forControlEvents:UIControlEventTouchUpInside];
     [control setRd_ActionBlock:block];
     return control;
 }
 
-+ (instancetype)rd_ControlBgColor:(UIColor *_Nullable)bgColor forView:(UIView *)superView{
++ (instancetype _Nonnull)rd_ControlBgColor:(UIColor *_Nullable)bgColor forView:(UIView *)superView{
     UIControl *control = [[UIControl alloc] init];
     control.backgroundColor = bgColor? bgColor : [UIColor clearColor];
     [superView addSubview:control];

@@ -12,9 +12,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UIControl (RdTools)
 
-+ (instancetype)rd_ControlBgColor:(UIColor *_Nullable)bgColor forView:(UIView *)superView setTapResponder:(void (^)(UIControl *sender))block;
++ (instancetype _Nonnull)rd_ControlBgColor:(UIColor *_Nullable)bgColor forView:(UIView *)superView setTapResponder:(void (^)(UIControl *sender))block;
 
-+ (instancetype)rd_ControlBgColor:(UIColor *_Nullable)bgColor forView:(UIView *)superView;
++ (instancetype _Nonnull)rd_ControlBgColor:(UIColor *_Nullable)bgColor forView:(UIView *)superView;
 
 - (void)rd_setTapResponder:(void (^)(UIControl * sender))block;
 

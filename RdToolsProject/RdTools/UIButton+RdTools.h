@@ -17,46 +17,46 @@ typedef NS_ENUM(NSUInteger, RdButtonImageType) {
 };
 
 
-+ (instancetype)rd_BtnImage:(NSString *)imgName forView:(UIView *)superView;
++ (instancetype _Nonnull)rd_BtnImage:(NSString *_Nonnull)imgName forView:(UIView *_Nonnull)superView;
 
-+ (instancetype)rd_BtnImage:(NSString *)imgName forView:(UIView *)superView responder:(void (^)(UIButton *sender))block;
-
-
-
-+ (instancetype)rd_BtnTitle:(NSString *)title forView:(UIView *)superView;
-
-+ (instancetype)rd_BtnTitle:(NSString *)title forView:(UIView *)superView responder:(void (^)(UIButton *sender))block;
++ (instancetype _Nonnull)rd_BtnImage:(NSString *_Nonnull)imgName forView:(UIView *_Nonnull)superView responder:(void (^_Nullable)(UIButton * _Nonnull sender))block;
 
 
 
-+ (instancetype)rd_BtnTitle:(NSString *)title image:(NSString *)imgName forView:(UIView *)superView;
++ (instancetype _Nonnull)rd_BtnTitle:(NSString *_Nonnull)title forView:(UIView *_Nonnull)superView;
 
-+ (instancetype)rd_BtnTitle:(NSString *)title image:(NSString *)imgName forView:(UIView *)superView responder:(void (^)(UIButton *sender))block;
-
-
-
-+ (instancetype)rd_BtnImage:(NSString *)imgName;
-
-+ (instancetype)rd_BtnImage:(NSString *)imgName responder:(void (^)(UIButton *sender))block;
++ (instancetype _Nonnull)rd_BtnTitle:(NSString *_Nonnull)title forView:(UIView *_Nonnull)superView responder:(void (^_Nullable)(UIButton *_Nonnull sender))block;
 
 
 
-+ (instancetype)rd_BtnTitle:(NSString *)title;
++ (instancetype _Nonnull)rd_BtnTitle:(NSString *_Nonnull)title image:(NSString *_Nonnull)imgName forView:(UIView *_Nonnull)superView;
 
-+ (instancetype)rd_BtnTitle:(NSString *)title responder:(void (^)(UIButton *sender))block;
++ (instancetype _Nonnull)rd_BtnTitle:(NSString *_Nonnull)title image:(NSString *_Nonnull)imgName forView:(UIView *_Nonnull)superView responder:(void (^_Nullable)(UIButton *_Nonnull sender))block;
 
 
 
-+ (instancetype)rd_BtnTitle:(NSString *)title image:(NSString *)imgName;
++ (instancetype _Nonnull)rd_BtnImage:(NSString *_Nonnull)imgName;
 
-+ (instancetype)rd_BtnTitle:(NSString *)title image:(NSString *)imgName responder:(void (^)(UIButton *sender))block;
++ (instancetype _Nonnull)rd_BtnImage:(NSString *_Nonnull)imgName responder:(void (^_Nullable)(UIButton *_Nonnull sender))block;
+
+
+
++ (instancetype _Nonnull)rd_BtnTitle:(NSString *_Nonnull)title;
+
++ (instancetype _Nonnull)rd_BtnTitle:(NSString *_Nonnull)title responder:(void (^_Nullable)(UIButton *_Nonnull sender))block;
+
+
+
++ (instancetype _Nonnull)rd_BtnTitle:(NSString *_Nonnull)title image:(NSString *_Nonnull)imgName;
+
++ (instancetype _Nonnull)rd_BtnTitle:(NSString *_Nonnull)title image:(NSString *_Nonnull)imgName responder:(void (^_Nullable)(UIButton *_Nonnull sender))block;
 
 
 
 /// color为 nil 时背景色为clearColor
-+ (instancetype)rd_BtnBGColor:(UIColor *_Nullable)bgColor superView:(UIView *_Nonnull)superView;
++ (instancetype _Nonnull)rd_BtnBGColor:(UIColor *_Nullable)bgColor superView:(UIView *_Nonnull)superView;
 
-+ (instancetype)rd_BtnBGColor:(UIColor *_Nullable)bgColor superView:(UIView *_Nonnull)superView responder:(void (^)(UIButton *sender))block;
++ (instancetype _Nonnull)rd_BtnBGColor:(UIColor *_Nullable)bgColor superView:(UIView *_Nonnull)superView responder:(void (^_Nullable)(UIButton *_Nonnull sender))block;
 
 
 

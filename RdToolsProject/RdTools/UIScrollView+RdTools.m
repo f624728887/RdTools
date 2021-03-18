@@ -14,7 +14,7 @@ static char rdScrollViewContentViewKey;
 
 @implementation UIScrollView (RdTools)
 
-+ (instancetype)rd_HScrollView:(UIColor *_Nullable)bgColor forView:(UIView *)superView{
++ (instancetype _Nonnull)rd_HScrollView:(UIColor *_Nullable)bgColor forView:(UIView *)superView{
     UIScrollView *scrollView = [UIScrollView rd_ScrollView:bgColor forView:superView];
     
     [scrollView.contentView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -25,7 +25,7 @@ static char rdScrollViewContentViewKey;
     return scrollView;
 }
 
-+ (instancetype)rd_VScrollView:(UIColor *_Nullable)bgColor forView:(UIView *)superView{
++ (instancetype _Nonnull)rd_VScrollView:(UIColor *_Nullable)bgColor forView:(UIView *)superView{
     UIScrollView *scrollView = [UIScrollView rd_ScrollView:bgColor forView:superView];
     
     [scrollView.contentView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -36,7 +36,7 @@ static char rdScrollViewContentViewKey;
     return scrollView;
 }
 
-+ (instancetype)rd_ScrollView:(UIColor *_Nullable)bgColor forView:(UIView *)superView{
++ (instancetype _Nonnull)rd_ScrollView:(UIColor *_Nullable)bgColor forView:(UIView *)superView{
     UIScrollView *scrollView = [[UIScrollView alloc] init];
     scrollView.backgroundColor = bgColor? bgColor : [UIColor clearColor];
 //    scrollView.showsVerticalScrollIndicator = NO;

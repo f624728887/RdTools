@@ -66,9 +66,9 @@ static inline float statusbarHeight() {
 #define Rd_WeakSelf(type)        __weak typeof(type) weak##type = type;
 #define Rd_StrongSelf(type)      __strong typeof(type) type = weak##type;
 
-#define Rd_ScreenWidth          [[UIScreen mainScreen] bounds].size.width
-#define Rd_ScreenHeight         [[UIScreen mainScreen] bounds].size.height
-#define Rd_ScreenScale          [UIScreen mainScreen].scale
+#define Rd_ScreenWidth          (CGFloat)[[UIScreen mainScreen] bounds].size.width
+#define Rd_ScreenHeight         (CGFloat)[[UIScreen mainScreen] bounds].size.height
+#define Rd_ScreenScale          (CGFloat)[UIScreen mainScreen].scale
 
 #define Rd_SafeAreaTop          safeAreaTop()
 #define Rd_SafeAreaSides        safeAreaSide()
@@ -78,27 +78,27 @@ static inline float statusbarHeight() {
 
 #define Rd_isLandscape          ((Rd_ScreenWidth > Rd_ScreenHeight) ? true : false)
 
-#define Rd_NavibarH             (Rd_isiPhoneX ? (float)44 + Rd_SafeAreaTop : 64)
-#define Rd_TabbarH              ((float)49 + Rd_SafeAreaBottom)
-#define Rd_StatusbarH           (statusbarHeight())
+#define Rd_NavibarH             (CGFloat)(Rd_isiPhoneX ? (float)44 + Rd_SafeAreaTop : 64)
+#define Rd_TabbarH              (CGFloat)((float)49 + Rd_SafeAreaBottom)
+#define Rd_StatusbarH           (CGFloat)(statusbarHeight())
 
 
 #define Rd_NumberOfSingleLine(min, max) (Rd_ScreenWidth <= 750 ? min : max)
 
 
-#define Rd_IMG_HEI_16_9         (Rd_ScreenWidth / 16.0 * 9.0)
-#define Rd_IMG_HEI_4_3          (Rd_ScreenWidth / 4.0 * 3.0)
+#define Rd_IMG_HEI_16_9         (CGFloat)(Rd_ScreenWidth / 16.0 * 9.0)
+#define Rd_IMG_HEI_4_3          (CGFloat)(Rd_ScreenWidth / 4.0 * 3.0)
 
-#define Rd_GET_HEI_16_9(width)  (width / 16.0 * 9.0)
-#define Rd_GET_HEI_4_3(width)   (width / 4.0 * 3.0)
+#define Rd_GET_HEI_16_9(width)  (CGFloat)(width / 16.0 * 9.0)
+#define Rd_GET_HEI_4_3(width)   (CGFloat)(width / 4.0 * 3.0)
 
-#define Rd_GET_WID_16_9(height) (height / 9.0 * 16.0)
-#define Rd_GET_WID_4_3(height)  (height / 3.0 * 4.0)
+#define Rd_GET_WID_16_9(height) (CGFloat)(height / 9.0 * 16.0)
+#define Rd_GET_WID_4_3(height)  (CGFloat)(height / 3.0 * 4.0)
 
-#define Rd_MarginLarge          (20)
-#define Rd_MarginMiddle         (15)
-#define Rd_MarginDefault        (10)
-#define Rd_MarginSmall          (5)
+#define Rd_MarginLarge          (CGFloat)(20)
+#define Rd_MarginMiddle         (CGFloat)(15)
+#define Rd_MarginDefault        (CGFloat)(10)
+#define Rd_MarginSmall          (CGFloat)(5)
 
 #define Rd_FontSizeS    12
 #define Rd_FontSizeM    14
@@ -153,7 +153,7 @@ static inline NSString * getJsonWithArr(NSArray *arr) {
     return text;
 }
 
-/// 该方法不推荐使用，如有使用请自行寻求替换方法
+DEPRECATED_MSG_ATTRIBUTE("请使用JSONModel等工具转换")
 static inline NSArray * getArrWithJson(NSString *string) {
     NSData *jsonData = [string dataUsingEncoding:NSASCIIStringEncoding];
     
@@ -162,7 +162,7 @@ static inline NSArray * getArrWithJson(NSString *string) {
     return arr;
 }
 
-/// 该方法不推荐使用，如有使用请自行寻求替换方法
+DEPRECATED_MSG_ATTRIBUTE("请使用JSONModel等工具转换")
 static inline NSDictionary * getDicWithJson(NSString *string) {
     NSData *jsonData = [string dataUsingEncoding:NSASCIIStringEncoding];
     

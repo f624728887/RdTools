@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface RdPageView : UIView
 
-- (instancetype)initWithViewEdge:(CGFloat)viewEdge pageEdge:(CGFloat)pageEdge imageList:(NSArray <NSString *>*)imageList placeHolder:(NSString *)placeHolder forView:(UIView *)forView;
+- (instancetype _Nonnull)initWithViewEdge:(CGFloat)viewEdge pageEdge:(CGFloat)pageEdge imageList:(NSArray <NSString *>*)imageList placeHolder:(NSString *)placeHolder forView:(UIView *)forView;
 
 @end
 

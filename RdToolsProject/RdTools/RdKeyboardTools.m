@@ -18,7 +18,7 @@
 
 @implementation RdKeyboardTools
 
-- (instancetype)init{
+- (instancetype _Nonnull)init{
     self = [super init];
     if (self) {
         [self addObsever];

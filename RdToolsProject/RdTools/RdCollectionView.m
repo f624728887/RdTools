@@ -12,7 +12,7 @@
 
 @implementation RdCollectionViewLayout
 
-- (instancetype)initWithSize:(CGSize)size edgeInset:(UIEdgeInsets)edgeInset{
+- (instancetype _Nonnull)initWithSize:(CGSize)size edgeInset:(UIEdgeInsets)edgeInset{
     self = [super init];
     if (self) {
         self.itemSize = size;
@@ -32,7 +32,7 @@
 
 @implementation RdCollectionView
 
-- (instancetype)initColor:(UIColor *)bgColor withLayout:(RdCollectionViewLayout *)layout forView:(UIView *)superView{
+- (instancetype _Nonnull)initColor:(UIColor *)bgColor withLayout:(RdCollectionViewLayout *)layout forView:(UIView *)superView{
     self = [super init];
     if (self) {
         self.backgroundColor = bgColor ? bgColor : [UIColor clearColor];

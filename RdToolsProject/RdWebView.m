@@ -19,7 +19,7 @@
 
 @implementation RdWebView
 
-- (instancetype)initWithUrl:(NSString *)url{
+- (instancetype _Nonnull)initWithUrl:(NSString *)url{
     self = [super init];
     if (self) {
         self.bgView = [UIView rd_ViewBGColor:Rd_ColorWith(whiteColor) for:self];

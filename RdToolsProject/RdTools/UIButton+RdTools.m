@@ -20,63 +20,63 @@ static char rdButtonActionBlockKey;
 
 @implementation UIButton (RdTools)
 
-+ (instancetype)rd_BtnImage:(NSString *)imgName forView:(UIView *)superView{
++ (instancetype _Nonnull)rd_BtnImage:(NSString *)imgName forView:(UIView *)superView{
     return [UIButton rd_BtnImage:imgName forView:superView responder:nil];
 }
 
-+ (instancetype)rd_BtnImage:(NSString *)imgName forView:(UIView *)superView responder:(void (^)(UIButton *sender))block{
++ (instancetype _Nonnull)rd_BtnImage:(NSString *)imgName forView:(UIView *)superView responder:(void (^)(UIButton *sender))block{
     UIButton *button = [UIButton ButtonImg:imgName forView:superView];
     [button rd_setButtonAction:block];
     
     return button;
 }
 
-+ (instancetype)rd_BtnTitle:(NSString *)title forView:(UIView *)superView{
++ (instancetype _Nonnull)rd_BtnTitle:(NSString *)title forView:(UIView *)superView{
     return [UIButton rd_BtnTitle:title forView:superView responder:nil];
 }
 
-+ (instancetype)rd_BtnTitle:(NSString *)title forView:(UIView *)superView responder:(void (^)(UIButton *sender))block{
++ (instancetype _Nonnull)rd_BtnTitle:(NSString *)title forView:(UIView *)superView responder:(void (^)(UIButton *sender))block{
     UIButton *button = [UIButton ButtonTitle:title forView:superView];
     [button rd_setButtonAction:block];
     return button;
 }
 
-+ (instancetype)rd_BtnTitle:(NSString *)title image:(NSString *)imgName forView:(UIView *)superView{
++ (instancetype _Nonnull)rd_BtnTitle:(NSString *)title image:(NSString *)imgName forView:(UIView *)superView{
     return [UIButton rd_BtnTitle:title image:imgName forView:superView responder:nil];
 }
 
-+ (instancetype)rd_BtnTitle:(NSString *)title image:(NSString *)imgName forView:(UIView *)superView responder:(void (^)(UIButton *sender))block{
++ (instancetype _Nonnull)rd_BtnTitle:(NSString *)title image:(NSString *)imgName forView:(UIView *)superView responder:(void (^)(UIButton *sender))block{
     UIButton *button = [UIButton ButtonTitle:title img:imgName forView:superView];
     [button rd_setButtonAction:block];
     return button;
 }
 
-+ (instancetype)rd_BtnImage:(NSString *)imgName{
++ (instancetype _Nonnull)rd_BtnImage:(NSString *)imgName{
     return [UIButton rd_BtnImage:imgName responder:nil];
 }
 
-+ (instancetype)rd_BtnImage:(NSString *)imgName responder:(void (^)(UIButton *sender))block{
++ (instancetype _Nonnull)rd_BtnImage:(NSString *)imgName responder:(void (^)(UIButton *sender))block{
     UIButton *button = [UIButton ButtonImg:imgName forView:nil];
     [button rd_setButtonAction:block];
     
     return button;
 }
 
-+ (instancetype)rd_BtnTitle:(NSString *)title{
++ (instancetype _Nonnull)rd_BtnTitle:(NSString *)title{
     return [UIButton rd_BtnTitle:title responder:nil];
 }
 
-+ (instancetype)rd_BtnTitle:(NSString *)title responder:(void (^)(UIButton *sender))block{
++ (instancetype _Nonnull)rd_BtnTitle:(NSString *)title responder:(void (^)(UIButton *sender))block{
     UIButton *button = [UIButton ButtonTitle:title forView:nil];
     [button rd_setButtonAction:block];
     return button;
 }
 
-+ (instancetype)rd_BtnTitle:(NSString *)title image:(NSString *)imgName{
++ (instancetype _Nonnull)rd_BtnTitle:(NSString *)title image:(NSString *)imgName{
     return [UIButton rd_BtnTitle:title image:imgName responder:nil];
 }
 
-+ (instancetype)rd_BtnTitle:(NSString *)title image:(NSString *)imgName responder:(void (^)(UIButton *sender))block{
++ (instancetype _Nonnull)rd_BtnTitle:(NSString *)title image:(NSString *)imgName responder:(void (^)(UIButton *sender))block{
     UIButton *button = [UIButton ButtonTitle:title img:imgName forView:nil];
     [button rd_setButtonAction:block];
     return button;
@@ -94,7 +94,7 @@ static char rdButtonActionBlockKey;
     return button;
 }
 
-+ (instancetype)rd_BtnBGColor:(UIColor *_Nullable)bgColor superView:(UIView *_Nonnull)superView responder:(void (^)(UIButton *sender))block{
++ (instancetype _Nonnull)rd_BtnBGColor:(UIColor *_Nullable)bgColor superView:(UIView *_Nonnull)superView responder:(void (^)(UIButton *sender))block{
     UIButton *button = [[UIButton alloc] init];
     button.backgroundColor = (bgColor == nil ? [UIColor clearColor] : bgColor);
     if (Rd_FontNameNormal.length != 0) {
@@ -108,7 +108,7 @@ static char rdButtonActionBlockKey;
     return button;
 }
 
-+ (instancetype)ButtonImg:(NSString *)imgName forView:(UIView *_Nullable)superView{
++ (instancetype _Nonnull)ButtonImg:(NSString *)imgName forView:(UIView *_Nullable)superView{
     UIButton *button = [[UIButton alloc] init];
     if (superView) {
         [superView addSubview:button];
@@ -121,7 +121,7 @@ static char rdButtonActionBlockKey;
     return button;
 }
 
-+ (instancetype)ButtonTitle:(NSString *)title forView:(UIView *_Nullable)superView{
++ (instancetype _Nonnull)ButtonTitle:(NSString *)title forView:(UIView *_Nullable)superView{
     UIButton *button = [[UIButton alloc] init];
     if (superView) {
         [superView addSubview:button];
@@ -134,7 +134,7 @@ static char rdButtonActionBlockKey;
     return button;
 }
 
-+ (instancetype)ButtonTitle:(NSString *)title img:(NSString *)imgName  forView:(UIView *_Nullable)superView{
++ (instancetype _Nonnull)ButtonTitle:(NSString *)title img:(NSString *)imgName  forView:(UIView *_Nullable)superView{
     UIButton *button = [[UIButton alloc] init];
     if (superView) {
         [superView addSubview:button];

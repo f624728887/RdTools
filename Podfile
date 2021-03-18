@@ -6,6 +6,5 @@ inhibit_all_warnings!
 target 'RdToolsProject' do
 pod 'Masonry', '1.1.0'
 pod 'SDWebImage', '5.8.0'
-pod 'MLeaksFinder'
 pod 'YYText'
 end

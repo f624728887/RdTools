@@ -13,9 +13,9 @@
 + (instancetype _Nonnull)rd_sharedLabel;
 
 /// 该方法内部使用单例实现，所以在Appdelegate设置一次即可全局使用。
-+ (void)rd_setLabelDefaulFontName:(NSString *)name;
++ (void)rd_setLabelDefaulFontName:(NSString *_Nonnull)name;
 
-+ (NSString *)rd_getLabelDefaulFontName;
++ (NSString *_Nonnull)rd_getLabelDefaulFontName;
 
 + (instancetype _Nonnull)rd_LabelString:(NSString *_Nullable)string fontName:(NSString *_Nullable)name fontSize:(CGFloat)size lineNumber:(NSInteger)number textColor:(UIColor *_Nullable)color superView:(UIView *_Nonnull)superView;
 
@@ -23,7 +23,7 @@
 - (void)rd_setTextAlignmentCenter;
 
 /// 该方法只适用于一行不定宽的label
-- (void)rd_setTextWidthFit:(NSString *)text;
+- (void)rd_setTextWidthFit:(NSString *_Nonnull)text;
 
 - (void)rd_labelWidthApading;
 
