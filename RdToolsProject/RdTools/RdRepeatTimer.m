@@ -47,6 +47,7 @@
 }
 
 - (void)rd_cancelRepeatTimer{
+    [self rd_resumeRepeatTimer];
     dispatch_source_cancel(self.timer);
 }
 

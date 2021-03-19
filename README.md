@@ -1,5 +1,7 @@
 # RdTools
 
+技术上限较低，更新频繁请谅解。
+
 pod 'RdTools'
 
 引入`import <RdToolsHeader.h>`即可使用
