@@ -20,6 +20,7 @@ static char rdButtonActionBlockKey;
 
 @implementation UIButton (RdTools)
 
+#pragma mark - 初始化
 + (instancetype _Nonnull)rd_BtnImage:(NSString *)imgName forView:(UIView *)superView{
     return [UIButton rd_BtnImage:imgName forView:superView responder:nil];
 }
@@ -31,6 +32,7 @@ static char rdButtonActionBlockKey;
     return button;
 }
 
+
 + (instancetype _Nonnull)rd_BtnTitle:(NSString *)title forView:(UIView *)superView{
     return [UIButton rd_BtnTitle:title forView:superView responder:nil];
 }
@@ -40,6 +42,7 @@ static char rdButtonActionBlockKey;
     [button rd_setButtonAction:block];
     return button;
 }
+
 
 + (instancetype _Nonnull)rd_BtnTitle:(NSString *)title image:(NSString *)imgName forView:(UIView *)superView{
     return [UIButton rd_BtnTitle:title image:imgName forView:superView responder:nil];
@@ -51,6 +54,191 @@ static char rdButtonActionBlockKey;
     return button;
 }
 
+
++ (instancetype _Nonnull)rd_BtnBgColor:(UIColor *_Nonnull)color forView:(UIView *_Nonnull)superView{
+    UIButton *button = [UIButton ButtonforView:superView];
+    button.rd_setBgColorWithState(color, UIControlStateNormal);
+    return button;
+}
+
++ (instancetype _Nonnull)rd_BtnBgColor:(UIColor *_Nonnull)color forView:(UIView *_Nonnull)superView responder:(void (^_Nullable)(UIButton *_Nonnull sender))block{
+    UIButton *button = [UIButton ButtonforView:superView];
+    button.rd_setBgColorWithState(color, UIControlStateNormal);
+    [button rd_setButtonAction:block];
+    return button;
+}
+
+
++ (instancetype _Nonnull)rd_BtnBgImg:(NSString *_Nonnull)imgName forView:(UIView *_Nonnull)superView{
+    UIButton *button = [UIButton ButtonforView:superView];
+    button.rd_setBgImageWithState(imgName, UIControlStateNormal);
+    return button;
+}
+
++ (instancetype _Nonnull)rd_BtnBgImg:(NSString *_Nonnull)imgName forView:(UIView *_Nonnull)superView responder:(void (^_Nullable)(UIButton *_Nonnull sender))block{
+    UIButton *button = [UIButton ButtonforView:superView];
+    button.rd_setBgImageWithState(imgName, UIControlStateNormal);
+    [button rd_setButtonAction:block];
+    return button;
+}
+
+#pragma mark - 方法
+- (void)rd_setButtonAction:(void (^)(UIButton *sender))block{
+    if (block) {
+        [self addTarget:self action:@selector(rdbuttonClick:) forControlEvents:UIControlEventTouchUpInside];
+        
+        [self setRdActionBlock:block];
+    }
+}
+
+- (UIButton *_Nonnull(^_Nonnull)(NSString * _Nonnull title, UIControlState state))rd_setTitleWithState{
+    return ^(NSString *title, UIControlState state) {
+        [self setTitle:title forState:state];
+        return self;
+    };
+}
+
+- (UIButton *_Nonnull(^_Nonnull)(CGFloat fontSize))rd_setTitleFontSize{
+    return ^(CGFloat fontSize) {
+        if (Rd_FontNameNormal.length == 0) {
+            self.titleLabel.font = [UIFont systemFontOfSize:fontSize];
+        }
+        else {
+            self.titleLabel.font = [UIFont fontWithName:Rd_FontNameNormal size:fontSize];
+        }
+        return self;
+    };
+}
+
+- (UIButton *_Nonnull(^_Nonnull)(NSString * _Nullable fontName, CGFloat fontSize))rd_setTitleFont{
+    return ^(NSString *fontName, CGFloat fontSize) {
+        if (fontName == nil) {
+            if (Rd_FontNameNormal.length == 0) {
+                self.titleLabel.font = [UIFont systemFontOfSize:fontSize];
+            }
+            else {
+                self.titleLabel.font = [UIFont fontWithName:Rd_FontNameNormal size:fontSize];
+            }
+        }
+        else {
+            self.titleLabel.font = [UIFont fontWithName:fontName size:fontSize];
+        }
+        return self;
+    };
+}
+
+- (UIButton *_Nonnull(^_Nonnull)(UIColor * _Nonnull color, UIControlState state))rd_setTitleColorWithState{
+    return ^(UIColor *color, UIControlState state) {
+        [self setTitleColor:color forState:state];
+        return self;
+    };
+}
+
+- (UIButton *_Nonnull(^_Nonnull)(NSString * _Nonnull imageName, UIControlState state))rd_setImageWithState{
+    return ^(NSString *imageName, UIControlState state) {
+        [self setImage:nil forState:state];
+        [self setImage:[UIImage imageNamed:imageName] forState:state];
+        return self;
+    };
+}
+
+- (UIButton *_Nonnull(^_Nonnull)(UIColor * _Nonnull color, UIControlState state))rd_setBgColorWithState{
+    return ^(UIColor *color, UIControlState state) {
+        CGRect frame = self.frame;
+        CGFloat width = frame.size.width > 1 ? frame.size.width : 1;
+        CGFloat height = frame.size.height > 1 ? frame.size.height : 1;
+        
+        UIImage *image = [self getImageWith:color width:width height:height];
+        
+        [self setBackgroundImage:image forState:state];
+        return self;
+    };
+}
+
+- (UIButton *_Nonnull(^_Nonnull)(NSString * _Nonnull imageName, UIControlState state))rd_setBgImageWithState{
+    return ^(NSString *imageName, UIControlState state) {
+        [self setBackgroundImage:[UIImage imageNamed:imageName] forState:state];
+        return self;
+    };
+}
+
+- (UIButton *_Nonnull(^_Nonnull)(RdButtonImageType type))rd_setButtonImageType{
+    return ^(RdButtonImageType type) {
+        if (type == RdButtonImageLeft) {
+            return self;
+        }
+        else if (type == RdButtonImageRight) {
+            self.titleEdgeInsets = UIEdgeInsetsMake(0, -CGRectGetWidth(self.imageView.frame), 0, CGRectGetWidth(self.imageView.frame));
+            self.imageEdgeInsets = UIEdgeInsetsMake(0, CGRectGetWidth(self.titleLabel.frame), 0, -CGRectGetWidth(self.titleLabel.frame));
+        }
+        else if (type == RdButtonImageBottom) {
+            self.titleEdgeInsets = UIEdgeInsetsMake(CGRectGetHeight(self.imageView.frame)/2.0, -CGRectGetWidth(self.imageView.frame)/2.0, -CGRectGetHeight(self.imageView.frame)/2.0, CGRectGetWidth(self.imageView.frame)/2.0);
+            self.imageEdgeInsets = UIEdgeInsetsMake(-CGRectGetHeight(self.titleLabel.frame)/2.0, CGRectGetWidth(self.titleLabel.frame)/2.0, CGRectGetHeight(self.titleLabel.frame)/2.0, -CGRectGetWidth(self.titleLabel.frame)/2.0);
+        }
+        return self;
+    };
+}
+
+#pragma mark - 私有初始化方法
++ (instancetype _Nonnull)ButtonImg:(NSString *)imgName forView:(UIView *_Nullable)superView{
+    UIButton *button = [[UIButton alloc] init];
+    if (superView) {
+        [superView addSubview:button];
+    }
+    [button setImage:[UIImage imageNamed:imgName] forState:UIControlStateNormal];
+    if (Rd_FontNameNormal.length != 0) {
+        button.titleLabel.font = [UIFont fontWithName:Rd_FontNameNormal size:button.titleLabel.font.pointSize];
+    }
+    button.clipsToBounds = YES;
+    return button;
+}
+
++ (instancetype _Nonnull)ButtonTitle:(NSString *)title forView:(UIView *_Nullable)superView{
+    UIButton *button = [[UIButton alloc] init];
+    if (superView) {
+        [superView addSubview:button];
+    }
+    [button setTitle:title forState:UIControlStateNormal];
+    if (Rd_FontNameNormal.length != 0) {
+        button.titleLabel.font = [UIFont fontWithName:Rd_FontNameNormal size:button.titleLabel.font.pointSize];
+    }
+    button.clipsToBounds = YES;
+    return button;
+}
+
++ (instancetype _Nonnull)ButtonforView:(UIView *_Nullable)superView{
+    UIButton *button = [[UIButton alloc] init];
+    if (superView) {
+        [superView addSubview:button];
+    }
+    if (Rd_FontNameNormal.length != 0) {
+        button.titleLabel.font = [UIFont fontWithName:Rd_FontNameNormal size:button.titleLabel.font.pointSize];
+    }
+    button.clipsToBounds = YES;
+    return button;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#pragma mark - 废弃
 + (instancetype _Nonnull)rd_BtnImage:(NSString *)imgName{
     return [UIButton rd_BtnImage:imgName responder:nil];
 }
@@ -108,32 +296,6 @@ static char rdButtonActionBlockKey;
     return button;
 }
 
-+ (instancetype _Nonnull)ButtonImg:(NSString *)imgName forView:(UIView *_Nullable)superView{
-    UIButton *button = [[UIButton alloc] init];
-    if (superView) {
-        [superView addSubview:button];
-    }
-    [button setImage:[UIImage imageNamed:imgName] forState:UIControlStateNormal];
-    if (Rd_FontNameNormal.length != 0) {
-        button.titleLabel.font = [UIFont fontWithName:Rd_FontNameNormal size:button.titleLabel.font.pointSize];
-    }
-    button.clipsToBounds = YES;
-    return button;
-}
-
-+ (instancetype _Nonnull)ButtonTitle:(NSString *)title forView:(UIView *_Nullable)superView{
-    UIButton *button = [[UIButton alloc] init];
-    if (superView) {
-        [superView addSubview:button];
-    }
-    [button setTitle:title forState:UIControlStateNormal];
-    if (Rd_FontNameNormal.length != 0) {
-        button.titleLabel.font = [UIFont fontWithName:Rd_FontNameNormal size:button.titleLabel.font.pointSize];
-    }
-    button.clipsToBounds = YES;
-    return button;
-}
-
 + (instancetype _Nonnull)ButtonTitle:(NSString *)title img:(NSString *)imgName  forView:(UIView *_Nullable)superView{
     UIButton *button = [[UIButton alloc] init];
     if (superView) {
@@ -146,14 +308,6 @@ static char rdButtonActionBlockKey;
     }
     button.clipsToBounds = YES;
     return button;
-}
-
-- (void)rd_setButtonAction:(void (^)(UIButton *sender))block{
-    if (block) {
-        [self addTarget:self action:@selector(rdbuttonClick:) forControlEvents:UIControlEventTouchUpInside];
-        
-        [self setRdActionBlock:block];
-    }
 }
 
 - (UIButton *_Nonnull(^_Nonnull)(NSString * _Nonnull title))rd_setButtonTitle{
@@ -311,26 +465,9 @@ static char rdButtonActionBlockKey;
     };
 }
 
-- (UIButton *_Nonnull(^_Nonnull)(RdButtonImageType type))rd_setButtonImageType{
-    return ^(RdButtonImageType type) {
-        if (type == RdButtonImageLeft) {
-            return self;
-        }
-        else if (type == RdButtonImageRight) {
-            self.titleEdgeInsets = UIEdgeInsetsMake(0, -CGRectGetWidth(self.imageView.frame), 0, CGRectGetWidth(self.imageView.frame));
-            self.imageEdgeInsets = UIEdgeInsetsMake(0, CGRectGetWidth(self.titleLabel.frame), 0, -CGRectGetWidth(self.titleLabel.frame));
-        }
-        else if (type == RdButtonImageBottom) {
-            self.titleEdgeInsets = UIEdgeInsetsMake(CGRectGetHeight(self.imageView.frame)/2.0, -CGRectGetWidth(self.imageView.frame)/2.0, -CGRectGetHeight(self.imageView.frame)/2.0, CGRectGetWidth(self.imageView.frame)/2.0);
-            self.imageEdgeInsets = UIEdgeInsetsMake(-CGRectGetHeight(self.titleLabel.frame)/2.0, CGRectGetWidth(self.titleLabel.frame)/2.0, CGRectGetHeight(self.titleLabel.frame)/2.0, -CGRectGetWidth(self.titleLabel.frame)/2.0);
-        }
-        return self;
-    };
-}
 
 
-
-
+#pragma mark - 辅助方法
 - (UIImage *)getImageWith:(UIColor *)color width:(CGFloat)width height:(CGFloat)height{
     CGRect rect = CGRectMake(0.0f, 0.0f, width, height);
     UIGraphicsBeginImageContextWithOptions(rect.size, NO, 0);
