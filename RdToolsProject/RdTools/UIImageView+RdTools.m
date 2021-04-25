@@ -14,7 +14,7 @@
 
 + (instancetype _Nonnull)rd_ImageView:(UIColor *)bgColor for:(UIView *_Nonnull)superView{
     UIImageView *view = [[UIImageView alloc] init];
-    view.backgroundColor = bgColor;
+    view.backgroundColor = bgColor ? bgColor : UIColor.clearColor;
     view.contentMode = UIViewContentModeScaleAspectFill;
     view.clipsToBounds = YES;
     view.userInteractionEnabled = YES;

@@ -10,7 +10,7 @@
 
 @interface UIImageView (RdTools)
 
-+ (instancetype _Nonnull)rd_ImageView:(UIColor *_Nonnull)bgColor for:(UIView *_Nonnull)superView;
++ (instancetype _Nonnull)rd_ImageView:(UIColor *_Nullable)bgColor for:(UIView *_Nonnull)superView;
 
 + (instancetype _Nonnull)rd_ImageViewImage:(NSString *_Nullable)imageName for:(UIView *_Nonnull)superView;
 
