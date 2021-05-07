@@ -135,7 +135,6 @@ static inline float statusbarHeight() {
     [generator impactOccurred];\
 }
 
-DEPRECATED_MSG_ATTRIBUTE("请使用JSONModel等工具转换")
 static inline NSString * getJsonWithDic(NSDictionary *dic) {
     if (dic.count == 0) {
         return @"{}";
@@ -145,7 +144,6 @@ static inline NSString * getJsonWithDic(NSDictionary *dic) {
     return text;
 }
 
-DEPRECATED_MSG_ATTRIBUTE("请使用JSONModel等工具转换")
 static inline NSString * getJsonWithArr(NSArray *arr) {
     if (arr.count == 0) {
         return @"[]";
