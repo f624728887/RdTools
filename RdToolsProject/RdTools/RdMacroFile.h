@@ -135,6 +135,7 @@ static inline float statusbarHeight() {
     [generator impactOccurred];\
 }
 
+DEPRECATED_MSG_ATTRIBUTE("请使用JSONModel等工具转换")
 static inline NSString * getJsonWithDic(NSDictionary *dic) {
     if (dic.count == 0) {
         return @"{}";
@@ -144,6 +145,7 @@ static inline NSString * getJsonWithDic(NSDictionary *dic) {
     return text;
 }
 
+DEPRECATED_MSG_ATTRIBUTE("请使用JSONModel等工具转换")
 static inline NSString * getJsonWithArr(NSArray *arr) {
     if (arr.count == 0) {
         return @"[]";
@@ -153,7 +155,6 @@ static inline NSString * getJsonWithArr(NSArray *arr) {
     return text;
 }
 
-DEPRECATED_MSG_ATTRIBUTE("请使用JSONModel等工具转换")
 static inline NSArray * getArrWithJson(NSString *string) {
     NSData *jsonData = [string dataUsingEncoding:NSASCIIStringEncoding];
     
@@ -162,7 +163,6 @@ static inline NSArray * getArrWithJson(NSString *string) {
     return arr;
 }
 
-DEPRECATED_MSG_ATTRIBUTE("请使用JSONModel等工具转换")
 static inline NSDictionary * getDicWithJson(NSString *string) {
     NSData *jsonData = [string dataUsingEncoding:NSASCIIStringEncoding];
     
