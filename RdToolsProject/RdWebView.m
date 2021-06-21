@@ -22,6 +22,7 @@
 - (instancetype _Nonnull)initWithUrl:(NSString *)url{
     self = [super init];
     if (self) {
+        self.bounces = false;
         self.bgView = [UIView rd_ViewBGColor:Rd_ColorWith(whiteColor) for:self];
         self.bgView.rd_edgeEqualTo(0, 0, 0, 0).rd_widthMultipliedBy(self, 1);
         
@@ -50,9 +51,9 @@
     
 }
 
-- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event{
-    return self;
-}
+//- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event{
+//    return self;
+//}
 
 /*
 // Only override drawRect: if you perform custom drawing.

@@ -18,7 +18,7 @@ static char rdScrollViewContentViewKey;
     UIScrollView *scrollView = [UIScrollView rd_ScrollView:bgColor forView:superView];
     
     [scrollView.contentView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(scrollView);
+//        make.edges.equalTo(scrollView);
         make.height.equalTo(scrollView);
     }];
     
@@ -29,7 +29,7 @@ static char rdScrollViewContentViewKey;
     UIScrollView *scrollView = [UIScrollView rd_ScrollView:bgColor forView:superView];
     
     [scrollView.contentView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(scrollView);
+//        make.edges.equalTo(scrollView);
         make.width.equalTo(scrollView);
     }];
     
@@ -51,6 +51,10 @@ static char rdScrollViewContentViewKey;
     contentView.backgroundColor = bgColor? bgColor : [UIColor clearColor];
     [scrollView addSubview:contentView];
     [scrollView setContentView:contentView];
+    
+    [scrollView.contentView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(scrollView);
+    }];
     
     return scrollView;
 }

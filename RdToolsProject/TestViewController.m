@@ -27,7 +27,7 @@
     NSArray *imgList = @[@"http://i3.sinaimg.cn/IT/t/2010-03-23/U4373P2T1D3977324F13DT20100323204034.JPG", @"https://tse3.mm.bing.net/th?id=OIP.NhtyuGqMktb2_SIGGSqkIQHaF7&pid=Api", @"https://i10.hoopchina.com.cn/hupuapp/bbs/938/27501938/thread_27501938_20170106125452_s_138853_o_h_300px_w_471px2047383998.jpeg?x-oss-process=image/resize,w_800/format,jpeg", @"https://i10.hoopchina.com.cn/hupuapp/bbs/938/27501938/thread_27501938_20170106125452_s_238668_o_h_600px_w_400px2122520759.jpeg", @"https://i10.hoopchina.com.cn/hupuapp/bbs/938/27501938/thread_27501938_20170106125453_s_303571_o_h_900px_w_573px265700814.jpeg"];
     
     RdPageView *p = [[RdPageView alloc] initWithViewEdge:Rd_MarginLarge pageEdge:Rd_MarginDefault imageList:imgList placeHolder:@"hill" forView:self.view];
-    p.backgroundColor = Rd_ColorWith(whiteColor);
+    p.backgroundColor = Rd_ColorWith(greenColor);
     p.rd_edgeEqualTo(Rd_NavibarH, 0, Rd_IGNORE, 0).rd_heightValue(Rd_ScreenWidth/16.0*9.0);
     
     

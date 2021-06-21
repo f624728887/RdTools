@@ -25,7 +25,7 @@
         [forView addSubview:self];
         self.imgList = [NSMutableArray arrayWithCapacity:0];
         self.pageEdge = pageEdge;
-        self.scrollView = [UIScrollView rd_HScrollView:Rd_ColorWith(whiteColor) forView:self];
+        self.scrollView = [UIScrollView rd_HScrollView:Rd_ColorWith(redColor) forView:self];
         self.scrollView.rd_edgeEqualTo(viewEdge, viewEdge, -viewEdge, -viewEdge);
         self.scrollView.clipsToBounds = NO;
         self.scrollView.pagingEnabled = YES;
