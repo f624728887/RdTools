@@ -109,8 +109,13 @@
         }
     };
     
-    for (void (^actionBlock)(void (^complete)(void)) in self.actionArray) {
-        actionBlock(completeBlock);
+    if (self.actionArray.count == 0) {
+        block();
+    }
+    else {
+        for (void (^actionBlock)(void (^complete)(void)) in self.actionArray) {
+            actionBlock(completeBlock);
+        }
     }
 }
 
@@ -153,8 +158,13 @@
         }
     };
     
-    for (void (^actionBlock)(void (^complete)(BOOL success)) in self.actionArray) {
-        actionBlock(completeBlock);
+    if (self.actionArray.count == 0) {
+        block(true);
+    }
+    else {    
+        for (void (^actionBlock)(void (^complete)(BOOL success)) in self.actionArray) {
+            actionBlock(completeBlock);
+        }
     }
 }
 
