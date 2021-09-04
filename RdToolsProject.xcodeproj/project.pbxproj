@@ -32,7 +32,6 @@
 		57190F772383BBB000512FE6 /* UIViewController+Logging.m in Sources */ = {isa = PBXBuildFile; fileRef = 57190F762383BBB000512FE6 /* UIViewController+Logging.m */; };
 		572AEBDE21DC60D900F520AE /* TimerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 572AEBDD21DC60D900F520AE /* TimerViewController.m */; };
 		57456784219C047500862A09 /* RdVideoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 57456783219C047500862A09 /* RdVideoView.m */; };
-		5769BF9126D3689000F6E9BE /* RdSwiftMacroFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5769BF9026D3689000F6E9BE /* RdSwiftMacroFile.swift */; };
 		57994D712470F9A700389A87 /* CollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57994D702470F9A700389A87 /* CollectionViewController.m */; };
 		57A0FAF5248797F500C6582D /* RdWeakProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A0FAF4248797F500C6582D /* RdWeakProxy.m */; };
 		57CDEF662238F84B00E1F95C /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57CDEF652238F84B00E1F95C /* TestViewController.m */; };
@@ -124,8 +123,6 @@
 		57396A692251F3DB007F3B8B /* RdToolsProject.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RdToolsProject.entitlements; sourceTree = "<group>"; };
 		57456782219C047500862A09 /* RdVideoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RdVideoView.h; sourceTree = "<group>"; };
 		57456783219C047500862A09 /* RdVideoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RdVideoView.m; sourceTree = "<group>"; };
-		5769BF8F26D3689000F6E9BE /* RdToolsProject-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RdToolsProject-Bridging-Header.h"; sourceTree = "<group>"; };
-		5769BF9026D3689000F6E9BE /* RdSwiftMacroFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RdSwiftMacroFile.swift; sourceTree = "<group>"; };
 		57994D6F2470F9A700389A87 /* CollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectionViewController.h; sourceTree = "<group>"; };
 		57994D702470F9A700389A87 /* CollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectionViewController.m; sourceTree = "<group>"; };
 		57A0FAF3248797F500C6582D /* RdWeakProxy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RdWeakProxy.h; sourceTree = "<group>"; };
@@ -247,7 +244,6 @@
 				57FA3DD32251E43E00509194 /* RdWebView.m */,
 				57190F752383BBB000512FE6 /* UIViewController+Logging.h */,
 				57190F762383BBB000512FE6 /* UIViewController+Logging.m */,
-				5769BF8F26D3689000F6E9BE /* RdToolsProject-Bridging-Header.h */,
 				5708FFFB219BB45000702D7F /* RdTools */,
 				5708FFCF219BB41300702D7F /* Main.storyboard */,
 				5708FFD2219BB41400702D7F /* Assets.xcassets */,
@@ -281,10 +277,9 @@
 			isa = PBXGroup;
 			children = (
 				5708000B219BB45000702D7F /* RdToolsHeader.h */,
-				5708000D219BB45000702D7F /* RdMacroFile.h */,
-				5769BF9026D3689000F6E9BE /* RdSwiftMacroFile.swift */,
 				57DC6FA4243452D600C63BE3 /* RdToolsManager.h */,
 				57DC6FA5243452D600C63BE3 /* RdToolsManager.m */,
+				5708000D219BB45000702D7F /* RdMacroFile.h */,
 				5708000F219BB45000702D7F /* UIView+RdMasonry.h */,
 				57080002219BB45000702D7F /* UIView+RdMasonry.m */,
 				57080006219BB45000702D7F /* UIView+RdTools.h */,
@@ -406,7 +401,6 @@
 				TargetAttributes = {
 					5708FFC5219BB41300702D7F = {
 						CreatedOnToolsVersion = 10.1;
-						LastSwiftMigration = 1250;
 						SystemCapabilities = {
 							com.apple.WAC = {
 								enabled = 0;
@@ -503,7 +497,6 @@
 			files = (
 				57038B2C243DC3BB008D29F5 /* RdCollectionView.m in Sources */,
 				572AEBDE21DC60D900F520AE /* TimerViewController.m in Sources */,
-				5769BF9126D3689000F6E9BE /* RdSwiftMacroFile.swift in Sources */,
 				57FA3DD42251E43E00509194 /* RdWebView.m in Sources */,
 				570F243421DC5967004AAC1F /* MasonryViewController.m in Sources */,
 				57E84C482251DCFC002BE10C /* Scroll2ViewController.m in Sources */,
@@ -708,8 +701,6 @@
 			baseConfigurationReference = 89295A06D8D491DF4C3CEC7F /* Pods-RdToolsProject.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
-				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = K993SX32LX;
 				INFOPLIST_FILE = RdToolsProject/Info.plist;
@@ -720,9 +711,6 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Rondo.RdToolsProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "RdToolsProject/RdToolsProject-Bridging-Header.h";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -732,8 +720,6 @@
 			baseConfigurationReference = 779B5804DB8D5E5C21400152 /* Pods-RdToolsProject.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
-				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = K993SX32LX;
 				INFOPLIST_FILE = RdToolsProject/Info.plist;
@@ -744,8 +730,6 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Rondo.RdToolsProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "RdToolsProject/RdToolsProject-Bridging-Header.h";
-				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
@@ -753,7 +737,6 @@
 		5708FFF6219BB41400702D7F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = RdToolsProjectTests/Info.plist;
@@ -772,7 +755,6 @@
 		5708FFF7219BB41400702D7F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = RdToolsProjectTests/Info.plist;
@@ -791,7 +773,6 @@
 		5708FFF9219BB41400702D7F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = RdToolsProjectUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -809,7 +790,6 @@
 		5708FFFA219BB41400702D7F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = RdToolsProjectUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
